@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\ProductService;
-use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class ProductController extends Controller
 {
@@ -13,12 +13,15 @@ class ProductController extends Controller
 
     public function index()
     {
-        $product = $this->productService->getProducts();
-        dd($product);
+        $products = $this->productService->getProducts();
+        return Inertia::render('Products/Index', [
+            'products' => $products
+        ]);
     }
 
     public function show($id)
     {
-        return $this->productService->getProduct($id);
+        $product = $this->productService->getProduct($id);
+        dd($product);
     }
 }
