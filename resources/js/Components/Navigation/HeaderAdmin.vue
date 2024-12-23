@@ -6,14 +6,17 @@
             <input
                 placeholder="Search..."
                 type="search"
-                class="p-2 h-10 border border-gray-300 rounded-md w-1/2"
+                class="p-4 h-10 bg-[#F5F5FA] border border-gray-200 rounded-md w-1/2 focus:outline-none focus:ring-1 focus:ring-[#7364DB] transition duration-150"
             />
+
+            <button class="bg-[#7364DB] text-white px-4 py-2 rounded-md ml-1">
+                <i class="fas fa-search"></i>
+            </button>
         </div>
 
         <div class="flex justify-between gap-4">
-            <div>BG</div>
-            <div>BG</div>
-            <div>BG</div>
+            <div>Notifications</div>
+            <div>Profile</div>
         </div>
     </header>
 </template>
