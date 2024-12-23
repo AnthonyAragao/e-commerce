@@ -6,6 +6,6 @@
 
 <template>
     <AdminLayout>
-        <h3>Produtos</h3>
+        {{ products }}
     </AdminLayout>
 </template>
