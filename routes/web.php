@@ -17,6 +17,7 @@ Route::prefix('admin')
     ->name('admin.')
     ->group(function () {
         Route::resource('products', AdminProductController::class);
+        Route::get('dashboard', fn() => Inertia\Inertia::render('Admin/Dashboard'));
     });
 
 
