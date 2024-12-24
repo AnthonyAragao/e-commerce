@@ -65,36 +65,63 @@
         </div>
 
         <div class="flex flex-col w-full space-y-2 mt-4">
-            <div
-                v-for="image in images"
-                :key="image"
-                class="w-full h-20 p-4 border-2 border-gray-100 rounded-md shadow-sm flex justify-between gap-4 dark:border-[#313442]"
-            >
-                <img
-                    :src="image.url"
-                    alt="Product image"
-                    class=" w-14 "
-                />
+            <TransitionGroup name="fade" >
+                <div
+                    v-for="image in images"
+                    :key="image"
+                    class="w-full h-20 p-4 border-2 border-gray-100 rounded-md shadow-sm flex justify-between gap-4 dark:border-[#313442]"
+                >
+                    <img
+                        :src="image.url"
+                        alt="Product image"
+                        class="w-14"
+                    />
 
-                <div class="w-full">
-                    <span
-                        class="text-sm font-semibold text-gray-800 dark:text-gray-100"
-                    >
-                        {{ image.name }}
-                    </span>
+                    <div class="w-full">
+                        <span
+                            class="text-sm font-semibold text-gray-800 dark:text-gray-100"
+                        >
+                            {{ image.name }}
+                        </span>
+
+                        <div
+                            class="w-full h-1 bg-green-500 rounded-md mt-2"
+                        ></div>
+                    </div>
 
                     <div
-                        class="w-full h-1 bg-green-500 rounded-md mt-2"
-                    ></div>
+                        class="w-9 h-8 bg-red-300/80 rounded-full flex items-center justify-center cursor-pointer shadow-md mt-2"
+                        @click="removeImage(image)"
+                    >
+                        <i class="fas fa-times text-red-800"></i>
+                    </div>
                 </div>
-
-                <div
-                    class="w-9 h-8 bg-red-300/80 rounded-full flex items-center justify-center cursor-pointer shadow-md mt-2"
-                    @click="removeImage(image)"
-                >
-                    <i class="fas fa-times text-red-800"></i>
-                </div>
-            </div>
+            </TransitionGroup>
         </div>
     </div>
 </template>
+
+
+<style scoped>
+    .fade-enter-from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    .fade-enter-to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: all 0.3s;
+    }
+    .fade-leave-from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .fade-leave-to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+</style>
