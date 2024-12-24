@@ -1,6 +1,6 @@
 <template>
     <header
-        class="bg-white w-full h-16 flex justify-between items-center px-4 shadow-sm dark:bg-[#1F2128] dark:border-b dark:border-[#313442]"
+        class="fixed left-0 bg-white w-full h-16 flex justify-between items-center px-4 shadow-sm dark:bg-[#1F2128] dark:border-b dark:border-[#313442]"
     >
         <div class="flex flex-grow justify-center">
             <div class="relative w-1/2">

@@ -7,7 +7,7 @@
 
 <template>
    <aside
-        class="h-screen bg-white w-56 text-[#9696AC] flex flex-col justify-between shadow-md z-10 dark:bg-[#1F2128] dark:border-r-2 dark:border-[#313442]"
+        class="fixed h-screen bg-white w-56 text-[#9696AC] flex flex-col justify-between shadow-md z-10 dark:bg-[#1F2128] dark:border-r-2 dark:border-[#313442]"
     >
         <div class="p-4">
             <div class="text-lg font-bold">

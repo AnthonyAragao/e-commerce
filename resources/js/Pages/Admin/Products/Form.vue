@@ -6,6 +6,7 @@
     import TextAreaInput from '../../../Components/Ui/Inputs/TextAreaInput.vue';
     import SelectInput from '../../../Components/Ui/Selects/SelectInput.vue';
     import NumberInput from '../../../Components/Ui/Inputs/NumberInput.vue';
+    import ProductGallery from '../../../Components/Products/ProductGallery.vue';
 
     const { categories } = defineProps([ 'categories' ]);
 </script>
@@ -89,6 +90,10 @@
                         placeholder="0"
                         required
                     />
+                </div>
+
+                <div class="mt-10">
+                    <ProductGallery />
                 </div>
 
             </form>

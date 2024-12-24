@@ -16,10 +16,10 @@
     <div class="flex bg-[#F5F5FA]" :class="{'dark': isDarkMode}" >
         <Sidebar @toggle-dark-mode="toggleDarkMode" />
 
-        <div class="flex-1 flex flex-col dark:bg-zinc-900 dark:text-white">
+        <div class="flex-1 flex flex-col dark:bg-zinc-900 dark:text-white ml-56">
             <HeaderAdmin />
 
-            <main class="p-7">
+            <main class="p-7 mt-16 min-h-[calc(100vh-4rem)]">
                 <slot></slot>
             </main>
         </div>

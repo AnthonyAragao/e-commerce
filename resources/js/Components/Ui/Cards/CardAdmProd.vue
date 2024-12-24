@@ -11,7 +11,7 @@
         <div>
             <div class="flex gap-2 relative">
                 <img
-                    src="../../../../../public/imagens/perguntas_entrevista_emprego.png"
+                    src="/img/exemple.png"
                     alt=""
                     class=" border-[1.5px] border-gray-300 dark:border-[#b3b3b3] p-[.2px] rounded-md w-20 h-20 object-cover"
                 >
@@ -56,7 +56,6 @@
                         </a>
                     </div>
               </Transition>
-
             </div>
 
             <div class="mt-1">
@@ -80,8 +79,10 @@
                 class="flex justify-between mt-2"
             >
                 <p class="text-sm  ">Amount </p>
-                <div class=" flex items-center gap-1">
-                    <div class="w-11 rounded-md h-1 bg-[#c6cbd9] after:content-[''] after:block after:w-4/5 after:h-1 after:rounded-md after:bg-[#50d1b2]"></div>
+                <div class="flex items-center gap-1">
+                    <div
+                        class="w-11 rounded-md h-1 bg-[#c6cbd9] after:content-[''] after:block after:w-4/5 after:h-1 after:rounded-md after:bg-[#50d1b2]"
+                    ></div>
                     <span class="text-xs text-gray-500 dark:text-gray-400"> 2025</span>
                 </div>
             </div>
