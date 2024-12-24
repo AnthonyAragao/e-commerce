@@ -21,7 +21,9 @@
         ]" />
 
 
-        <CardLayout>
+        <CardLayout
+            customClass="pb-28"
+        >
 
             <form action="" method="post">
                 <div class="flex w-full gap-6">
@@ -88,6 +90,7 @@
                         required
                     />
                 </div>
+
             </form>
 
         </CardLayout>
