@@ -3,15 +3,17 @@
         bg-white w-full h-16 flex justify-between items-center px-4 shadow-sm"
     >
         <div class="flex flex-grow justify-center">
-            <input
-                placeholder="Search..."
-                type="search"
-                class="p-4 h-10 bg-[#F5F5FA] border border-gray-200 rounded-md w-1/2 focus:outline-none focus:ring-1 focus:ring-[#7364DB] transition duration-150"
-            />
+            <div class="relative w-1/2">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <i class="fas fa-search text-gray-400"></i>
+                </div>
 
-            <button class="bg-[#7364DB] text-white px-4 py-2 rounded-md ml-1">
-                <i class="fas fa-search"></i>
-            </button>
+                <input
+                    placeholder="Search"
+                    type="search"
+                    class="p-4 pl-8 h-10 bg-[#F5F5FA] text-sm border border-gray-200 rounded-md w-full focus:outline-none focus:ring-1 focus:ring-gray-300 transition duration-300"
+                />
+            </div>
         </div>
 
         <div class="flex justify-between gap-4">
