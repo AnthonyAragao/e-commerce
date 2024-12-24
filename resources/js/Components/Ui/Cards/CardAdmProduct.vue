@@ -6,7 +6,7 @@
 
 <template>
     <div
-        class="w-[300px] flex flex-col justify-between p-4 h-[300px] bg-white dark:border-gray-700 rounded-md border-[1.5px]  border-gray-300 dark:bg-[#1F2128] dark:border-[1.5px]"
+        class="w-[300px] flex flex-col justify-between p-4 h-[300px] bg-white border-[1.5px] border-gray-200 dark:border-gray-700 rounded-md dark:bg-[#1F2128]"
     >
         <div>
             <div class="flex gap-2 relative">

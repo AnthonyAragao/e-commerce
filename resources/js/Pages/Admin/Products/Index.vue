@@ -3,7 +3,7 @@
     import AdminLayout from '../../../Components/Layouts/AdminLayout.vue';
     import Breadcrumb from '../../../Components/Navigation/Breadcrumb.vue';
     import CardLayout from '../../../Components/Ui/Cards/CardLayout.vue';
-    import CardAdmProd from '../../../Components/Ui/Cards/CardAdmProd.vue';
+    import CardAdmProduct from '../../../Components/UI/Cards/CardAdmProduct.vue';
 
     const { products } = defineProps(["products"]);
 </script>
@@ -29,7 +29,7 @@
         </div>
 
         <CardLayout>
-            <CardAdmProd />
+            <CardAdmProduct />
         </CardLayout>
     </AdminLayout>
 </template>
