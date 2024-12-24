@@ -2,18 +2,25 @@
 
 namespace App\Repositories;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Repositories\Contracts\ProductRepositoryInterface;
 
 class ProductRepository implements ProductRepositoryInterface
 {
     public function __construct(
-        protected Product $product
+        protected Product $product,
+        protected Category $category
     ){}
 
     public function getProducts()
     {
         return $this->product->with('category')->get();
+    }
+
+    public function getCategories()
+    {
+        return $this->category->all();
     }
 
     public function getProduct($id)
