@@ -40,7 +40,7 @@
             </div>
 
             <div class="mt-1">
-                <h3 class="zinc-900 text-md font-medium dark:text-gray-200">Summury</h3>
+                <h3 class="zinc-900 text-md font-medium dark:text-gray-200">Summary</h3>
                 <p class="text-xs text-gray-500 dark:text-[#d1d0d0]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
             </div>
         </div>
