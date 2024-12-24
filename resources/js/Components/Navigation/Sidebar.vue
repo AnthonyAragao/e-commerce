@@ -1,11 +1,15 @@
 <script setup>
+    import { ref } from 'vue';
     import { usePage } from '@inertiajs/inertia-vue3';
+
     const page = usePage()
+    const isDarkMode = ref(false)
 </script>
 
 <template>
    <aside
-        class="h-screen bg-white w-56 text-[#9696AC] flex flex-col justify-between shadow-md z-10"
+        class="h-screen bg-white w-56 text-[#9696AC] flex flex-col justify-between shadow-md z-10 transition-all duration-300"
+        :class="{ 'bg-[#1F2128]': isDarkMode }"
     >
         <div class="p-4">
             <div class="text-lg font-bold">
@@ -47,12 +51,27 @@
             </nav>
         </div>
 
+
         <div class="p-4">
-            <button class="
-                w-full px-4 py-3 font-bold text-left rounded-xl hover:bg-[#7364DB] hover:text-white transition duration-300"
+            <div
+                class="flex justify-between items-center bg-[#E8EDF2] py-4 px-12 rounded-xl"
+                :class="{ 'bg-[#313442] ' : isDarkMode }"
             >
-                Logout
-            </button>
+                <i class="fas fa-moon text-purple-500"></i>
+
+                <div
+                    class="relative w-12 h-4 bg-gray-300 rounded-full cursor-pointer flex items-center transition-all duration-300"
+                    :class="{ 'bg-purple-500' : isDarkMode }"
+                    @click="isDarkMode = !isDarkMode"
+                >
+                    <div
+                        class="absolute w-5 h-5 bg-[#7364DB] rounded-full transition-all duration-300"
+                        :class="{ 'left-0': isDarkMode , 'left-7': !isDarkMode }"
+                    ></div>
+                </div>
+
+                <i class="fas fa-sun text-orange-400"></i>
+            </div>
         </div>
     </aside>
 </template>
