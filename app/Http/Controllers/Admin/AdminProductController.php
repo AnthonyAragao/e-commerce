@@ -22,6 +22,8 @@ class AdminProductController extends Controller
 
     public function create()
     {
-        return inertia('Admin/Products/Form');
+        return inertia('Admin/Products/Form', [
+            'categories' => $this->productService->getCategories(),
+        ]);
     }
 }

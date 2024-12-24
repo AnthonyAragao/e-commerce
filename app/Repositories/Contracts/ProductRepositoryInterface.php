@@ -6,6 +6,8 @@ interface ProductRepositoryInterface
 {
     public function getProducts();
 
+    public function getCategories();
+
     public function getProduct($id);
 
     public function createProduct($data);
