@@ -1,13 +1,23 @@
 <script setup>
     import Sidebar from '../Navigation/Sidebar.vue';
     import HeaderAdmin from '../Navigation/HeaderAdmin.vue';
+    import { useDark, useToggle } from '@vueuse/core';
+
+    const isDarkMode = useDark({
+        storageKey: 'dark-mode',
+        valueDark: 'dark',
+        valueLight: 'light',
+        onChanged: (isDark) => console.log('Modo alterado:', isDark),
+    });
+
+    const toggleDarkMode = useToggle(isDarkMode);
 </script>
 
 <template>
-    <div class="flex bg-[#F5F5FA]">
-        <Sidebar />
+    <div class="flex bg-[#F5F5FA]" :class="{'dark': isDarkMode}" >
+        <Sidebar @toggle-dark-mode="toggleDarkMode" />
 
-        <div class="flex-1 flex flex-col">
+        <div class="flex-1 flex flex-col dark:bg-[#0F0F12] dark:text-white transition-all duration-300">
             <HeaderAdmin />
 
             <main class="p-7">
@@ -16,4 +26,5 @@
         </div>
     </div>
 </template>
+
 
