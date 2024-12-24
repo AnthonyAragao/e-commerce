@@ -7,7 +7,7 @@
 
 <template>
    <aside
-        class="h-screen bg-white w-56 text-[#9696AC] flex flex-col justify-between shadow-md z-10 transition-all duration-300 dark:bg-[#1F2128] dark:border-r-2 dark:border-[#313442]"
+        class="h-screen bg-white w-56 text-[#9696AC] flex flex-col justify-between shadow-md z-10 dark:bg-[#1F2128] dark:border-r-2 dark:border-[#313442]"
     >
         <div class="p-4">
             <div class="text-lg font-bold">
@@ -40,11 +40,27 @@
                 </Link>
 
                 <Link
-                    href="/admin/users"
+                    href="/admin/payments"
                     class="px-4 py-3 rounded-xl flex items-center space-x-2 hover:bg-[#7364DB] hover:text-white transition duration-300"
-                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/users')}"
+                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/payments')}"
                 >
-                    <i class="fas fa-users"></i> <span>Users</span>
+                    <i class="fas fa-money-check-alt"></i> <span>Payments</span>
+                </Link>
+
+                <Link
+                    href="/admin/transactions"
+                    class="px-4 py-3 rounded-xl flex items-center space-x-2 hover:bg-[#7364DB] hover:text-white transition duration-300"
+                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/transactions')}"
+                >
+                    <i class="fas fa-exchange-alt"></i> <span>Transactions</span>
+                </Link>
+
+                <Link
+                    href="/admin/clients"
+                    class="px-4 py-3 rounded-xl flex items-center space-x-2 hover:bg-[#7364DB] hover:text-white transition duration-300"
+                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/clients')}"
+                >
+                    <i class="fas fa-users"></i> <span>Clients</span>
                 </Link>
             </nav>
         </div>
@@ -64,7 +80,8 @@
                 >
                     <div
                         class="absolute w-5 h-5 bg-[#7364DB] rounded-full transition-all duration-300 left-7 dark:left-0"
-                    ></div>
+                    >
+                    </div>
                 </div>
 
                 <!--  Icone do Sol -->

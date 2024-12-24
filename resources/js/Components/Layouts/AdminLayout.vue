@@ -7,7 +7,6 @@
         storageKey: 'dark-mode',
         valueDark: 'dark',
         valueLight: 'light',
-        onChanged: (isDark) => console.log('Modo alterado:', isDark),
     });
 
     const toggleDarkMode = useToggle(isDarkMode);
@@ -17,7 +16,7 @@
     <div class="flex bg-[#F5F5FA]" :class="{'dark': isDarkMode}" >
         <Sidebar @toggle-dark-mode="toggleDarkMode" />
 
-        <div class="flex-1 flex flex-col dark:bg-[#0F0F12] dark:text-white transition-all duration-300">
+        <div class="flex-1 flex flex-col dark:bg-[#0F0F12] dark:text-white">
             <HeaderAdmin />
 
             <main class="p-7">

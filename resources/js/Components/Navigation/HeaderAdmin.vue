@@ -1,6 +1,6 @@
 <template>
     <header
-        class="bg-white w-full h-16 flex justify-between items-center px-4 shadow-sm dark:bg-[#1F2128]"
+        class="bg-white w-full h-16 flex justify-between items-center px-4 shadow-sm dark:bg-[#1F2128] dark:border-b dark:border-[#313442]"
     >
         <div class="flex flex-grow justify-center">
             <div class="relative w-1/2">
@@ -11,7 +11,7 @@
                 <input
                     placeholder="Search"
                     type="search"
-                    class="p-4 pl-8 h-10 bg-[#F5F5FA] text-sm border border-gray-200 rounded-md w-full focus:outline-none focus:ring-1 focus:ring-gray-300 transition duration-300 dark:bg-[#313442] dark:text-white dark:border-[#313442] dark:ring-[#313442]"
+                    class="p-4 pl-8 h-10 bg-[#F5F5FA] text-sm border border-gray-200 rounded-md w-full focus:outline-none focus:ring-1 focus:ring-gray-300 dark:bg-[#313442] dark:text-white dark:border-[#313442] dark:ring-[#313442]"
                 />
             </div>
         </div>
