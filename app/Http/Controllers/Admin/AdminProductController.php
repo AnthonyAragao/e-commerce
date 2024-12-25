@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Services\ProductService;
+use Illuminate\Http\Request;
 
 class AdminProductController extends Controller
 {
@@ -25,5 +26,10 @@ class AdminProductController extends Controller
         return inertia('Admin/Products/Form', [
             'categories' => $this->productService->getCategories(),
         ]);
+    }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
     }
 }

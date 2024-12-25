@@ -3,6 +3,8 @@
 
     const images = ref([]);
 
+    const generateUniqueId = () => `${Date.now()}-${Math.random()}`;
+
     const handleFileUpload = (event) => {
         const files = event.target.files;
 
@@ -14,14 +16,19 @@
         Array.from(files).forEach((file) => {
             const reader = new FileReader();
             reader.onload = (e) => {
-                images.value.push({
+                const newImage = {
+                    id: generateUniqueId(),
                     url: e.target.result,
                     name: file.name,
-                });
+                };
+
+                images.value.push(newImage);
             };
 
             reader.readAsDataURL(file);
         })
+
+        event.target.value = null;
     }
 
     const removeImage = (image) => {
@@ -68,7 +75,7 @@
             <TransitionGroup name="fade" >
                 <div
                     v-for="image in images"
-                    :key="image"
+                    :key="image.id"
                     class="w-full h-20 p-4 border-2 border-gray-100 rounded-md shadow-sm flex justify-between gap-4 dark:border-[#313442]"
                 >
                     <img

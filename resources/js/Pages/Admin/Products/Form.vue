@@ -7,8 +7,24 @@
     import SelectInput from '../../../Components/Ui/Selects/SelectInput.vue';
     import NumberInput from '../../../Components/Ui/Inputs/NumberInput.vue';
     import ProductGallery from '../../../Components/Products/ProductGallery.vue';
+    import { useForm } from '@inertiajs/inertia-vue3';
 
     const { categories } = defineProps([ 'categories' ]);
+
+    const form = useForm({
+        name: '',
+        category: '',
+        description: '',
+        regular_price: '',
+        sale_price: '',
+        sku: '',
+        stock: 0,
+        images: []
+    });
+
+    const submitForm = () => {
+        form.post('/admin/products');
+    }
 </script>
 
 <template>
@@ -23,22 +39,21 @@
 
 
         <CardLayout
-            customClass="pb-28"
+            customClass="pb-20"
         >
-
-            <form action="" method="post">
+            <form @submit.prevent="submitForm">
                 <div class="flex w-full gap-6">
                     <TextInput
+                        v-model="form.name"
                         label="Name"
                         name="name"
                         placeholder="Product name"
-                        required
                     />
 
                    <SelectInput
                         label="Category"
                         name="category"
-                        required
+                        v-model="form.category"
                     >
                         <option disabled selected value="">-- Select an option --</option>
                         <option
@@ -53,49 +68,60 @@
 
                 <div class="mt-10">
                     <TextAreaInput
+                        v-model="form.description"
                         label="Description"
                         name="description"
                         placeholder="Product description"
-                        required
                     />
                 </div>
 
                 <div class="flex w-full gap-6 mt-10">
                     <NumberInput
+                        v-model="form.regular_price"
                         label="Regular Price"
                         name="regular_price"
                         placeholder="0.00"
-                        required
                     />
 
                     <NumberInput
+                        v-model="form.sale_price"
                         label="Sale Price"
                         name="sale_price"
                         placeholder="0.00"
-                        required
                     />
                 </div>
 
                 <div class="flex w-full gap-6 mt-10">
                     <TextInput
+                        v-model="form.sku"
                         label="SKU"
                         name="sku"
                         placeholder="Product SKU"
-                        required
                     />
 
                     <NumberInput
+                        v-model="form.stock"
                         label="Stock Quantity"
                         name="stock"
                         placeholder="0"
-                        required
                     />
                 </div>
 
                 <div class="mt-10">
-                    <ProductGallery />
+                    <ProductGallery
+                        :images="form.images"
+                    />
                 </div>
 
+
+                <div class="mt-10">
+                    <button
+                        type="submit"
+                        class="bg-[#7364DB] text-sm text-white px-6 py-2 rounded-md hover:bg-[#5B48A2] transition duration-300"
+                    >
+                        Save Product
+                    </button>
+                </div>
             </form>
 
         </CardLayout>

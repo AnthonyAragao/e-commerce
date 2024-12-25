@@ -1,7 +1,8 @@
 <script setup>
     import { ref } from 'vue';
 
-    const { label, name, placeholder, required, customClass } = defineProps([
+    const {modelValue, label, name, placeholder, required, customClass } = defineProps([
+        "modelValue",
         "label",
         "name",
         "placeholder",
@@ -9,12 +10,16 @@
         "customClass"
     ]);
 
-    const formattedValue = ref('');
+    const emit = defineEmits(["update:modelValue"]);
+
+    const formattedValue = ref(modelValue || "");
 
     const sanitizeInput = (event) => {
         const value = event.target.value;
-        const sanitizedValue = value.replace(/[^0-9.]/g, '');
+        const sanitizedValue = value.replace(/[^0-9.]/g, "");
         formattedValue.value = sanitizedValue;
+
+        emit('update:modelValue', sanitizedValue);
     };
 </script>
 
@@ -29,8 +34,8 @@
 
         <input
             type="text"
-            :name="name"
             :id="name"
+            :name="name"
             :placeholder="placeholder"
             :required="required"
             :class="customClass"
