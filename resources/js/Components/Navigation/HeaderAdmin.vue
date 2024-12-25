@@ -1,6 +1,6 @@
 <template>
     <header
-        class="fixed left-0 bg-white w-full h-16 flex justify-between items-center px-4 shadow-sm dark:bg-[#1F2128] dark:border-b dark:border-[#313442] "
+        class="fixed left-[14rem] w-[calc(100%-14rem)] h-16 bg-white flex justify-between items-center px-4 shadow-sm dark:bg-[#1F2128] dark:border-b dark:border-[#313442] "
     >
         <div class="flex flex-grow justify-center">
             <div class="relative w-[50%] max-w-[600px]">
@@ -18,11 +18,11 @@
 
         <div class="flex justify-between gap-6 items-center">
             <span>
-                <i class="fas fa-bell text-gray-400"></i>
+                <i class="fas fa-bell text-gray-400 cursor-pointer"></i>
             </span>
 
             <span>
-                <i class="fas fa-envelope text-gray-400"></i>
+                <i class="fas fa-envelope text-gray-400 cursor-pointer"></i>
             </span>
 
             <div class="flex items-center">

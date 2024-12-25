@@ -14,7 +14,9 @@
 
 <template>
     <div class="flex bg-[#F5F5FA]" :class="{'dark': isDarkMode}" >
-        <Sidebar @toggle-dark-mode="toggleDarkMode" />
+        <Sidebar
+            @toggle-dark-mode="toggleDarkMode"
+        />
 
         <div class="flex-1 flex flex-col dark:bg-zinc-900 dark:text-white ml-56">
             <HeaderAdmin />
