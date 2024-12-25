@@ -15,7 +15,7 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function getProducts()
     {
-        return $this->product->with('category')->get();
+        return $this->product->with([ 'category', 'images' ])->get();
     }
 
     public function getCategories()

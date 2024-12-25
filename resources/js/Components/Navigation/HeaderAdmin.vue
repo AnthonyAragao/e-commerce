@@ -1,9 +1,9 @@
 <template>
     <header
-        class="fixed left-0 bg-white w-full h-16 flex justify-between items-center px-4 shadow-sm dark:bg-[#1F2128] dark:border-b dark:border-[#313442]"
+        class="fixed left-0 bg-white w-full h-16 flex justify-between items-center px-4 shadow-sm dark:bg-[#1F2128] dark:border-b dark:border-[#313442] "
     >
         <div class="flex flex-grow justify-center">
-            <div class="relative w-1/2">
+            <div class="relative w-[50%] max-w-[600px]">
                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                     <i class="fas fa-search text-gray-400"></i>
                 </div>
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="flex justify-between gap-4">
+        <div class="flex justify-between gap-6 items-center">
             <span>
                 <i class="fas fa-bell text-gray-400"></i>
             </span>
@@ -24,6 +24,15 @@
             <span>
                 <i class="fas fa-envelope text-gray-400"></i>
             </span>
+
+            <div class="flex items-center">
+                <img
+                    src="https://randomuser.me/api/portraits/men/75.jpg"
+                    alt="User"
+                    class="w-8 h-8 rounded-full cursor-pointer"
+                >
+            </div>
+
         </div>
   </header>
 </template>

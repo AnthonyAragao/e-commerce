@@ -29,7 +29,13 @@
         </div>
 
         <CardLayout>
-            <CardAdmProduct />
+            <div class="flex flex-wrap gap-5">
+                <CardAdmProduct
+                    v-for="product in products"
+                    :key="product.id"
+                    :product="product"
+                />
+            </div>
         </CardLayout>
     </AdminLayout>
 </template>
