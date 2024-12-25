@@ -3,7 +3,7 @@
     import AdminLayout from '../../../Components/Layouts/AdminLayout.vue';
     import Breadcrumb from '../../../Components/Navigation/Breadcrumb.vue';
     import CardLayout from '../../../Components/Ui/Cards/CardLayout.vue';
-    import CardAdmProduct from '../../../Components/UI/Cards/CardAdmProduct.vue';
+    import CardAdmProduct from '../../../Components/Ui/Cards/CardAdmProduct.vue';
 
     const { products } = defineProps(["products"]);
 </script>

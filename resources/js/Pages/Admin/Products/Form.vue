@@ -37,7 +37,6 @@
             { 'href': '', 'name': 'New Product' }
         ]" />
 
-
         <CardLayout
             customClass="pb-20"
         >
@@ -55,7 +54,7 @@
                         name="category"
                         v-model="form.category"
                     >
-                        <option disabled selected value="">-- Select an option --</option>
+                        <option disabled selected value="">Select an option</option>
                         <option
                             v-for="category in categories"
                             :key="category.id"
@@ -109,7 +108,7 @@
 
                 <div class="mt-10">
                     <ProductGallery
-                        :images="form.images"
+                        v-model="form.images"
                     />
                 </div>
 
@@ -119,7 +118,7 @@
                         type="submit"
                         class="bg-[#7364DB] text-sm text-white px-6 py-2 rounded-md hover:bg-[#5B48A2] transition duration-300"
                     >
-                        Save Product
+                        <i class="fas fa-save"></i> Save Product
                     </button>
                 </div>
             </form>

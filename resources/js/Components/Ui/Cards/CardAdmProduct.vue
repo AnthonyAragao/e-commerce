@@ -28,7 +28,7 @@
 
                 <button
                     @click="modalEditRemove = !modalEditRemove"
-                    class="border-[1.5px] border-gray-300 dark:border-gray-500 flex items-center bg-[#f5f5fa] rounded-md size-6 pl-[1px] dark:bg-[#313442]"
+                    class="border-[1.5px] border-gray-200 dark:border-gray-500 flex items-center bg-[#f5f5fa] rounded-md size-6 pl-[1px] dark:bg-[#313442]"
                 >
                      <i class="fas fa-ellipsis-v p-2 rotate-90 text-xs dark:text-gray-400 text-gray-500 mr-1"></i>
                 </button>
@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        <div class=" bg-[#f5f5fa] dark:bg-[#313442] p-3 rounded-md border-[1.5px] dark:border-gray-600  border-gray-200">
+        <div class=" bg-[#F5F5FA] dark:bg-[#313442] p-3 rounded-md border-[1.7px] dark:border-gray-600  border-gray-200 shadow-sm">
             <div
                 class="flex justify-between dark:border-gray-500  pb-2 border-b-[1.5px] border-gray-200 dark:text-gray-300"
             >

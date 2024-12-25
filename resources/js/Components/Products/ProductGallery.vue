@@ -1,6 +1,10 @@
 <script setup>
     import { ref } from 'vue';
 
+    const { modelValue } = defineProps(['modelValue']);
+
+    const emit = defineEmits(['update:modelValue']);
+
     const images = ref([]);
 
     const generateUniqueId = () => `${Date.now()}-${Math.random()}`;
@@ -14,18 +18,15 @@
         }
 
         Array.from(files).forEach((file) => {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                const newImage = {
-                    id: generateUniqueId(),
-                    url: e.target.result,
-                    name: file.name,
-                };
-
-                images.value.push(newImage);
+            const newImage = {
+                id: generateUniqueId(),
+                file: file,
+                url: URL.createObjectURL(file),
+                name: file.name,
             };
 
-            reader.readAsDataURL(file);
+            images.value.push(newImage);
+            emit('update:modelValue', images.value);
         })
 
         event.target.value = null;
@@ -33,6 +34,7 @@
 
     const removeImage = (image) => {
         images.value = images.value.filter((img) => img !== image);
+        emit('update:modelValue', images.value);
     }
 </script>
 

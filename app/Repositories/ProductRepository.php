@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Models\Category;
-use App\Models\Product;
+use Illuminate\Support\Facades\DB;
+use App\Models\{Category, Product};
 use App\Repositories\Contracts\ProductRepositoryInterface;
 
 class ProductRepository implements ProductRepositoryInterface
@@ -30,7 +30,37 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function createProduct($data)
     {
-        return $this->product->create($data);
+        DB::beginTransaction();
+
+        try{
+            $product = $this->product->create([
+                'name' => $data['name'],
+                'slug' =>  $this->product->createUniqueSlug($data['name']),
+                'description' => $data['description'],
+                'regular_price' => $data['regular_price'],
+                'sale_price' => $data['sale_price'],
+                'sku' => $data['sku'],
+                'stock' => $data['stock'],
+                'category_id' => $data['category'],
+            ]);
+
+            $images = $data['images'];
+            if (!empty($images)) {
+                foreach ($images as $image) {
+                    $image_path = $image['file']->store('products', 'public');
+
+                    $product->images()->create([
+                        'image_path' => $image_path,
+                    ]);
+                }
+            }
+
+            DB::commit();
+            return;
+        } catch (\Exception $exception) {
+            DB::rollBack();
+            throw $exception;
+        }
     }
 
     public function updateProduct($id, $data)
