@@ -8,6 +8,7 @@
     <AdminLayout>
         <h1 class="text-3xl font-bold">Dashboard</h1>
         <!-- caminho da pagina -->
+
         <Breadcrumb :breadcrumbs="[
             { 'href': '/admin', 'name': 'Home' },
             { 'href': '', 'name': 'Dashboard' }

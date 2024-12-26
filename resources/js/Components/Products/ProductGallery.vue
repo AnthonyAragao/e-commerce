@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue';
+    import SpanError from '../Ui/Inputs/SpanError.vue';
 
     const { modelValue, error } = defineProps(['modelValue', 'error']);
 
@@ -70,12 +71,7 @@
                 />
             </label>
 
-            <span
-                v-if="error"
-                class="text-red-500 text-sm mt-1 font-semibold"
-            >
-                {{ error }}
-            </span>
+            <SpanError :error="error"/>
         </div>
 
         <div class="flex flex-col w-full space-y-2 mt-4">

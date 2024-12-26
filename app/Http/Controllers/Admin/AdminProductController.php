@@ -19,6 +19,7 @@ class AdminProductController extends Controller
 
         return inertia('Admin/Products/Index', [
             'products' => $products,
+            'flash' => session('success'),
         ]);
     }
 
@@ -32,5 +33,8 @@ class AdminProductController extends Controller
     public function store(ProductRequest $request)
     {
         $this->productService->createProduct($request->all());
+        return redirect()
+            ->route('admin.products.index')
+            ->with('success', 'Product created successfully');
     }
 }

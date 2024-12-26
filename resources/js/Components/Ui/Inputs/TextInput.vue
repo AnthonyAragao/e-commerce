@@ -1,4 +1,6 @@
 <script setup>
+    import SpanError from './SpanError.vue';
+
     const { modelValue, label, name, placeholder, required, customClass, error} = defineProps([
         "modelValue",
         "label",
@@ -32,11 +34,7 @@
             class="px-3 py-2 rounded-lg border-2 border-gray-100 mt-1 focus:outline-none focus:border-gray-300 dark:bg-[#1F2128] dark:border-[#313442] dark:text-white dark:focus:border-[#7364DB]"
         >
 
-        <span
-            v-if="error"
-            class="text-red-500 text-sm mt-1 font-semibold"
-        >
-            {{ error }}
-        </span>
+
+        <SpanError :error="error"/>
     </div>
 </template>
