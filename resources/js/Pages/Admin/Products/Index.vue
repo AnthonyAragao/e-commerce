@@ -4,7 +4,7 @@
     import Breadcrumb from '../../../Components/Navigation/Breadcrumb.vue';
     import CardLayout from '../../../Components/Ui/Cards/CardLayout.vue';
     import CardAdmProduct from '../../../Components/Ui/Cards/CardAdmProduct.vue';
-    import Success from '../../../Components/Ui/Notifications/Success.vue';
+    import Alert from '../../../Components/Ui/Notifications/Alert.vue';
     import { onMounted, ref } from 'vue';
 
     const { products, flash } = defineProps(["products", "flash"]);
@@ -20,7 +20,7 @@
 
 <template>
     <AdminLayout>
-        <Success
+        <Alert
             v-if="success"
             :message="flash"
             duration="3000"
@@ -29,7 +29,7 @@
         <div class="flex justify-between items-center">
             <div>
                 <h1 class="text-3xl font-bold">Products</h1>
-                
+
                 <Breadcrumb :breadcrumbs="[
                     { 'href': '/admin', 'name': 'Home' },
                     { 'href': '', 'name': 'Products' }

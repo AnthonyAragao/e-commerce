@@ -1,7 +1,7 @@
 <script setup>
     import { onMounted, ref } from 'vue';
 
-    const { message, duration } = defineProps(['message', 'duration']);
+    const { message, duration, customClass } = defineProps(['message', 'duration', 'customClass']);
 
     const isVisible = ref(false);
 
@@ -15,16 +15,16 @@
 </script>
 
 <template>
-    <Transition name="fade">
+    <Transition name="fade" @after-leave="$emit('hidden')">
         <div
             v-if="isVisible"
-            class="fixed bottom-10 right-8 bg-green-500 text-white px-6 py-4 rounded-md shadow-lg flex items-center gap-4 z-10"
+            :class="`fixed bottom-10 right-8 bg-green-500 text-white px-6 py-4 rounded-md shadow-lg flex items-center gap-4 z-10 ${customClass}`"
         >
             <span class="text-sm font-semibold">
                 {{ message }}
             </span>
 
-            <button @click="isVisible = false">
+            <button type="button" @click="isVisible = false">
                 <i class="fas fa-times"></i>
             </button>
         </div>

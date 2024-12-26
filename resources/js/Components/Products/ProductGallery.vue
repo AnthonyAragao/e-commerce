@@ -1,12 +1,13 @@
 <script setup>
     import { ref } from 'vue';
     import SpanError from '../Ui/Inputs/SpanError.vue';
+    import Alert from '../Ui/Notifications/Alert.vue';
 
     const { modelValue, error } = defineProps(['modelValue', 'error']);
-
+    const images = ref([]);
     const emit = defineEmits(['update:modelValue']);
 
-    const images = ref([]);
+    const showErrorMaxUploadImages = ref(false);
 
     const generateUniqueId = () => `${Date.now()}-${Math.random()}`;
 
@@ -14,7 +15,7 @@
         const files = event.target.files;
 
         if (images.value.length >= 4) {
-            alert('You can only upload up to 4 images');
+            showErrorMaxUploadImages.value = true;
             return;
         }
 
@@ -40,6 +41,7 @@
 </script>
 
 <template>
+
     <div class="flex gap-6">
         <div class="min-w-[600px]">
             <span
@@ -103,6 +105,15 @@
                     </div>
                 </div>
             </TransitionGroup>
+
+            <Alert
+                v-if="showErrorMaxUploadImages"
+                message="You can only upload up to 4 images"
+                duration="3000"
+                customClass="bg-red-400"
+                @hidden="showErrorMaxUploadImages = false"
+            />
+
         </div>
     </div>
 </template>

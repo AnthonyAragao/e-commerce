@@ -39,7 +39,10 @@
         ]" />
 
         <CardLayout customClass="pb-20">
-            <form @submit.prevent="submitForm">
+            <form
+                @submit.prevent="submitForm"
+                @keydown.enter.prevent
+            >
                 <div class="flex w-full gap-6">
                     <TextInput
                         v-model="form.name"

@@ -75,7 +75,7 @@
                     @click="$emit('toggle-dark-mode')"
                 >
                     <div
-                        class="absolute w-5 h-5 bg-[#7364DB] rounded-full transition-all duration-300 left-7 dark:left-0"
+                        class="absolute w-5 h-5 bg-orange-400/80 dark:bg-[#7364DB] rounded-full transition-all duration-300 left-7 dark:left-0"
                     >
                     </div>
                 </div>
