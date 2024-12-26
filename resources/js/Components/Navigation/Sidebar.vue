@@ -67,13 +67,9 @@
 
 
         <div class="p-4">
-            <div
-                class="flex justify-between items-center bg-[#E8EDF2] py-4 px-12 rounded-xl dark:bg-[#313442]"
-            >
-                <!--  Icone da lua -->
+            <div class="flex justify-between items-center bg-[#E8EDF2] py-4 px-12 rounded-xl dark:bg-[#313442]">
                 <i class="fas fa-moon text-purple-500"></i>
 
-                <!--  Toggle  -->
                 <div
                     class="relative w-12 h-4 bg-gray-300 rounded-full cursor-pointer flex items-center transition-all duration-300 dark:bg-[#2C2C35]"
                     @click="$emit('toggle-dark-mode')"
@@ -84,7 +80,6 @@
                     </div>
                 </div>
 
-                <!--  Icone do Sol -->
                 <i class="fas fa-sun text-orange-400"></i>
             </div>
         </div>

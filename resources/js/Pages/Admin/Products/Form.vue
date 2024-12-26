@@ -23,7 +23,14 @@
     });
 
     const submitForm = () => {
-        form.post('/admin/products');
+        form.post('/admin/products', {
+            onSuccess: () => {
+                form.reset();
+            },
+            onError: (errors) => {
+                console.log(form.errors.name);
+            }
+        });
     }
 </script>
 
@@ -47,12 +54,14 @@
                         label="Name"
                         name="name"
                         placeholder="Product name"
+                        :error="form.errors.name"
                     />
 
                    <SelectInput
                         label="Category"
                         name="category"
                         v-model="form.category"
+                        :error="form.errors.category"
                     >
                         <option disabled selected value="">Select an option</option>
                         <option
@@ -71,6 +80,7 @@
                         label="Description"
                         name="description"
                         placeholder="Product description"
+                        :error="form.errors.description"
                     />
                 </div>
 
@@ -80,6 +90,7 @@
                         label="Regular Price"
                         name="regular_price"
                         placeholder="0.00"
+                        :error="form.errors.regular_price"
                     />
 
                     <NumberInput
@@ -87,6 +98,7 @@
                         label="Sale Price"
                         name="sale_price"
                         placeholder="0.00"
+                        :error="form.errors.sale_price"
                     />
                 </div>
 
@@ -96,6 +108,7 @@
                         label="SKU"
                         name="sku"
                         placeholder="Product SKU"
+                        :error="form.errors.sku"
                     />
 
                     <NumberInput
@@ -103,12 +116,14 @@
                         label="Stock Quantity"
                         name="stock"
                         placeholder="0"
+                        :error="form.errors.stock"
                     />
                 </div>
 
                 <div class="mt-10">
                     <ProductGallery
                         v-model="form.images"
+                        :error="form.errors.images"
                     />
                 </div>
 

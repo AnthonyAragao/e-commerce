@@ -1,13 +1,14 @@
 <script setup>
     import { ref } from 'vue';
 
-    const {modelValue, label, name, placeholder, required, customClass } = defineProps([
+    const {modelValue, label, name, placeholder, required, customClass, error } = defineProps([
         "modelValue",
         "label",
         "name",
         "placeholder",
         "required",
-        "customClass"
+        "customClass",
+        "error"
     ]);
 
     const emit = defineEmits(["update:modelValue"]);
@@ -43,5 +44,12 @@
             v-model="formattedValue"
             @input="sanitizeInput"
         />
+
+        <span
+            v-if="error"
+            class="text-red-500 text-sm mt-1 font-semibold"
+        >
+            {{ error }}
+        </span>
     </div>
 </template>

@@ -1,10 +1,11 @@
 <script setup>
-    const { modelValue, label, name, required, customClass } = defineProps([
+    const { modelValue, label, name, required, customClass, error } = defineProps([
         "modelValue",
         "label",
         "name",
         "required",
-        "customClass"
+        "customClass",
+        "error"
     ]);
 
     const emit = defineEmits(["update:modelValue"]);
@@ -28,5 +29,12 @@
         >
             <slot></slot>
         </select>
+
+        <span
+            v-if="error"
+            class="text-red-500 text-sm mt-1 font-semibold"
+        >
+            {{ error }}
+        </span>
     </div>
 </template>
