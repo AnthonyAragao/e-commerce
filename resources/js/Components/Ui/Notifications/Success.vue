@@ -22,7 +22,7 @@
                 {{ message }}
             </span>
 
-            <button>
+            <button @click="isVisible = false">
                 <i class="fas fa-times"></i>
             </button>
         </div>
