@@ -14,7 +14,13 @@ class CategorySeeder extends Seeder
             'Notebooks',
             'Tablets',
             'Smartwatches',
-            'Acessórios',
+            'Laptops',
+            'Desktops',
+            'Mobile Phones',
+            'Acessories',
+            'Smart TVs',
+            'Portable storage',
+            'Headphones',
         ];
 
         foreach ($categories as $category) {

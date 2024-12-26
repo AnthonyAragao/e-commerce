@@ -4,12 +4,27 @@
     import Breadcrumb from '../../../Components/Navigation/Breadcrumb.vue';
     import CardLayout from '../../../Components/Ui/Cards/CardLayout.vue';
     import CardAdmProduct from '../../../Components/Ui/Cards/CardAdmProduct.vue';
+    import Success from '../../../Components/Ui/Notifications/Success.vue';
+    import { onMounted, ref } from 'vue';
 
     const { products } = defineProps(["products"]);
+
+    const success = ref(false);
+
+    onMounted(() => {
+        // Adicionar logica aqui
+        success.value = true;
+    });
 </script>
 
 <template>
     <AdminLayout>
+        <Success
+            v-if="success"
+            message="Product created successfully"
+            duration="3000"
+        />
+
         <div class="flex justify-between items-center">
             <div>
                 <h1 class="text-3xl font-bold">Products</h1>
