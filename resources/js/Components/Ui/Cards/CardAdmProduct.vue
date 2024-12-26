@@ -6,7 +6,7 @@
 
 <template>
     <div
-        class="w-[300px] flex flex-col justify-between p-4 h-[300px] bg-white border-[1.5px] border-gray-200 dark:border-gray-700 rounded-md dark:bg-[#1F2128]"
+        class="w-[300px] h-[300px] flex flex-col justify-between p-4 rounded-md bg-white border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]"
     >
         <div>
             <div class="flex gap-2 relative">
@@ -73,8 +73,10 @@
                 class="flex justify-between dark:border-gray-500 pb-2 border-b-[1.5px] border-gray-200"
             >
                 <p class="text-sm dark:text-gray-300">Sales </p>
+                
                 <div class=" flex items-center gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" class="size-3" fill="#50d1b2" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+
                     <span class="text-xs text-gray-500 dark:text-gray-400">
                         {{ product.sales }}
                     </span>
@@ -87,6 +89,7 @@
                     <div
                         class="w-11 rounded-md h-1 bg-[#c6cbd9] after:content-[''] after:block after:w-4/5 after:h-1 after:rounded-md after:bg-[#50d1b2]"
                     ></div>
+
                     <span class="text-xs text-gray-500 dark:text-gray-400">
                         {{ product.stock }}
                     </span>

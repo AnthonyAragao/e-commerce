@@ -1,5 +1,6 @@
 <script setup>
     import { ref } from 'vue';
+    import SpanError from './SpanError.vue';
 
     const {modelValue, label, name, placeholder, required, customClass, error } = defineProps([
         "modelValue",
@@ -45,11 +46,6 @@
             @input="sanitizeInput"
         />
 
-        <span
-            v-if="error"
-            class="text-red-500 text-sm mt-1 font-semibold"
-        >
-            {{ error }}
-        </span>
+        <SpanError :error="error"/>
     </div>
 </template>

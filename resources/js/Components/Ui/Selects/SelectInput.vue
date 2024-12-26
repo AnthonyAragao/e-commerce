@@ -1,4 +1,6 @@
 <script setup>
+    import SpanError from '../Inputs/SpanError.vue';
+
     const { modelValue, label, name, required, customClass, error } = defineProps([
         "modelValue",
         "label",
@@ -30,11 +32,6 @@
             <slot></slot>
         </select>
 
-        <span
-            v-if="error"
-            class="text-red-500 text-sm mt-1 font-semibold"
-        >
-            {{ error }}
-        </span>
+        <SpanError :error="error"/>
     </div>
 </template>

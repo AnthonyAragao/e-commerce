@@ -23,14 +23,7 @@
     });
 
     const submitForm = () => {
-        form.post('/admin/products', {
-            onSuccess: () => {
-                form.reset();
-            },
-            onError: (errors) => {
-                console.log(form.errors.name);
-            }
-        });
+        form.post('/admin/products');
     }
 </script>
 
