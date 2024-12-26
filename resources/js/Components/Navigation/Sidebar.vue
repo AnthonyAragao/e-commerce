@@ -71,11 +71,11 @@
                 <i class="fas fa-moon text-purple-500"></i>
 
                 <div
-                    class="relative w-12 h-4 bg-gray-300 rounded-full cursor-pointer flex items-center transition-all duration-300 dark:bg-[#2C2C35]"
+                    class="relative w-12 h-4 bg-gray-300 rounded-full cursor-pointer flex items-center dark:bg-[#2C2C35]"
                     @click="$emit('toggle-dark-mode')"
                 >
                     <div
-                        class="absolute w-5 h-5 bg-orange-400/80 dark:bg-[#7364DB] rounded-full transition-all duration-300 left-7 dark:left-0"
+                        class="absolute w-5 h-5 rounded-full left-7 dark:left-0 bg-gradient-to-r from-orange-300 to-orange-600  dark:from-purple-300 dark:to-purple-700"
                     >
                     </div>
                 </div>
