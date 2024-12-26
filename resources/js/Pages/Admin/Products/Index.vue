@@ -7,13 +7,14 @@
     import Success from '../../../Components/Ui/Notifications/Success.vue';
     import { onMounted, ref } from 'vue';
 
-    const { products } = defineProps(["products"]);
+    const { products, flash } = defineProps(["products", "flash"]);
 
     const success = ref(false);
 
     onMounted(() => {
-        // Adicionar logica aqui
-        success.value = true;
+        if (flash !== null) {
+            success.value = true;
+        }
     });
 </script>
 
@@ -21,14 +22,14 @@
     <AdminLayout>
         <Success
             v-if="success"
-            message="Product created successfully"
+            :message="flash"
             duration="3000"
         />
 
         <div class="flex justify-between items-center">
             <div>
                 <h1 class="text-3xl font-bold">Products</h1>
-                <!-- caminho da pagina -->
+                
                 <Breadcrumb :breadcrumbs="[
                     { 'href': '/admin', 'name': 'Home' },
                     { 'href': '', 'name': 'Products' }
@@ -44,7 +45,7 @@
         </div>
 
         <CardLayout>
-            <div class="flex flex-wrap gap-5">
+            <div class="flex flex-wrap justify-center gap-4">
                 <CardAdmProduct
                     v-for="product in products"
                     :key="product.id"

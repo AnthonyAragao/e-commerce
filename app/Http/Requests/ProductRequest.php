@@ -22,7 +22,7 @@ class ProductRequest extends FormRequest
             'sku' => 'required|string|unique:products,sku',
             'stock' => 'required|integer',
             'images' => 'required|array',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 }

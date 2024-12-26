@@ -3,9 +3,11 @@
 
     const { message, duration } = defineProps(['message', 'duration']);
 
-    const isVisible = ref(true);
+    const isVisible = ref(false);
 
     onMounted(() => {
+        isVisible.value = true;
+
         setTimeout(() => {
             isVisible.value = false;
         }, duration);
@@ -32,7 +34,7 @@
 <style scoped>
     .fade-enter-from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(50px);
     }
 
     .fade-enter-to {
@@ -52,6 +54,6 @@
 
     .fade-leave-to {
         opacity: 0;
-        transform: translateX(20px);
+        transform: translateX(50px);
     }
 </style>
