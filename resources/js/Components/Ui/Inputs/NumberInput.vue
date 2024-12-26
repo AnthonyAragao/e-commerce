@@ -2,13 +2,14 @@
     import { ref } from 'vue';
     import SpanError from './SpanError.vue';
 
-    const {modelValue, label, name, placeholder, required, customClass, error } = defineProps([
+    const {modelValue, label, name, placeholder, required, customClass, onlyInteger, error } = defineProps([
         "modelValue",
         "label",
         "name",
         "placeholder",
         "required",
         "customClass",
+        "onlyInteger",
         "error"
     ]);
 
@@ -18,7 +19,9 @@
 
     const sanitizeInput = (event) => {
         const value = event.target.value;
-        const sanitizedValue = value.replace(/[^0-9.]/g, "");
+
+        const sanitizedValue = onlyInteger ? value.replace(/[^0-9]/g, "") : value.replace(/[^0-9.]/g, "");
+
         formattedValue.value = sanitizedValue;
 
         emit('update:modelValue', sanitizedValue);

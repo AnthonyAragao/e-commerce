@@ -7,6 +7,7 @@
     import SelectInput from '../../../Components/Ui/Selects/SelectInput.vue';
     import NumberInput from '../../../Components/Ui/Inputs/NumberInput.vue';
     import ProductGallery from '../../../Components/Products/ProductGallery.vue';
+    import SubmitButton from '../../../Components/Ui/Buttons/SubmitButton.vue';
     import { useForm } from '@inertiajs/inertia-vue3';
 
     const { categories } = defineProps([ 'categories' ]);
@@ -37,9 +38,7 @@
             { 'href': '', 'name': 'New Product' }
         ]" />
 
-        <CardLayout
-            customClass="pb-20"
-        >
+        <CardLayout customClass="pb-20">
             <form @submit.prevent="submitForm">
                 <div class="flex w-full gap-6">
                     <TextInput
@@ -109,6 +108,7 @@
                         label="Stock Quantity"
                         name="stock"
                         placeholder="0"
+                        :onlyInteger="true"
                         :error="form.errors.stock"
                     />
                 </div>
@@ -120,17 +120,12 @@
                     />
                 </div>
 
-
-                <div class="mt-10">
-                    <button
-                        type="submit"
-                        class="bg-[#7364DB] text-sm text-white px-6 py-2 rounded-md hover:bg-[#5B48A2] transition duration-300"
-                    >
-                        <i class="fas fa-save"></i> Save Product
-                    </button>
-                </div>
+                <SubmitButton
+                    label="Save Product"
+                    icon="fas fa-save"
+                    customClass="mt-10"
+                />
             </form>
-
         </CardLayout>
     </AdminLayout>
 </template>
