@@ -1,8 +1,35 @@
 <script setup>
-    import { usePage } from '@inertiajs/inertia-vue3';
+import { usePage } from '@inertiajs/inertia-vue3';
+import { set } from '@vueuse/core';
+import { ref, watch } from 'vue';
 
-    const page = usePage()
-    const emit = defineEmits(['toggle-dark-mode']);
+const page = usePage();
+const emit = defineEmits(['toggle-dark-mode']);
+const isDarkMode = ref();
+const ballPosition = ref('left-7');
+
+const {isDarkModeProps} = defineProps(['isDarkModeProps']);
+
+
+
+isDarkMode.value = isDarkModeProps;
+
+
+ballPosition.value = isDarkMode.value ? 'left-0 bg-[#7364DB]' : 'left-7  bg-orange-400 ';
+
+const toggleDarkMode = () => {
+    isDarkMode.value = !isDarkMode.value;
+    emit('toggle-dark-mode');
+};
+
+// Usar watch para observar mudanças em isDarkMode
+watch(isDarkMode, (newValue) => {
+    setTimeout(() => {
+        ballPosition.value = newValue ? 'left-0 bg-[#7364DB]' : 'left-7 bg-orange-400 ';
+    }, 0);
+    console.log('updated');
+
+});
 </script>
 
 <template>
@@ -71,11 +98,14 @@
                 <i class="fas fa-moon text-purple-500"></i>
 
                 <div
-                    class="relative w-12 h-4 bg-gray-300 rounded-full cursor-pointer flex items-center dark:bg-[#2C2C35]"
-                    @click="$emit('toggle-dark-mode')"
+                    class="relative w-12 h-4 bg-gray-300 rounded-full cursor-pointer flex items-center transition-all duration-300 dark:bg-[#2C2C35]"
+                    @click="toggleDarkMode"
                 >
                     <div
-                        class="absolute w-5 h-5 rounded-full left-7 dark:left-0 bg-gradient-to-r from-orange-300 to-orange-600  dark:from-purple-300 dark:to-purple-700"
+                        :class="[
+                            'absolute w-5 h-5  rounded-full transition-all duration-500',
+                            ballPosition
+                        ]"
                     >
                     </div>
                 </div>

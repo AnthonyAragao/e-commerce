@@ -2,6 +2,7 @@
     import Sidebar from '../Navigation/Sidebar.vue';
     import HeaderAdmin from '../Navigation/HeaderAdmin.vue';
     import { useDark, useToggle } from '@vueuse/core';
+    import { ref } from 'vue';
 
     const isDarkMode = useDark({
         storageKey: 'dark-mode',
@@ -10,11 +11,14 @@
     });
 
     const toggleDarkMode = useToggle(isDarkMode);
+    const isDarkModeRef = ref(isDarkMode.value);
+
 </script>
 
 <template>
     <div class="flex bg-[#F5F5FA]" :class="{'dark': isDarkMode}" >
-        <Sidebar
+
+        <Sidebar :isDarkModeProps="isDarkModeRef"
             @toggle-dark-mode="toggleDarkMode"
         />
 
