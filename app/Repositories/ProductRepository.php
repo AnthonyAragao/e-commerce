@@ -73,6 +73,11 @@ class ProductRepository implements ProductRepositoryInterface
 
     public function deleteProduct($id)
     {
-        return $this->product->destroy($id);
+        $product = $this->product->find($id);
+        foreach ($product->images as $image) {
+            $image->delete();
+        }
+
+        return $product->delete();
     }
 }

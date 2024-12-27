@@ -33,8 +33,15 @@ class AdminProductController extends Controller
     public function store(ProductRequest $request)
     {
         $this->productService->createProduct($request->all());
-        return redirect()
-            ->route('admin.products.index')
+        return to_route('admin.products.index')
             ->with('success', 'Product created successfully');
+    }
+
+
+    public function destroy($id)
+    {
+        $this->productService->deleteProduct($id);
+        return to_route('admin.products.index')
+            ->with('success', 'Product deleted successfully');
     }
 }

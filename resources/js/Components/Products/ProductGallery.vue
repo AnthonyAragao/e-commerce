@@ -120,7 +120,6 @@
         opacity: 0;
         transform: translateY(-10px);
     }
-
     .fade-enter-to {
         opacity: 1;
         transform: translateY(0);
