@@ -1,7 +1,13 @@
 <script setup>
     import { ref } from 'vue';
     const { product } = defineProps(["product"]);
-    const modalEditRemove = ref(false);
+    const modalEditRemoveProduct = ref(false);
+    const emit = defineEmits(["deleteProduct"]);
+
+    const removeProduct = (id) => {
+        modalEditRemoveProduct.value = false;
+        emit("deleteProduct", id);
+    }
 </script>
 
 <template>
@@ -32,7 +38,7 @@
                 </div>
 
                 <button
-                    @click="modalEditRemove = !modalEditRemove"
+                    @click="modalEditRemoveProduct = !modalEditRemoveProduct"
                     class="border-[1.5px] border-gray-200 dark:border-gray-500 flex items-center bg-[#f5f5fa] rounded-md size-6 pl-[1px] dark:bg-[#313442] ml-auto"
                 >
                     <i class="fas fa-ellipsis-v p-2 rotate-90 text-xs dark:text-gray-400 text-gray-500 mr-1"></i>
@@ -40,8 +46,8 @@
 
                 <Transition name="fade">
                     <div
-                        v-if="modalEditRemove"
-                        class="absolute w-24 flex h-12 right-0 top-7 border-[1.5px] rounded-md text-end py-[1px] px-2 bg-[#f5f5fa] dark:bg-[#313442] dark:border-gray-500 flex-col"
+                        v-if="modalEditRemoveProduct"
+                        class="absolute w-24 flex h-12 right-0 top-7 border-[1.5px] rounded-md text-end pb-[1px] pt-[3px] px-2 bg-[#f5f5fa] dark:bg-[#313442] dark:border-gray-500 flex-col"
                     >
                         <a
                             href="#"
@@ -51,6 +57,7 @@
                         </a>
 
                         <a
+                            @click="removeProduct(product.id)"
                             href="#"
                             class="text-sm font-semibold  hover:dark:text-red-500 dark:text-red-500/80 text-red-500/90 hover:text-red-600/90 transition-colors duration-300"
                         >
@@ -73,7 +80,7 @@
                 class="flex justify-between dark:border-gray-500 pb-2 border-b-[1.5px] border-gray-200"
             >
                 <p class="text-sm dark:text-gray-300">Sales </p>
-                
+
                 <div class=" flex items-center gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" class="size-3" fill="#50d1b2" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
 

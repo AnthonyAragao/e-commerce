@@ -11,7 +11,8 @@
     const { products, flash } = defineProps(["products", "flash"]);
 
     const success = ref(false);
-    const isModalVisible = ref(true);
+    const isModalVisible = ref(false);
+    const idProduct = ref(null);
 
     onMounted(() => {
         if (flash !== null) {
@@ -19,10 +20,16 @@
         }
     });
 
+    const removeProduct = (id) => {
+        isModalVisible.value = true;
+        idProduct.value = id;
+    }
+
     const handleDelete = () => {
         isModalVisible.value = false;
         console.log('Product deleted');
     }
+
 </script>
 
 <template>
@@ -57,6 +64,7 @@
                     v-for="product in products"
                     :key="product.id"
                     :product="product"
+                    @deleteProduct="removeProduct"
                 />
             </div>
         </CardLayout>
@@ -66,6 +74,7 @@
     <!-- Modal delete product -->
     <ProductDeleteModal
         v-if="isModalVisible"
+        :idProduct="idProduct"
         @close="isModalVisible = false"
         @confirm="handleDelete"
     />

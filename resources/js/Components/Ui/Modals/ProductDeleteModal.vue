@@ -1,22 +1,25 @@
 <script setup>
-    import { ref } from 'vue';
+    import { useForm } from '@inertiajs/inertia-vue3';
 
+    const { idProduct } = defineProps(['idProduct']);
     const emit = defineEmits(["close", "confirm"]);
-    const isVisible = ref(true);
+
+    const form = useForm({
+        id: idProduct,
+    });
+
+    const confirmDelete = () => {
+        form.delete(`/admin/products/${idProduct}`);
+        emit("confirm");
+    };
 
     const closeModal = () => {
         emit("close");
     };
-
-    const confirmDelete = () => {
-        emit("confirm");
-    };
-
 </script>
 
 <template>
     <div
-        v-if="isVisible"
         class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
     >
         <div
