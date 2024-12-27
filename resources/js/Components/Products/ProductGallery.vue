@@ -5,9 +5,8 @@
 
     const { modelValue, error } = defineProps(['modelValue', 'error']);
     const images = ref([]);
-    const emit = defineEmits(['update:modelValue']);
-
     const showErrorMaxUploadImages = ref(false);
+    const emit = defineEmits(['update:modelValue']);
 
     const generateUniqueId = () => `${Date.now()}-${Math.random()}`;
 
@@ -41,7 +40,6 @@
 </script>
 
 <template>
-
     <div class="flex gap-6">
         <div class="min-w-[600px]">
             <span
@@ -113,11 +111,9 @@
                 customClass="bg-red-400"
                 @hidden="showErrorMaxUploadImages = false"
             />
-
         </div>
     </div>
 </template>
-
 
 <style scoped>
     .fade-enter-from {

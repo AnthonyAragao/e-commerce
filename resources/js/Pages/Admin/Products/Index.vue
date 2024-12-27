@@ -5,17 +5,24 @@
     import CardLayout from '../../../Components/Ui/Cards/CardLayout.vue';
     import CardAdmProduct from '../../../Components/Ui/Cards/CardAdmProduct.vue';
     import Alert from '../../../Components/Ui/Notifications/Alert.vue';
+    import ProductDeleteModal from '../../../Components/Ui/Modals/ProductDeleteModal.vue';
     import { onMounted, ref } from 'vue';
 
     const { products, flash } = defineProps(["products", "flash"]);
 
     const success = ref(false);
+    const isModalVisible = ref(true);
 
     onMounted(() => {
         if (flash !== null) {
             success.value = true;
         }
     });
+
+    const handleDelete = () => {
+        isModalVisible.value = false;
+        console.log('Product deleted');
+    }
 </script>
 
 <template>
@@ -53,5 +60,14 @@
                 />
             </div>
         </CardLayout>
+
     </AdminLayout>
+
+    <!-- Modal delete product -->
+    <ProductDeleteModal
+        v-if="isModalVisible"
+        @close="isModalVisible = false"
+        @confirm="handleDelete"
+    />
+
 </template>
