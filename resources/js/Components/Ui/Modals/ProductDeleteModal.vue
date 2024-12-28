@@ -12,10 +12,6 @@
         form.delete(`/admin/products/${idProduct}`);
         emit("confirm");
     };
-
-    const closeModal = () => {
-        emit("close");
-    };
 </script>
 
 <template>
@@ -23,7 +19,7 @@
         class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
     >
         <div
-            class="group w-[300px] py-10 bg-gray-800 rounded-2xl border border-gray-800 shadow-lg flex flex-col items-center"
+            class="group w-[300px] py-10 rounded-2xl border shadow-lg flex flex-col items-center bg-gray-100 border-gray-200 dark:bg-gray-900  dark:border-gray-800 "
         >
 
             <svg
@@ -39,7 +35,7 @@
                 ></path>
             </svg>
 
-            <h2 class="text-xl font-bold py-4 text-gray-200">Are you sure?</h2>
+            <h2 class="text-xl font-bold py-4 text-gray-700 dark:text-gray-200">Are you sure?</h2>
 
             <p class="text-sm font-bold text-center text-gray-500 px-2">
                 Do you really want to delete this product? This process cannot be undone.
@@ -47,9 +43,11 @@
 
             <div class="mt-6 flex gap-2">
                 <button
-                    @click="closeModal"
+                    @click="emit('close')"
                     type="button"
-                    class="bg-gray-700 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border-2 border-gray-600 hover:border-gray-700 text-gray-300 rounded-full hover:shadow-lg hover:bg-gray-800 transition ease-in duration-300"
+                    class="
+                        rounded-full shadow-lg px-5 py-2 text-sm font-medium tracking-wider text-gray-300 border-2 transition ease-in duration-300
+                        bg-gray-600 border-gray-600 hover:bg-transparent hover:text-black dark:bg-gray-800 dark:hover:bg-gray-900 dark:hover:text-white dark:hover:border-gray-700"
                 >
                     Cancel
                 </button>

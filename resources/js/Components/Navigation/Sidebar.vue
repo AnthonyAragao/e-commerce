@@ -1,35 +1,24 @@
 <script setup>
-import { usePage } from '@inertiajs/inertia-vue3';
-import { set } from '@vueuse/core';
-import { ref, watch } from 'vue';
+    import { ref, watch } from 'vue';
 
-const page = usePage();
-const emit = defineEmits(['toggle-dark-mode']);
-const isDarkMode = ref();
-const ballPosition = ref('left-7');
+    const emit = defineEmits(['toggle-dark-mode']);
+    const { isDarkModeProps } = defineProps(['isDarkModeProps']);
 
-const {isDarkModeProps} = defineProps(['isDarkModeProps']);
+    const isDarkMode = ref(isDarkModeProps);
+    const ballPosition = ref('');
 
+    ballPosition.value = isDarkMode.value ? 'left-0 bg-[#7364DB]' : 'left-7 bg-orange-400';
 
+    watch(isDarkMode, (newValue) => {
+        setTimeout(() => {
+            ballPosition.value = newValue ? 'left-0 bg-[#7364DB]' : 'left-7 bg-orange-400 ';
+        }, 0);
+    });
 
-isDarkMode.value = isDarkModeProps;
-
-
-ballPosition.value = isDarkMode.value ? 'left-0 bg-[#7364DB]' : 'left-7  bg-orange-400 ';
-
-const toggleDarkMode = () => {
-    isDarkMode.value = !isDarkMode.value;
-    emit('toggle-dark-mode');
-};
-
-// Usar watch para observar mudanças em isDarkMode
-watch(isDarkMode, (newValue) => {
-    setTimeout(() => {
-        ballPosition.value = newValue ? 'left-0 bg-[#7364DB]' : 'left-7 bg-orange-400 ';
-    }, 0);
-    console.log('updated');
-
-});
+    const toggleDarkMode = () => {
+        isDarkMode.value = !isDarkMode.value;
+        emit('toggle-dark-mode');
+    };
 </script>
 
 <template>

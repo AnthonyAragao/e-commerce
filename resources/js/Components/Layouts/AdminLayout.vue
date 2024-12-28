@@ -12,13 +12,13 @@
 
     const toggleDarkMode = useToggle(isDarkMode);
     const isDarkModeRef = ref(isDarkMode.value);
-
 </script>
 
 <template>
     <div class="flex bg-[#F5F5FA]" :class="{'dark': isDarkMode}" >
 
-        <Sidebar :isDarkModeProps="isDarkModeRef"
+        <Sidebar
+            :isDarkModeProps="isDarkModeRef"
             @toggle-dark-mode="toggleDarkMode"
         />
 
