@@ -19,7 +19,6 @@ class AdminProductController extends Controller
 
         return inertia('Admin/Products/Index', [
             'products' => $products,
-            'flash' => session('success'),
         ]);
     }
 
@@ -34,7 +33,7 @@ class AdminProductController extends Controller
     {
         $this->productService->createProduct($request->all());
         return to_route('admin.products.index')
-            ->with('success', 'Product created successfully');
+            ->with('message', 'Product created successfully');
     }
 
 
@@ -42,6 +41,9 @@ class AdminProductController extends Controller
     {
         $this->productService->deleteProduct($id);
         return to_route('admin.products.index')
-            ->with('success', 'Product deleted successfully');
+            ->with([
+                'message' => 'Product deleted successfully',
+                'key' => now()->timestamp,
+            ]);
     }
 }

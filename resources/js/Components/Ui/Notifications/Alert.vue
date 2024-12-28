@@ -1,21 +1,27 @@
 <script setup>
-    import { onMounted, ref } from 'vue';
+    import { ref, watch } from 'vue';
 
     const { message, duration, customClass } = defineProps(['message', 'duration', 'customClass']);
 
     const isVisible = ref(false);
 
-    onMounted(() => {
-        isVisible.value = true;
+    const showAlert = () => {
+        if (message) {
+            setTimeout(() => {
+                isVisible.value = true;
 
-        setTimeout(() => {
-            isVisible.value = false;
-        }, duration);
-    });
+                setTimeout(() => {
+                    isVisible.value = false;
+                }, duration);
+            }, 100);
+        }
+    };
+
+    watch(() => message, showAlert, { immediate: true });
 </script>
 
 <template>
-    <Transition name="fade" @after-leave="$emit('hidden')">
+    <Transition name="fade">
         <div
             v-if="isVisible"
             :class="`fixed bottom-10 right-8 bg-green-500 text-white px-6 py-4 rounded-md shadow-lg flex items-center gap-4 z-10 ${customClass}`"
@@ -44,7 +50,7 @@
 
     .fade-enter-active,
     .fade-leave-active {
-        transition: all 0.3s;
+        transition: all 0.3s ease-in-out;
     }
 
     .fade-leave-from {

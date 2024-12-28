@@ -6,38 +6,25 @@
     import CardAdmProduct from '../../../Components/Ui/Cards/CardAdmProduct.vue';
     import Alert from '../../../Components/Ui/Notifications/Alert.vue';
     import ProductDeleteModal from '../../../Components/Ui/Modals/ProductDeleteModal.vue';
-    import { onMounted, ref } from 'vue';
+    import { ref } from 'vue';
 
     const { products, flash } = defineProps(["products", "flash"]);
 
-    const success = ref(false);
     const isModalVisible = ref(false);
     const idProduct = ref(null);
-
-    onMounted(() => {
-        if (flash !== null) {
-            success.value = true;
-        }
-    });
 
     const removeProduct = (id) => {
         isModalVisible.value = true;
         idProduct.value = id;
     }
-
-    const handleDelete = () => {
-        isModalVisible.value = false;
-        console.log('Product deleted');
-    }
-
 </script>
 
 <template>
     <AdminLayout>
         <Alert
-            v-if="success"
-            :message="flash"
-            duration="3000"
+            :key="flash.key"
+            :message="flash.message"
+            duration="1500"
         />
 
         <div class="flex justify-between items-center">
@@ -71,12 +58,12 @@
 
     </AdminLayout>
 
+
     <!-- Modal delete product -->
     <ProductDeleteModal
         v-if="isModalVisible"
         :idProduct="idProduct"
         @close="isModalVisible = false"
-        @confirm="handleDelete"
+        @confirm="isModalVisible = false"
     />
-
 </template>
