@@ -1,8 +1,9 @@
 <script setup>
     import { ref } from 'vue';
+
     const { product } = defineProps(["product"]);
-    const modalEditRemoveProduct = ref(false);
     const emit = defineEmits(["deleteProduct"]);
+    const modalEditRemoveProduct = ref(false);
 
     const removeProduct = (id) => {
         modalEditRemoveProduct.value = false;
@@ -57,7 +58,7 @@
                         </a>
 
                         <a
-                            @click="removeProduct(product.id)"
+                            @click.prevent="removeProduct(product.id)"
                             href="#"
                             class="text-sm font-semibold  hover:dark:text-red-500 dark:text-red-500/80 text-red-500/90 hover:text-red-600/90 transition-colors duration-300"
                         >

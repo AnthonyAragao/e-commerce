@@ -9,8 +9,9 @@
     });
 
     const confirmDelete = () => {
-        form.delete(`/admin/products/${idProduct}`);
-        emit("confirm");
+        form.delete(`/admin/products/${idProduct}`,{
+            onSuccess: () => emit('confirm'),
+        });
     };
 </script>
 
