@@ -1,4 +1,6 @@
 <script setup>
+    import { ref } from 'vue';
+    import { useForm } from '@inertiajs/inertia-vue3';
     import AdminLayout from '../../../Components/Layouts/AdminLayout.vue';
     import Breadcrumb from '../../../Components/Navigation/Breadcrumb.vue';
     import CardLayout from '../../../Components/Ui/Cards/CardLayout.vue';
@@ -8,9 +10,10 @@
     import NumberInput from '../../../Components/Ui/Inputs/NumberInput.vue';
     import ProductGallery from '../../../Components/Products/ProductGallery.vue';
     import SubmitButton from '../../../Components/Ui/Buttons/SubmitButton.vue';
-    import { useForm } from '@inertiajs/inertia-vue3';
 
     const { categories } = defineProps([ 'categories' ]);
+
+    const isSubmitting = ref(false);
 
     const form = useForm({
         name: '',
@@ -24,7 +27,11 @@
     });
 
     const submitForm = () => {
-        form.post('/admin/products');
+        form.post('/admin/products',{
+            onStart:    () => isSubmitting.value = true,
+            onSuccess:  () => isSubmitting.value = false,
+            onError:    () => isSubmitting.value = false
+        });
     }
 </script>
 
@@ -124,6 +131,7 @@
                 </div>
 
                 <SubmitButton
+                    :isSubmitting="isSubmitting"
                     label="Save Product"
                     icon="fas fa-save"
                     customClass="mt-10"
