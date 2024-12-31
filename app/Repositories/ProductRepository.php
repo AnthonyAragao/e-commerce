@@ -25,9 +25,12 @@ class ProductRepository implements ProductRepositoryInterface
         return $this->category->all();
     }
 
-    public function getProduct($id)
+    public function getProductBySlug($slug)
     {
-        return $this->product->with('category', 'images')->find($id);
+        return $this->product
+            ->with('category', 'images')
+            ->where('slug', $slug)
+            ->first();
     }
 
     public function createProduct($data)

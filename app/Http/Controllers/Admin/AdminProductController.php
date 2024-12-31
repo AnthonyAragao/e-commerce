@@ -37,6 +37,25 @@ class AdminProductController extends Controller
     }
 
 
+    public function edit($slug)
+    {
+        $product = $this->productService->getProductBySlug($slug);
+
+        return inertia('Admin/Products/Form', [
+            'product' => $product,
+            'categories' => $this->productService->getCategories(),
+            'isUpdating' => true,
+        ]);
+    }
+
+    // public function upodate(Request $request, $id)
+    // {
+    //     $this->productService->updateProduct($id, $request->all());
+    //     return to_route('admin.products.index')
+    //         ->with('message', 'Product updated successfully');
+    // }
+
+
     public function destroy($id)
     {
         $this->productService->deleteProduct($id);

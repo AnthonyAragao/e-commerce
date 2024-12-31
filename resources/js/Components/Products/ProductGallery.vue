@@ -4,9 +4,10 @@
     import Alert from '../Ui/Notifications/Alert.vue';
 
     const { modelValue, error } = defineProps(['modelValue', 'error']);
+    const emit = defineEmits(['update:modelValue']);
+    
     const images = ref([]);
     const showErrorMaxUploadImages = ref(false);
-    const emit = defineEmits(['update:modelValue']);
 
     const generateUniqueId = () => `${Date.now()}-${Math.random()}`;
 

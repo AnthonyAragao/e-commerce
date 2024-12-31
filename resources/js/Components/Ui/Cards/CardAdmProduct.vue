@@ -50,12 +50,12 @@
                         v-if="modalEditRemoveProduct"
                         class="absolute w-24 flex h-12 right-0 top-7 border-[1.5px] rounded-md text-end pb-[1px] pt-[3px] px-2 bg-[#f5f5fa] dark:bg-[#313442] dark:border-gray-500 flex-col"
                     >
-                        <a
-                            href="#"
+                        <Link
+                            :href="`/admin/products/${product.slug}/edit`"
                             class="text-sm font-semibold dark:text-gray-300 hover:dark:text-gray-100 hover:text-gray-900 text-gray-500 transition-colors duration-300"
                         >
                             <i class="fas fa-pen text-[13px]"></i> Editar
-                        </a>
+                        </Link>
 
                         <a
                             @click.prevent="removeProduct(product.id)"

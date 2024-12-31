@@ -8,7 +8,7 @@ interface ProductRepositoryInterface
 
     public function getCategories();
 
-    public function getProduct($id);
+    public function getProductBySlug($slug);
 
     public function createProduct($data);
 

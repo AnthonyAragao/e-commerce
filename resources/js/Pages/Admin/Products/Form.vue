@@ -1,5 +1,5 @@
 <script setup>
-    import { ref } from 'vue';
+    import { onMounted, ref } from 'vue';
     import { useForm } from '@inertiajs/inertia-vue3';
     import AdminLayout from '../../../Components/Layouts/AdminLayout.vue';
     import Breadcrumb from '../../../Components/Navigation/Breadcrumb.vue';
@@ -11,7 +11,7 @@
     import ProductGallery from '../../../Components/Products/ProductGallery.vue';
     import SubmitButton from '../../../Components/Ui/Buttons/SubmitButton.vue';
 
-    const { categories } = defineProps([ 'categories' ]);
+    const { isUpdating, product, categories } = defineProps([ 'isUpdating', 'product', 'categories' ]);
 
     const isSubmitting = ref(false);
 
@@ -26,13 +26,37 @@
         images: []
     });
 
+    onMounted(() => {
+        if (isUpdating) {
+            form.name = product.name;
+            form.category = product.category_id;
+            form.description = product.description;
+            form.regular_price = product.regular_price;
+            form.sale_price = product.sale_price;
+            form.sku = product.sku;
+            form.stock = product.stock;
+            form.images = product.images;
+        }
+    });
+
     const submitForm = () => {
-        form.post('/admin/products',{
-            onStart:    () => isSubmitting.value = true,
-            onSuccess:  () => isSubmitting.value = false,
-            onError:    () => isSubmitting.value = false
-        });
+        const method = isUpdating ? 'put' : 'post';
+
+        const url = isUpdating
+            ? `/admin/products/${product.slug}`
+            : '/admin/products';
+
+        handleSubmit(url, method);
     }
+
+
+    const handleSubmit = (url, method) => {
+        form[method](url, {
+            onStart: () => (isSubmitting.value = true),
+            onSuccess: () => (isSubmitting.value = false),
+            onError: () => (isSubmitting.value = false),
+        });
+    };
 </script>
 
 <template>

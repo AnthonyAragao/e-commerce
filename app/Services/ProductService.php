@@ -20,9 +20,9 @@ class ProductService
         return $this->productRepository->getCategories();
     }
 
-    public function getProduct($id)
+    public function getProductBySlug($slug)
     {
-        return $this->productRepository->getProduct($id);
+        return $this->productRepository->getProductBySlug($slug);
     }
 
     public function createProduct($data)
