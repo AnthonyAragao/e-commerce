@@ -68,10 +68,23 @@ class ProductRepository implements ProductRepositoryInterface
         }
     }
 
-    public function updateProduct($id, $data)
+    public function updateProduct($data, $slug)
     {
-        $product = $this->product->find($id);
-        $product->update($data);
+        $product = $this->product
+            ->where('slug', $slug)
+            ->first();
+
+        // Refatorar depois, para não repetir o código no método createProduct e updateProduct
+        $product->update([
+            'name' => $data['name'],
+            'slug' =>  $this->product->createUniqueSlug($data['name']),
+            'description' => $data['description'],
+            'regular_price' => $data['regular_price'],
+            'sale_price' => $data['sale_price'],
+            'sku' => $data['sku'],
+            'stock' => $data['stock'],
+            'category_id' => $data['category'],
+        ]);
 
         return $product;
     }

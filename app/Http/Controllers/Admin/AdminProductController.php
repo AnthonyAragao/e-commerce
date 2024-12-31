@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Services\ProductService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
-use App\Services\ProductService;
-use Illuminate\Http\Request;
 
 class AdminProductController extends Controller
 {
@@ -48,12 +47,12 @@ class AdminProductController extends Controller
         ]);
     }
 
-    // public function upodate(Request $request, $id)
-    // {
-    //     $this->productService->updateProduct($id, $request->all());
-    //     return to_route('admin.products.index')
-    //         ->with('message', 'Product updated successfully');
-    // }
+    public function update(ProductRequest $request, $slug)
+    {
+        $this->productService->updateProduct($request->all(), $slug);
+        return to_route('admin.products.index')
+            ->with('message', 'Product updated successfully');
+    }
 
 
     public function destroy($id)

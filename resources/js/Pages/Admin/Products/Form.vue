@@ -49,7 +49,6 @@
         handleSubmit(url, method);
     }
 
-
     const handleSubmit = (url, method) => {
         form[method](url, {
             onStart: () => (isSubmitting.value = true),
@@ -147,7 +146,7 @@
                     />
                 </div>
 
-                <div class="mt-10">
+                <div v-if="!isUpdating" class="mt-10">
                     <ProductGallery
                         v-model="form.images"
                         :error="form.errors.images"
