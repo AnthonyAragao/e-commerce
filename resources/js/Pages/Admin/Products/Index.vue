@@ -6,6 +6,7 @@
     import CardAdmProduct from '../../../Components/Ui/Cards/CardAdmProduct.vue';
     import Alert from '../../../Components/Ui/Notifications/Alert.vue';
     import ProductDeleteModal from '../../../Components/Ui/Modals/ProductDeleteModal.vue';
+    import Pagination from '../../../Components/Navigation/Pagination.vue';
     import { ref } from 'vue';
 
     const { products, flash } = defineProps(["products", "flash"]);
@@ -48,7 +49,7 @@
         <CardLayout>
             <div class="flex flex-wrap justify-center gap-4">
                 <CardAdmProduct
-                    v-for="product in products"
+                    v-for="product in products.data"
                     :key="product.id"
                     :product="product"
                     @deleteProduct="removeProduct"
@@ -56,6 +57,7 @@
             </div>
         </CardLayout>
 
+        <Pagination :pagination="products" class="mb-4"/>
     </AdminLayout>
 
 
