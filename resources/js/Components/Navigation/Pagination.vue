@@ -6,7 +6,7 @@
    <nav class="space-x-1">
         <template v-for="(link, index) in pagination.links" :key="index">
             <Link
-                v-if="link.label.includes('Previous')"
+                v-if="link.label.includes('Previous') && link.url !== null"
                 :href="link.url"
                 preserve-scroll
                 class="px-4 py-2 text-sm font-bold rounded-lg text-gray-500 border border-gray-300 cursor-default transition duration-150 dark:text-gray-200 dark:bg-gray-700 dark:border-gray-800"
