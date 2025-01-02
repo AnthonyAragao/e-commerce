@@ -14,7 +14,7 @@
         />
 
         <CardStat
-            title="Orders vaLUE"
+            title="Orders value"
             amount="$136.500"
             percentage="22.8%"
             footer="Compared to Jan 2022"

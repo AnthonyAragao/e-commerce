@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\AdminProductController;
 
@@ -17,6 +18,7 @@ Route::prefix('admin')
     ->name('admin.')
     ->group(function () {
         Route::resource('products', AdminProductController::class);
+        Route::resource('orders', AdminOrderController::class)->only(['index', 'show']);
         Route::get('dashboard', fn() => Inertia\Inertia::render('Admin/Dashboard'));
     });
 
