@@ -14,7 +14,7 @@
         class="bg-white py-3 px-4 w-1/4 h-26 rounded-xl flex flex-col gap-1 border-[1px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]
     ">
         <div class="flex justify-between">
-            <h3 class="text-xs text-gray-500">
+            <h3 class="text-xs text-gray-500 dark:text-gray-400">
                 {{ title }}
             </h3>
             <i class="text-gray-500 fas fa-ellipsis-v"></i>
@@ -28,7 +28,6 @@
                 >
                     <i :class="iconClass" class="text-white text-xl"></i>
                 </div>
-
                 <h4 class="font-semibold text-[14px] dark:text-gray-200">
                     {{ amount }}
                 </h4>
