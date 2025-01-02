@@ -17,7 +17,7 @@ class ProductRepository implements ProductRepositoryInterface
     {
         return $this->product
             ->with(['category', 'images'])
-            ->paginate(15);
+            ->paginate(20);
     }
 
     public function getCategories()
