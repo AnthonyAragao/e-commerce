@@ -18,8 +18,7 @@ class OrderRepository implements OrderRepositoryInterface
                 'user:id,name,email',
                 'payment'
             ])
-            ->orderBy('created_at', 'desc')
-            ->paginate(10);
+            ->paginate(15);
     }
 
 
@@ -29,5 +28,4 @@ class OrderRepository implements OrderRepositoryInterface
             ->with(['user', 'orderItems'])
             ->findOrFail($id);
     }
-
 }

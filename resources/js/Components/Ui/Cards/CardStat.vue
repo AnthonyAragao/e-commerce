@@ -20,7 +20,7 @@
             <i class="text-gray-500 fas fa-ellipsis-v"></i>
         </div>
 
-        <div class="flex justify-between items-center mt-3">
+        <div class="flex justify-between items-center mt-1">
             <div class="flex items-center gap-2">
                 <div
                     :class="iconBackground"
