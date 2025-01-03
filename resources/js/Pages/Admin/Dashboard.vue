@@ -4,6 +4,7 @@ import Breadcrumb from "../../Components/Navigation/Breadcrumb.vue";
 import CardDashSells from "../../Components/Ui/Cards/CardDashSells.vue";
 import CardLayout from "../../Components/Ui/Cards/CardLayout.vue";
 import CardLatestClients from "../../Components/Ui/Cards/CardLatestClients.vue";
+import RecentPurchases from "../../Components/Ui/Tables/RecentPurchases.vue";
 </script>
 
 <template>
@@ -36,7 +37,7 @@ import CardLatestClients from "../../Components/Ui/Cards/CardLatestClients.vue";
                         <i class="text-gray-500 fas fa-ellipsis-v mt-1"></i>
                     </div>
                 </div>
-                <div class="w-[600px] text-red-300">Grafico Temporario</div>
+                <div class="w-[980px] text-red-300">Grafico Temporario</div>
             </CardLayout>
             <CardLayout>
                 <div>
@@ -55,9 +56,12 @@ import CardLatestClients from "../../Components/Ui/Cards/CardLatestClients.vue";
                 </div>
             </CardLayout>
         </div>
-        <div>
-            <p>Compras Recentes</p>
-        </div>
+        <CardLayout>
+            <div>
+                <p>Compras Recentes</p>
+                <RecentPurchases />
+            </div>
+        </CardLayout>
         <div>
             <p>Graficos</p>
         </div>
