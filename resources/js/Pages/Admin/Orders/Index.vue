@@ -4,6 +4,7 @@
     import CardLayout from '../../../Components/Ui/Cards/CardLayout.vue';
     import Pagination from '../../../Components/Navigation/Pagination.vue';
     import OrdersTable from '../../../Components/Ui/Tables/OrdersTable.vue';
+    import FilterOrders from '../../../Components/Navigation/FilterOrders.vue';
 
     const { orders } = defineProps(['orders']);
 
@@ -19,8 +20,9 @@
             { 'href': '', 'name': 'Orders' }
         ]" />
 
+        <FilterOrders />
 
-        <CardLayout>
+        <CardLayout :customClass="'mt-7'">
             <h2 class="text-base font-bold mb-4">Recent Orders</h2>
 
             <OrdersTable

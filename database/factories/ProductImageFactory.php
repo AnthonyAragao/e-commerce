@@ -14,10 +14,13 @@ class ProductImageFactory extends Factory
     public function definition(): array
     {
         $imagePaths = [
-            'products/0kGQ2jDJEUuWRKoS5403sB7RWB9oBP4E1WSov8dJ.jpg',
-            'products/02R0L18EsjDjNkIR6uwjHFyL0nNkWWvMR7HQJAor.webp',
-            'products/a4xCBfCRGiMOcvkBl0DtwXXytMh3dNpycjfS5Ugn.webp',
-            'products/bKegbgJmrOTYBcz2LotOUbEH32ukuXQoJGRU3Hok.jpg'
+            'products/alexa.jpg',
+            'products/notebook.webp',
+            'products/televisao.jpg',
+            'products/pc.png',
+            'products/ps4.webp',
+            'products/cadeira.webp',
+            'products/fone.jpg',
         ];
 
         return [

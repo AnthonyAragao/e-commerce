@@ -56,28 +56,21 @@
                 </Link>
 
                 <Link
-                    href="/admin/payments"
-                    class="px-4 py-3 rounded-xl flex items-center space-x-2 hover:bg-[#7364DB] hover:text-white transition duration-300"
-                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/payments')}"
-                >
-                    <i class="fas fa-money-check-alt"></i> <span>Payments</span>
-                </Link>
-
-                <Link
-                    href="/admin/transactions"
-                    class="px-4 py-3 rounded-xl flex items-center space-x-2 hover:bg-[#7364DB] hover:text-white transition duration-300"
-                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/transactions')}"
-                >
-                    <i class="fas fa-exchange-alt"></i> <span>Transactions</span>
-                </Link>
-
-                <Link
                     href="/admin/clients"
                     class="px-4 py-3 rounded-xl flex items-center space-x-2 hover:bg-[#7364DB] hover:text-white transition duration-300"
                     :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/clients')}"
                 >
-                    <i class="fas fa-users"></i> <span>Clients</span>
+                    <i class="fas fa-users"></i> <span>Customers</span>
                 </Link>
+
+                <Link
+                    href="/admin/settings"
+                    class="px-4 py-3 rounded-xl flex items-center space-x-2 hover:bg-[#7364DB] hover:text-white transition duration-300"
+                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/settings')}"
+                >
+                    <i class="fas fa-cog"></i> <span>Settings</span>
+                </Link>
+
             </nav>
         </div>
 

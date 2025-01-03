@@ -5,7 +5,30 @@
     const modals = reactive({})
 
     const toggleModal = (id) => {
+        closeAllModals();
         modals[id] = !modals[id];
+    }
+
+    const closeAllModals = () => {
+        for (const key in modals) {
+            modals[key] = false;
+        }
+    }
+
+    const statusClasses = (status) => {
+        return {
+            'bg-yellow-200/70 text-yellow-600 dark:text-yellow-400 dark:bg-yellow-200/40'   : status === 'pending',
+            'bg-red-300/40 text-red-400'                                                    : status === 'declined',
+            'bg-green-200/80 text-green-500 dark:bg-green-200/20'                           : status !== 'pending' && status !== 'declined'
+        }
+    }
+
+    const indicatorClasses = (status) => {
+        return {
+            'bg-yellow-500' : status === 'pending',
+            'bg-red-400'    : status === 'declined',
+            'bg-green-500'  : status !== 'pending' && status !== 'declined'
+        }
     }
 </script>
 
@@ -36,21 +59,21 @@
                 <td class="px-6 py-4"> {{ order.user.name }} </td>
                 <td class="px-6 py-4"> {{ order.payment.payment_method }} </td>
                 <td class="px-6 py-4"> {{ order.order_date }} </td>
-                <td class="px-6 py-4 flex items-center">
-                    <div
-                        class="h-2.5 w-2.5 rounded-full me-2"
-                        :class="{
-                            'bg-yellow-500': order.status === 'pending',
-                            'bg-red-400'   : order.status === 'declined',
-                            'bg-green-500' : order.status !== 'pending' && order.status !== 'declined'
-                        }"
-                    ></div>
-                    {{ order.status }}
+                <td class="px-6 py-4">
+                    <span
+                        class="px-4 py-2 rounded-full text-xs font-semibold flex items-center w-fit"
+                        :class="statusClasses(order.status)"
+                    >
+                        <div
+                            class="h-2 w-2 rounded-full me-2"
+                            :class="indicatorClasses(order.status)"
+                        ></div>  {{ order.status }}
+                    </span>
                 </td>
                 <td class="px-6 py-4">${{ order.total_price }}</td>
                 <td class="px-6 py-4 relative">
                     <button
-                        @click="toggleModal(order.id)"
+                        @click.stop="toggleModal(order.id)"
                     >
                         <i class="fas fa-ellipsis-h text-gray-500 cursor-pointer hover:text-gray-700 dark:hover:text-gray-400"></i>
                     </button>
@@ -58,7 +81,9 @@
                     <Transition name="fade">
                         <div
                             v-if="modals[order.id]"
+                            v-click-outside="closeAllModals"
                             class="absolute left-[-60px] w-fit mt-2 py-2 bg-white dark:bg-[#1F2128] border border-gray-200 dark:border-gray-700 rounded-md shadow-md z-10"
+                            data-modal
                         >
                             <Link
                                 :href="`/admin/orders/${order.id}`"

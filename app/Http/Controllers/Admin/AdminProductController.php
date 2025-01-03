@@ -35,7 +35,6 @@ class AdminProductController extends Controller
             ->with('message', 'Product created successfully');
     }
 
-
     public function edit($slug)
     {
         $product = $this->productService->getProductBySlug($slug);
@@ -53,7 +52,6 @@ class AdminProductController extends Controller
         return to_route('admin.products.index')
             ->with('message', 'Product updated successfully');
     }
-
 
     public function destroy($id)
     {

@@ -39,6 +39,7 @@ import RecentPurchases from "../../Components/Ui/Tables/RecentPurchases.vue";
                 </div>
                 <div class="w-[980px] text-red-300">Grafico Temporario</div>
             </CardLayout>
+            
             <CardLayout>
                 <div>
                     <div class="flex gap-2 justify-between">

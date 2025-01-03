@@ -39,7 +39,7 @@
                 </div>
 
                 <button
-                    @click="modalEditRemoveProduct = !modalEditRemoveProduct"
+                    @click.stop="modalEditRemoveProduct = !modalEditRemoveProduct"
                     class="border-[1.5px] border-gray-200 dark:border-gray-500 flex items-center bg-[#f5f5fa] rounded-md size-6 pl-[1px] dark:bg-[#313442] ml-auto"
                 >
                     <i class="fas fa-ellipsis-v p-2 rotate-90 text-xs dark:text-gray-400 text-gray-500 mr-1"></i>
@@ -48,6 +48,7 @@
                 <Transition name="fade">
                     <div
                         v-if="modalEditRemoveProduct"
+                        v-click-outside="() => modalEditRemoveProduct = false"
                         class="absolute w-24 flex h-12 right-0 top-7 border-[1.5px] rounded-md text-end pb-[1px] pt-[3px] px-2 bg-[#f5f5fa] dark:bg-[#313442] dark:border-gray-500 flex-col"
                     >
                         <Link
