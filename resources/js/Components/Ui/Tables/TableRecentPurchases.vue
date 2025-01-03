@@ -3,7 +3,7 @@
     import TableTemplate from './TableTemplate.vue';
     import TableCell from './TableCell.vue';
 
-    const headers = ['ID', 'User', 'Payment Method', 'Order Date', 'Status', 'Total Price', 'Actions'];
+    const headers = ['Order ID', 'Products', 'Date', 'Customer Name', 'Status', 'Amount', 'Actions'];
     const orders = reactive({
         data: [
             {
