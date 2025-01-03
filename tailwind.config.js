@@ -18,4 +18,19 @@ export default {
         },
     },
     plugins: [],
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                orange: {
+                  400: '#fb923c', // Tailwind orange-400
+                },
+                purple: {
+                  600: '#9333ea', // Tailwind purple-600
+                },
+            },
+        },
+    },
 };
