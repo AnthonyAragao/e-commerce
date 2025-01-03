@@ -3,7 +3,7 @@
     import Breadcrumb from '../../../Components/Navigation/Breadcrumb.vue';
     import CardLayout from '../../../Components/Ui/Cards/CardLayout.vue';
     import Pagination from '../../../Components/Navigation/Pagination.vue';
-    import OrdersTable from '../../../Components/Ui/Tables/OrdersTable.vue';
+    import TableOrders from '../../../Components/Ui/Tables/TableOrders.vue';
     import FilterOrders from '../../../Components/Navigation/FilterOrders.vue';
 
     const { orders } = defineProps(['orders']);
@@ -25,7 +25,7 @@
         <CardLayout :customClass="'mt-7'">
             <h2 class="text-base font-bold mb-4">Recent Orders</h2>
 
-            <OrdersTable
+            <TableOrders
                 :headers="headers"
                 :orders="orders"
             />
