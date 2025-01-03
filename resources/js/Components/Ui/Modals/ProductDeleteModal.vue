@@ -20,7 +20,7 @@
         class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center"
     >
         <div
-            class="group w-[300px] py-10 rounded-2xl border shadow-lg flex flex-col items-center bg-gray-100 border-gray-200 dark:bg-gray-900  dark:border-gray-800 "
+            class="group w-[300px] py-10 rounded-2xl border shadow-md flex flex-col items-center bg-gray-100 border-gray-200 dark:bg-gray-900  dark:border-gray-800 "
         >
 
             <svg
@@ -47,7 +47,7 @@
                     @click="emit('close')"
                     type="button"
                     class="
-                        rounded-full shadow-lg px-5 py-2 text-sm font-medium tracking-wider text-gray-300 border-2 transition ease-in duration-300
+                        rounded-full shadow-lg px-5 py-2 text-sm font-medium tracking-wider text-gray-300 border transition ease-in duration-300
                         bg-gray-600 border-gray-600 hover:bg-transparent hover:text-black dark:bg-gray-800 dark:hover:bg-gray-900 dark:hover:text-white dark:hover:border-gray-700"
                 >
                     Cancel
@@ -56,7 +56,7 @@
                 <button
                     @click="confirmDelete"
                     type="button"
-                    class="bg-red-500 hover:bg-transparent px-5 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-red-500 hover:border-red-500 text-white hover:text-red-500 rounded-full transition ease-in duration-300"
+                    class="bg-red-500 hover:bg-transparent px-5 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border border-red-500 hover:border-red-500 text-white hover:text-red-500 rounded-full transition ease-in duration-300"
                 >
                     Confirm
                 </button>

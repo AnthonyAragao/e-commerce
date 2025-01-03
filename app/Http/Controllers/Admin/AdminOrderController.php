@@ -14,7 +14,7 @@ class AdminOrderController extends Controller
     public function index()
     {
         $orders = $this->orderService->getOrders();
-        
+
         return inertia('Admin/Orders/Index', [
             'orders' => $orders,
         ]);

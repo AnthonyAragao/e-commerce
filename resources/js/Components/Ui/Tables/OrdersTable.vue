@@ -1,5 +1,5 @@
 <script setup>
-    import { reactive } from 'vue';
+    import { onMounted, onUnmounted, reactive } from 'vue';
 
     const { headers, orders } = defineProps(['headers', 'orders']);
     const modals = reactive({})
@@ -7,6 +7,27 @@
     const toggleModal = (id) => {
         modals[id] = !modals[id];
     }
+
+    const handleClickOutside = (event) => {
+        const modal = event.target.closest('[data-modal]');
+        if (!modal) {
+            closeAllModals();
+        }
+    }
+
+    const closeAllModals = () => {
+        for (const key in modals) {
+            modals[key] = false;
+        }
+    }
+
+    onMounted(() => {
+        document.addEventListener('click', handleClickOutside);
+    })
+
+    onUnmounted(() => {
+        document.removeEventListener('click', handleClickOutside);
+    })
 </script>
 
 <template>
@@ -50,7 +71,7 @@
                 <td class="px-6 py-4">${{ order.total_price }}</td>
                 <td class="px-6 py-4 relative">
                     <button
-                        @click="toggleModal(order.id)"
+                        @click.stop="toggleModal(order.id)"
                     >
                         <i class="fas fa-ellipsis-h text-gray-500 cursor-pointer hover:text-gray-700 dark:hover:text-gray-400"></i>
                     </button>
@@ -59,6 +80,7 @@
                         <div
                             v-if="modals[order.id]"
                             class="absolute left-[-60px] w-fit mt-2 py-2 bg-white dark:bg-[#1F2128] border border-gray-200 dark:border-gray-700 rounded-md shadow-md z-10"
+                            data-modal
                         >
                             <Link
                                 :href="`/admin/orders/${order.id}`"
