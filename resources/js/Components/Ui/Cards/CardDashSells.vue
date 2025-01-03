@@ -3,9 +3,9 @@
 </script>
 
 <template>
-    <div class="flex gap-6 my-10">
+    <div class="flex gap-6 mt-10">
         <CardStat
-            title="Total sells"
+            title="Total sales"
             amount="$126.500"
             percentage="34.7%"
             footer="Compared to Jan 2022"
@@ -14,8 +14,8 @@
         />
 
         <CardStat
-            title="Orders value"
-            amount="$136.500"
+            title="Total orders"
+            amount="8672"
             percentage="22.8%"
             footer="Compared to Jan 2022"
             iconClass="fas fa-dollar-sign"
@@ -34,11 +34,11 @@
 
 
         <CardStat
-            title="Daily Revenue"
-            amount="$12.126"
+            title="Total users"
+            amount="1200"
             percentage="23.7%"
             footer="Compared to Jan 2022"
-            iconClass="fas fa-dollar-sign"
+            iconClass="fas fa-users"
             iconBackground="bg-[#FB7BB9]"
         />
     </div>

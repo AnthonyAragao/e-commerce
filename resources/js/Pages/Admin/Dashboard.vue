@@ -38,6 +38,7 @@ import CardLatestClients from "../../Components/Ui/Cards/CardLatestClients.vue";
                 </div>
                 <div class="w-[600px] text-red-300">Grafico Temporario</div>
             </CardLayout>
+            
             <CardLayout>
                 <div>
                     <div class="flex gap-2 justify-between">
