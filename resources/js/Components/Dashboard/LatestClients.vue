@@ -16,10 +16,15 @@
             :key="client"
             class="flex gap-2 items-center mt-2"
         >
-            <img src="/img/exemple.png" class="size-10 rounded-md" alt="">
+            <!-- <img src="/img/exemple.png" class="size-10 rounded-md" alt=""> -->
+            <img
+                src="https://randomuser.me/api/portraits/men/75.jpg"
+                alt="User"
+                class="w-8 h-8 rounded-full cursor-pointer"
+            >
 
             <div class="w-full">
-                <div class="flex gap-2 justify-between items-center font-medium">
+                <div class="flex gap-2 justify-between items-center font-bold">
                     <span class="text-[13px] ">
                         Esther Howard
                     </span>

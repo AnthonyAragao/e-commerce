@@ -9,6 +9,7 @@
             {
                 id: 1,
                 user: { name: 'John Doe' },
+                product: 'Apple Watch',
                 payment: { payment_method: 'Credit Card' },
                 order_date: '2023-10-01',
                 status: 'pending',
@@ -17,6 +18,7 @@
             {
                 id: 2,
                 user: { name: 'Jane Smith' },
+                product: 'iPhone 13',
                 payment: { payment_method: 'PayPal' },
                 order_date: '2023-10-02',
                 status: 'completed',
@@ -34,6 +36,22 @@
 
         modals[id] = !modals[id];
     };
+
+    const statusClasses = (status) => {
+        return {
+            'bg-yellow-200/70 text-yellow-600 dark:text-yellow-400 dark:bg-yellow-200/40'   : status === 'pending',
+            'bg-red-300/40 text-red-400'                                                    : status === 'declined',
+            'bg-green-200/80 text-green-500 dark:bg-green-200/20'                           : status !== 'pending' && status !== 'declined'
+        }
+    }
+
+    const indicatorClasses = (status) => {
+        return {
+            'bg-yellow-500' : status === 'pending',
+            'bg-red-400'    : status === 'declined',
+            'bg-green-500'  : status !== 'pending' && status !== 'declined'
+        }
+    }
 </script>
 
 <template>
@@ -44,20 +62,26 @@
             class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium"
         >
             <TableCell isHeader="true"> #{{ order.id }}</TableCell>
-            <TableCell> {{ order.user.name }} </TableCell>
+            <TableCell> {{ order.product }} </TableCell>
             <TableCell> {{ order.payment.payment_method }} </TableCell>
-            <TableCell> {{ order.order_date }} </TableCell>
+            <TableCell>
+                <div class="flex items-center gap-2">
+                    <img
+                        src="https://randomuser.me/api/portraits/men/75.jpg"
+                        alt="User"
+                        class="w-8 h-8 rounded-full cursor-pointer"
+                    >
+                    <span>{{ order.user.name }}</span>
+                </div>
+            </TableCell>
             <TableCell :customClass="'flex items-center'">
-                <div
-                    class="h-2.5 w-2.5 rounded-full me-2"
-                    :class="{
-                        'bg-yellow-500': order.status === 'pending',
-                        'bg-red-400'   : order.status === 'declined',
-                        'bg-green-500' : order.status !== 'pending' && order.status !== 'declined'
-                    }"
-                ></div>
-                {{ order.status }}
-
+                <span
+                    class="px-4 py-2 rounded-full text-xs font-semibold flex items-center w-fit"
+                    :class="statusClasses(order.status)"
+                >
+                    <div class="h-2 w-2 rounded-full me-2" :class="indicatorClasses(order.status)"></div>
+                    {{ order.status }}
+                </span>
             </TableCell>
             <TableCell> ${{ order.total_price }} </TableCell>
             <TableCell :customClass="'relative'">
