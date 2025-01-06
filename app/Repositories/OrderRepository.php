@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Order;
+use Illuminate\Support\Facades\Crypt;
 use App\Repositories\Contracts\OrderRepositoryInterface;
 
 class OrderRepository implements OrderRepositoryInterface
@@ -25,7 +26,11 @@ class OrderRepository implements OrderRepositoryInterface
     public function getOrder(string $id)
     {
         return $this->order
-            ->with(['user', 'orderItems'])
-            ->findOrFail($id);
+            ->with([
+                'user:id,name,email,phone',
+                'items' => fn($query) => $query->with('product:id,name'),
+                'payment:id,amount,payment_method,payment_status,created_at',
+            ])
+            ->findOrFail(Crypt::decrypt($id));
     }
 }

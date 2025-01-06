@@ -70,7 +70,7 @@
                         data-modal
                     >
                         <Link
-                            :href="`/admin/orders/${order.id}`"
+                            :href="`/admin/orders/${order.encrypted_id}`"
                             class="block px-4 text-gray-400 dark:text-gray-300 text-xs font-semibold"
                         >
                             View details

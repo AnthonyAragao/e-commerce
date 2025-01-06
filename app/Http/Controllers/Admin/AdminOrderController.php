@@ -13,13 +13,15 @@ class AdminOrderController extends Controller
 
     public function index()
     {
-        $orders = $this->orderService->getOrders();
-
         return inertia('Admin/Orders/Index', [
-            'orders' => $orders,
+            'orders' => $this->orderService->getOrders()
         ]);
     }
 
     public function show(string $id)
-    {}
+    {
+        return inertia('Admin/Orders/Show', [
+            'order' =>$this->orderService->getOrder($id)
+        ]);
+    }
 }

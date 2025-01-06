@@ -14,17 +14,15 @@ class AdminProductController extends Controller
 
     public function index()
     {
-        $products = $this->productService->getProducts();
-
         return inertia('Admin/Products/Index', [
-            'products' => $products,
+            'products' => $this->productService->getProducts()
         ]);
     }
 
     public function create()
     {
         return inertia('Admin/Products/Form', [
-            'categories' => $this->productService->getCategories(),
+            'categories' => $this->productService->getCategories()
         ]);
     }
 
