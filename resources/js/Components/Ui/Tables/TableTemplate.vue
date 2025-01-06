@@ -1,5 +1,5 @@
 <script setup>
-    const { headers } = defineProps(['headers']);
+    const { headers, customClass } = defineProps(['headers', 'customClass']);
 </script>
 
 <template>
@@ -7,10 +7,10 @@
         <thead class="text-xs text-gray-500 uppercase dark:text-gray-400 border-t border-b border-gray-200 dark:border-gray-500">
             <tr>
                 <th
-                    scope="col"
-                    class="px-6 py-3"
                     v-for="header in headers"
                     :key="header"
+                    scope="col"
+                    :class="['px-6 py-3', customClass]"
                 >
                     {{ header }}
                 </th>
