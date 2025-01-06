@@ -3,8 +3,8 @@
 namespace App\Providers;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use App\Repositories\{OrderRepository, ProductRepository};
-use App\Repositories\Contracts\{OrderRepositoryInterface, ProductRepositoryInterface};
+use App\Repositories\{CustomerRepository, OrderRepository, ProductRepository};
+use App\Repositories\Contracts\{CustomerRepositoryInterface, OrderRepositoryInterface, ProductRepositoryInterface};
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -12,6 +12,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(ProductRepositoryInterface::class, ProductRepository::class);
         $this->app->bind(OrderRepositoryInterface::class, OrderRepository::class);
+        $this->app->bind(CustomerRepositoryInterface::class, CustomerRepository::class);
     }
 
     public function boot(): void

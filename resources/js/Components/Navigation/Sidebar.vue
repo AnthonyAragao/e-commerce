@@ -56,9 +56,9 @@
                 </Link>
 
                 <Link
-                    href="/admin/clients"
+                    href="/admin/customers"
                     class="px-4 py-3 rounded-xl flex items-center space-x-2 hover:bg-[#7364DB] hover:text-white transition duration-300"
-                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/clients')}"
+                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/customers')}"
                 >
                     <i class="fas fa-users"></i> <span>Customers</span>
                 </Link>
