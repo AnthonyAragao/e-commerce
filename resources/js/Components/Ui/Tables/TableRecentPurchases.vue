@@ -1,5 +1,5 @@
 <script setup>
-    import { reactive } from 'vue';
+    import { reactive, ref } from 'vue';
     import TableTemplate from './TableTemplate.vue';
     import TableCell from './TableCell.vue';
 
@@ -28,22 +28,23 @@
     });
 
     const modals = reactive({});
+    const modalPrevious = ref(null);
 
     const toggleModal = (id) => {
-        if (modals[id]) {
-            closeAllModals();
-            return;
+        if (modalPrevious.value !== null) {
+            modals[modalPrevious.value] = false;
         }
-
-        closeAllModals();
-        modals[id] = !modals[id];
+        if (modalPrevious.value !== id) {
+            modals[id] = true;
+            modalPrevious.value = id;
+        } else {
+            modalPrevious.value = null;
+        }
     }
 
-    const closeAllModals = () => {
-        for (const key in modals) {
-            modals[key] = false;
-        }
-    };
+    const closeModalPrevious = () => {
+        modals[modalPrevious.value] = false;
+    }
 
     const statusClasses = (status) => {
         return {
@@ -95,14 +96,15 @@
             <TableCell :customClass="'relative'">
                 <button
                     @click.stop="toggleModal(order.id)"
+                    class="w-full h-full text-start cursor-pointer"
                 >
-                    <i class="fas fa-ellipsis-h text-gray-500 cursor-pointer hover:text-gray-700 dark:hover:text-gray-400"></i>
+                    <i class="fas fa-ellipsis-h text-gray-500 hover:text-gray-700 dark:hover:text-gray-400"></i>
                 </button>
 
                 <Transition name="fade">
                     <div
                         v-if="modals[order.id]"
-                        v-click-outside="() => (modals[order.id] = false)"
+                        v-click-outside="closeModalPrevious"
                         class="absolute left-[-60px] w-fit mt-2 py-2 bg-white dark:bg-[#1F2128] border border-gray-200 dark:border-gray-700 rounded-md shadow-md z-10"
                     >
                         <a
@@ -121,11 +123,11 @@
 <style scoped>
     .fade-enter-from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-30px);
     }
     .fade-enter-to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-8px);
     }
     .fade-enter-active,
     .fade-leave-active {
@@ -133,10 +135,10 @@
     }
     .fade-leave-from {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-8px);
     }
     .fade-leave-to {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(-30px);
     }
 </style>
