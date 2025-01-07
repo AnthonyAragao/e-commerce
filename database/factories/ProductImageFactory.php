@@ -21,6 +21,7 @@ class ProductImageFactory extends Factory
             'products/ps4.webp',
             'products/cadeira.webp',
             'products/fone.jpg',
+            'products/example.jpg',
         ];
 
         return [
