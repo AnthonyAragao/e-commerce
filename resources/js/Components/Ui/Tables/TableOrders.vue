@@ -7,6 +7,11 @@
     const modals = reactive({})
 
     const toggleModal = (id) => {
+        if (modals[id]) {
+            closeAllModals();
+            return;
+        }
+
         closeAllModals();
         modals[id] = !modals[id];
     }

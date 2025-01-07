@@ -30,11 +30,19 @@
     const modals = reactive({});
 
     const toggleModal = (id) => {
+        if (modals[id]) {
+            closeAllModals();
+            return;
+        }
+
+        closeAllModals();
+        modals[id] = !modals[id];
+    }
+
+    const closeAllModals = () => {
         for (const key in modals) {
             modals[key] = false;
         }
-
-        modals[id] = !modals[id];
     };
 
     const statusClasses = (status) => {
