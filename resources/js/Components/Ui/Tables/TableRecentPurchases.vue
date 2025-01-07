@@ -2,6 +2,7 @@
     import { reactive, ref } from 'vue';
     import TableTemplate from './TableTemplate.vue';
     import TableCell from './TableCell.vue';
+    import ButtonDetails from '../Buttons/ButtonDetails.vue';
 
     const headers = ['Order ID', 'Products', 'Date', 'Customer Name', 'Status', 'Amount', 'Actions'];
     const orders = reactive({
@@ -107,12 +108,9 @@
                         v-click-outside="closeModalPrevious"
                         class="absolute left-[-60px] w-fit mt-2 py-2 bg-white dark:bg-[#1F2128] border border-gray-200 dark:border-gray-700 rounded-md shadow-md z-10"
                     >
-                        <a
-                            :href="`/admin/orders/${order.id}`"
-                            class="block px-4 text-gray-400 dark:text-gray-300 text-xs font-semibold"
-                        >
-                            View details
-                        </a>
+                      
+                        <ButtonDetails
+                            :href="`/admin/orders/${order.id}`"/>
                     </div>
                 </Transition>
             </TableCell>

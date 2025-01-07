@@ -77,12 +77,7 @@
                         class="absolute -translate-y-[8px] -left-[90px] w-fit py-2 bg-white dark:bg-[#1F2128] border border-gray-200 dark:border-gray-700 rounded-md shadow-md z-10"
                         data-modal
                     >
-                        <!-- <Link
-                            :href="`/admin/orders/${order.encrypted_id}`"
-                            class="block px-4 text-gray-400 dark:text-gray-300 text-xs font-semibold"
-                        >
-                            View details
-                        </Link> -->
+                  
                         <ButtonDetails
                             :href="`/admin/orders/${order.encrypted_id}`"
                         />
