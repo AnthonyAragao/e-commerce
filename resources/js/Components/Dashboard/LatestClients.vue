@@ -18,7 +18,7 @@
         >
             <!-- <img src="/img/exemple.png" class="size-10 rounded-md" alt=""> -->
             <img
-                src="https://randomuser.me/api/portraits/men/75.jpg"
+                :src="`https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100)}.jpg`"
                 alt="User"
                 class="w-8 h-8 rounded-full cursor-pointer"
             >

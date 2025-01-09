@@ -33,7 +33,16 @@ const closeModalPrevious = () => {
             :key="customer.id"
             class="border-b dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium"
         >
-            <TableCell isHeader="true">{{ customer.name }}</TableCell>
+            <TableCell isHeader="true">
+                <div class="flex items-center gap-2">
+                    <img
+                        :src="`https://randomuser.me/api/portraits/men/${Math.floor(Math.random() * 100)}.jpg`"
+                        alt="User"
+                        class="w-8 h-8 rounded-full cursor-pointer"
+                    />
+                    <span>{{ customer.name }}</span>
+                </div>
+            </TableCell>
             <TableCell>{{ customer.email }}</TableCell>
             <TableCell>{{ customer.phone }}</TableCell>
             <TableCell>{{ customer.total_orders }}</TableCell>
