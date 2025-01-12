@@ -3,6 +3,8 @@
     import TableTemplate from "./TableTemplate.vue";
     import TableCell from "./TableCell.vue";
     import ButtonDetails from "../Buttons/ButtonDetails.vue";
+    import StatusBadge from "../Badges/StatusBadge.vue";
+
     const { headers, orders } = defineProps(["headers", "orders"]);
 
     const modals = reactive({});
@@ -19,24 +21,6 @@
     const closeModalPrevious = () => {
         modals[modalPrevious.value] = false;
     };
-
-    const statusClasses = (status) => {
-        return {
-            "bg-yellow-200/70 text-yellow-600 dark:text-yellow-400 dark:bg-yellow-200/40":
-                status === "pending",
-            "bg-red-300/40 text-red-400": status === "declined",
-            "bg-green-200/80 text-green-500 dark:bg-green-200/20":
-                status !== "pending" && status !== "declined",
-        };
-    };
-
-    const indicatorClasses = (status) => {
-        return {
-            "bg-yellow-500": status === "pending",
-            "bg-red-400": status === "declined",
-            "bg-green-500": status !== "pending" && status !== "declined",
-        };
-    };
 </script>
 
 <template>
@@ -51,16 +35,7 @@
             <TableCell>{{ order.payment.payment_method }}</TableCell>
             <TableCell>{{ order.order_date }}</TableCell>
             <TableCell>
-                <span
-                    class="px-4 py-2 rounded-full text-xs font-semibold flex items-center w-fit"
-                    :class="statusClasses(order.status)"
-                >
-                    <div
-                        class="h-2 w-2 rounded-full me-2"
-                        :class="indicatorClasses(order.status)"
-                    ></div>
-                    {{ order.status }}
-                </span>
+                <StatusBadge :status="order.status" />
             </TableCell>
             <TableCell>${{ order.total_price }}</TableCell>
             <TableCell :customClass="'relative'">
