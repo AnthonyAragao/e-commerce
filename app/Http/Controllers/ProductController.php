@@ -20,8 +20,5 @@ class ProductController extends Controller
     }
 
     public function show($id)
-    {
-        $product = $this->productService->getProduct($id);
-        dd($product);
-    }
+    {}
 }

@@ -7,7 +7,7 @@
     import FilterOrders from '../../../Components/Navigation/FilterOrders.vue';
 
     const { orders } = defineProps(['orders']);
-
+    
     const headers = ['Order ID', 'Customer name', 'Payment Method', 'Date', 'Status', 'Total', 'Actions',];
 </script>
 

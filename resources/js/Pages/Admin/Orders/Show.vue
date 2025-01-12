@@ -8,7 +8,6 @@
     const { order } = defineProps(['order']);
 
     const headers = ['Product Name', 'Price', 'Quantity', 'Total'];
-    console.log(order);
 </script>
 
 <template>
@@ -120,7 +119,7 @@
                                 <img
                                     :src="`/storage/${item.product.images[0].image_path}`"
                                     alt="product"
-                                    class="w-10 h-10 object-cover rounded-lg"
+                                    class="size-10 object-cover rounded-lg"
                                 />
                                 {{ item.product.name }}
                             </div>

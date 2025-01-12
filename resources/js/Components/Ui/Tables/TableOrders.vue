@@ -1,46 +1,42 @@
 <script setup>
-import { reactive, ref } from "vue";
-import TableTemplate from "./TableTemplate.vue";
-import TableCell from "./TableCell.vue";
-import ButtonDetails from "../Buttons/ButtonDetails.vue";
-const { headers, orders } = defineProps(["headers", "orders"]);
+    import { reactive, ref } from "vue";
+    import TableTemplate from "./TableTemplate.vue";
+    import TableCell from "./TableCell.vue";
+    import ButtonDetails from "../Buttons/ButtonDetails.vue";
+    const { headers, orders } = defineProps(["headers", "orders"]);
 
-const modals = reactive({});
-const modalPrevious = ref(null);
+    const modals = reactive({});
+    const modalPrevious = ref(null);
 
-const toggleModal = (id) => {
-    if (modalPrevious.value !== null) {
+    const toggleModal = (id) => {
+        if (modalPrevious.value !== null && modalPrevious.value !== id) {
+            modals[modalPrevious.value] = false;
+        }
+        modals[id] = !modals[id];
+        modalPrevious.value = modals[id] ? id : null;
+    };
+
+    const closeModalPrevious = () => {
         modals[modalPrevious.value] = false;
-    }
-    if (modalPrevious.value !== id) {
-        modals[id] = true;
-        modalPrevious.value = id;
-    } else {
-        modalPrevious.value = null;
-    }
-};
-
-const closeModalPrevious = () => {
-    modals[modalPrevious.value] = false;
-};
-
-const statusClasses = (status) => {
-    return {
-        "bg-yellow-200/70 text-yellow-600 dark:text-yellow-400 dark:bg-yellow-200/40":
-            status === "pending",
-        "bg-red-300/40 text-red-400": status === "declined",
-        "bg-green-200/80 text-green-500 dark:bg-green-200/20":
-            status !== "pending" && status !== "declined",
     };
-};
 
-const indicatorClasses = (status) => {
-    return {
-        "bg-yellow-500": status === "pending",
-        "bg-red-400": status === "declined",
-        "bg-green-500": status !== "pending" && status !== "declined",
+    const statusClasses = (status) => {
+        return {
+            "bg-yellow-200/70 text-yellow-600 dark:text-yellow-400 dark:bg-yellow-200/40":
+                status === "pending",
+            "bg-red-300/40 text-red-400": status === "declined",
+            "bg-green-200/80 text-green-500 dark:bg-green-200/20":
+                status !== "pending" && status !== "declined",
+        };
     };
-};
+
+    const indicatorClasses = (status) => {
+        return {
+            "bg-yellow-500": status === "pending",
+            "bg-red-400": status === "declined",
+            "bg-green-500": status !== "pending" && status !== "declined",
+        };
+    };
 </script>
 
 <template>
@@ -72,9 +68,7 @@ const indicatorClasses = (status) => {
                     @click.stop="toggleModal(order.id)"
                     class="w-full h-full text-start cursor-pointer"
                 >
-                    <i
-                        class="fas fa-ellipsis-h text-gray-500 hover:text-gray-700 dark:hover:text-gray-400"
-                    ></i>
+                    <i class="fas fa-ellipsis-h text-gray-500 hover:text-gray-700 dark:hover:text-gray-400"></i>
                 </button>
 
                 <Transition name="fade">
@@ -95,24 +89,24 @@ const indicatorClasses = (status) => {
 </template>
 
 <style scoped>
-.fade-enter-from {
-    opacity: 0;
-    transform: translateY(-30px);
-}
-.fade-enter-to {
-    opacity: 1;
-    transform: translateY(-2px);
-}
-.fade-enter-active,
-.fade-leave-active {
-    transition: all 0.3s;
-}
-.fade-leave-from {
-    opacity: 1;
-    transform: translateY(-2px);
-}
-.fade-leave-to {
-    opacity: 0;
-    transform: translateY(-30px);
-}
+    .fade-enter-from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    .fade-enter-to {
+        opacity: 1;
+        transform: translateY(-2px);
+    }
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: all 0.3s;
+    }
+    .fade-leave-from {
+        opacity: 1;
+        transform: translateY(-2px);
+    }
+    .fade-leave-to {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
 </style>

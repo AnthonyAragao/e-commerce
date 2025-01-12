@@ -1,5 +1,15 @@
 <script setup>
+    import { onMounted, ref } from 'vue';
     import CardLayout from '../Ui/Cards/CardLayout.vue';
+
+    const isLoading  = ref(false);
+
+    onMounted(() => {
+        isLoading.value = true;
+        setTimeout(() => {
+            isLoading.value = false;
+        }, 1000)
+    })
 </script>
 
 <template>
@@ -12,6 +22,34 @@
         </div>
 
         <div
+            v-if="isLoading"
+            class="animate-pulse"
+        >
+            <div
+                v-for="client in 8"
+                :key="client"
+                class="flex items-center mt-4 w-full"
+            >
+
+                <div class="w-9 h-8 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+
+                <div class="w-full ml-2 flex justify-between flex-col gap-1">
+                    <div class="flex gap-2 justify-between font-bold">
+                        <div class="w-3/4 h-4 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+                        <div class="w-1/6 h-3 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+                    </div>
+
+
+                    <div class="flex justify-between gap-2">
+                        <div class="w-1/4 h-2 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+                        <div class="w-1/5 h-3 bg-gray-200 dark:bg-gray-700 rounded-md"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            v-else
             v-for="client in 8"
             :key="client"
             class="flex gap-2 items-center mt-2"

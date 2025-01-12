@@ -22,7 +22,6 @@ Route::prefix('admin')
         Route::resource('orders', AdminOrderController::class)->only(['index', 'show']);
         Route::resource('customers', AdminCustomerController::class)->only(['index', 'show']);
         Route::get('dashboard', fn() => Inertia\Inertia::render('Admin/Dashboard'));
-
     });
 
 

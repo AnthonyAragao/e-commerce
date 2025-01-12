@@ -1,9 +1,7 @@
 <script setup>
-
-    const {href} = defineProps(['href']);
-
-
+    const { href } = defineProps(['href']);
 </script>
+
 <template>
     <Link
         :href="href"
