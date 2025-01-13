@@ -1,5 +1,5 @@
 <script setup>
-    import { onMounted, ref } from 'vue';
+    import { ref } from 'vue';
     import { useForm } from '@inertiajs/inertia-vue3';
     import AdminLayout from '../../../Components/Layouts/AdminLayout.vue';
     import Breadcrumb from '../../../Components/Navigation/Breadcrumb.vue';
@@ -16,27 +16,14 @@
     const isSubmitting = ref(false);
 
     const form = useForm({
-        name: '',
-        category: '',
-        description: '',
-        regular_price: '',
-        sale_price: '',
-        sku: '',
-        stock: 0,
-        images: []
-    });
-
-    onMounted(() => {
-        if (isUpdating) {
-            form.name = product.name;
-            form.category = product.category_id;
-            form.description = product.description;
-            form.regular_price = product.regular_price;
-            form.sale_price = product.sale_price;
-            form.sku = product.sku;
-            form.stock = product.stock;
-            form.images = product.images;
-        }
+        name: product?.name || '',
+        category: product?.category_id || '',
+        description: product?.description || '',
+        regular_price: product?.regular_price || '',
+        sale_price: product?.sale_price || '',
+        sku: product?.sku || '',
+        stock: product?.stock || '',
+        images: product?.images || [],
     });
 
     const submitForm = () => {

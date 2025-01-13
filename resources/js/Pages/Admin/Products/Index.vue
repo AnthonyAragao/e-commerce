@@ -60,7 +60,6 @@
         <Pagination :pagination="products" class="mb-4"/>
     </AdminLayout>
 
-
     <!-- Modal delete product -->
     <ProductDeleteModal
         v-if="isModalVisible"
