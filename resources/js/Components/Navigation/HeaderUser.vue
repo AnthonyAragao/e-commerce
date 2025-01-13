@@ -17,35 +17,36 @@
                         <input
                             placeholder="Search on the store"
                             type="search"
-                            class="py-[14px] pl-8 bg-[#F5F5FA] text-sm   rounded-md w-full focus:outline-none   dark:bg-[#313442] dark:text-white "
+                            class="py-[14px] pl-8 pr-2 bg-[#F5F5FA] text-sm   rounded-md w-full focus:outline-none   dark:bg-[#313442] dark:text-white "
                         />
-
                 </div>
+
                 <div class="bg-[#F5F5FA] p-3 rounded-lg h-12 text-[13px] flex flex-col font-semibold text-gray-500 justify-center"
                 ><img src="" alt="">
                <div class="flex gap-1"> <a class="hover:text-gray-800" href="">ENTRE</a><span class="font-normal">ou</span></div>
-                <a class="hover:text-gray-800" href="#">CADASTRA-SE</a></div>
+                    <a class="hover:text-gray-800" href="#">CADASTRA-SE</a></div>
 
-                <div class="flex gap-4 h-12 items-center rounded-lg bg-[#F5F5FA] p-3">
-                <a href="#" class="relative group">
-                    <img src="" alt="">
-                    <!-- ícone de SAC -->
-                    <i class="fas fa-headset"></i>
-                    <span class="infotag">SAC</span>
-                </a>
-                <a href="#" class="relative group">
-                    <img src="" alt="">
-                    <!-- ícone de Favoritos -->
-                    <i class="fas fa-heart"></i>
-                    <span class="infotag">Favoritos</span>
-                </a>
-                <a href="#" class="relative group">
-                    <img src="" alt="">
-                    <!-- ícone de Carrinho -->
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="infotag">Carrinho</span>
-                </a>
+                    <div class="flex gap-4 h-12 items-center rounded-lg bg-[#F5F5FA] p-3">
+                    <a href="#" class="relative group">
+                        <img src="" alt="">
+                        <!-- ícone de SAC -->
+                        <i class="fas fa-headset"></i>
+                        <span class="infotag">SAC</span>
+                    </a>
+                    <a href="#" class="relative group">
+                        <img src="" alt="">
+                        <!-- ícone de Favoritos -->
+                        <i class="fas fa-heart"></i>
+                        <span class="infotag">Favoritos</span>
+                    </a>
+                    <a href="#" class="relative group">
+                        <img src="" alt="">
+                        <!-- ícone de Carrinho -->
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="infotag">Carrinho</span>
+                    </a>
                 </div>
+
         </div>
     </Nav>
 </template>
@@ -54,14 +55,14 @@
 <style scoped>
 .group:hover .infotag {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(5px);
 }
 
 .infotag {
     position: absolute;
     bottom: -1.5rem;
     left: 70%;
-    transform: translateX(-50%) translateY(20px);
+    transform: translateX(-70%) translateY(20px);
     background-color: #333;
     color: #fff;
     padding: 0.2rem 0.5rem;
