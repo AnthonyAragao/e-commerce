@@ -24,7 +24,7 @@
             </a>
         </span>
         </p>
-        <p class="flex gap-4 text-sm text-gray-500 hover:text-gray-950 dark:text-gray-400">
+        <p class="flex gap-4 text-sm text-gray-500 dark:text-gray-400 ">
             <button class="hover:text-gray-950 dark:hover:text-gray-200">About</button>
             <button class="hover:text-gray-950 dark:hover:text-gray-200">Careers</button>
         </p>
