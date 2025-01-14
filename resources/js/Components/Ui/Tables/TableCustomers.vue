@@ -48,7 +48,7 @@ const closeModalPrevious = () => {
             <TableCell>{{ customer.total_orders }}</TableCell>
             <TableCell>{{ customer.total_spent }}</TableCell>
 
-            <TableCell :customClass="'relative'">
+            <TableCell customClass='relative'>
                 <button
                     @click.stop="toggleModal(customer.id)"
                     class="w-full h-full text-start cursor-pointer"

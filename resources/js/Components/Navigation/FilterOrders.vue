@@ -8,7 +8,7 @@
             <div class="w-[300px]">
                 <SelectInput
                     name="category"
-                    :customClass="'py-3 rounded-lg border border-gray-100 shadow-sm'"
+                    customClass='py-3 rounded-lg border border-gray-100 shadow-sm'
                 >
                     <option value="">Status</option>
                     <option>this is a test</option>
@@ -19,7 +19,7 @@
             <div class="w-[300px]">
                 <SelectInput
                     name="category"
-                    :customClass="'py-3 rounded-lg border border-gray-100 shadow-sm'"
+                    customClass='py-3 rounded-lg border border-gray-100 shadow-sm'
                 >
                     <option value="">Payment Method</option>
                     <option>this is a test</option>

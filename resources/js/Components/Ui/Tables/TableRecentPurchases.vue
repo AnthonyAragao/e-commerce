@@ -91,11 +91,11 @@
                         <span>{{ order.user.name }}</span>
                     </div>
                 </TableCell>
-                <TableCell :customClass="'flex items-center'">
+                <TableCell customClass='flex items-center'>
                     <StatusBadge :status="order.status" />
                 </TableCell>
                 <TableCell> ${{ order.total_price }} </TableCell>
-                <TableCell :customClass="'relative'">
+                <TableCell customClass='relative'>
                     <button
                         @click.stop="toggleModal(order.id)"
                         class="w-full h-full text-start cursor-pointer"

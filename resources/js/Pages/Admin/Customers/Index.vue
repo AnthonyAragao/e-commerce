@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <CardLayout :customClass="'mt-7'">
+        <CardLayout customClass='mt-7'>
             <h2 class="text-base font-bold mb-4"> Customers List </h2>
 
             <TableCustomers
