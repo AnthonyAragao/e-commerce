@@ -14,6 +14,7 @@ return new class extends Migration
             $table->decimal('total_price', 10, 2);
             $table->date('order_date');
             $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('address_id')->constrained('addresses');
             $table->foreignId('payment_id')->constrained('payments');
             $table->timestamps();
         });

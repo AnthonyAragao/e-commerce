@@ -19,6 +19,7 @@ class OrderFactory extends Factory
             'user_id' => \App\Models\User::factory(),
             'order_date' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'payment_id' => \App\Models\Payment::factory(),
+            'address_id' => \App\Models\Address::factory(),
             'created_at' => now(),
             'updated_at' => now(),
         ];

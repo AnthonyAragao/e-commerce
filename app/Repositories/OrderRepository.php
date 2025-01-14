@@ -33,6 +33,7 @@ class OrderRepository implements OrderRepositoryInterface
                     'product.images' => fn($query) => $query->select('product_id', 'image_path')->take(1)
                 ]),
                 'payment:id,amount,payment_method,payment_status,created_at',
+                'address'
             ])
             ->findOrFail(Crypt::decrypt($id));
     }
