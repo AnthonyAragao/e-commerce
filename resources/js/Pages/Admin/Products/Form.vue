@@ -13,6 +13,12 @@
 
     const { isUpdating, product, categories } = defineProps([ 'isUpdating', 'product', 'categories' ]);
 
+    const breadcrumbs = [
+        { 'href': '/admin', 'name': 'Home' },
+        { 'href': '/admin/products', 'name': 'Products' },
+        { 'href': '', 'name': 'New Product' }
+    ];
+
     const isSubmitting = ref(false);
 
     const form = useForm({
@@ -38,9 +44,9 @@
 
     const handleSubmit = (url, method) => {
         form[method](url, {
-            onStart: () => (isSubmitting.value = true),
+            onStart: ()   => (isSubmitting.value = true),
             onSuccess: () => (isSubmitting.value = false),
-            onError: () => (isSubmitting.value = false),
+            onError: ()   => (isSubmitting.value = false),
         });
     };
 </script>
@@ -49,11 +55,7 @@
     <AdminLayout>
         <h1 class="text-3xl font-bold">New Product</h1>
 
-        <Breadcrumb :breadcrumbs="[
-            { 'href': '/admin', 'name': 'Home' },
-            { 'href': '/admin/products', 'name': 'Products' },
-            { 'href': '', 'name': 'New Product' }
-        ]" />
+        <Breadcrumb :breadcrumbs="breadcrumbs" />
 
         <CardLayout customClass="pb-20">
             <form

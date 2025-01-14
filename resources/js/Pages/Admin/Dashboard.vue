@@ -9,18 +9,18 @@
     import ChartDoughnut from "../../Components/Ui/Charts/ChartDoughnut.vue";
     import ChartStackedBars from "../../Components/Ui/Charts/ChartStackedBars.vue";
     import ChartBar from "../../Components/Ui/Charts/ChartBar.vue";
+
+    const breadcrumbs = [
+        { href: '/admin', name: 'Home' },
+        { href: '', name: 'Dashboard' },
+    ];
 </script>
 
 <template>
     <AdminLayout>
         <h1 class="text-3xl font-bold">Dashboard</h1>
+        <Breadcrumb :breadcrumbs="breadcrumbs"/>
 
-        <Breadcrumb
-            :breadcrumbs="[
-                { href: '/admin', name: 'Home' },
-                { href: '', name: 'Dashboard' },
-            ]"
-        />
         <CardDashSells />
 
         <div class="flex gap-6 w-full">

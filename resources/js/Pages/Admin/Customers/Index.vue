@@ -6,6 +6,12 @@
     import Pagination from '../../../Components/Navigation/Pagination.vue';
 
     const { customers } = defineProps(["customers"]);
+
+    const breadcrumbs = [
+        { 'href': '/admin', 'name': 'Home' },
+        { 'href': '', 'name': 'Customers' }
+    ];
+
     const headers = ['Name', 'Email', 'Phone', 'Total Orders', 'Total Spent', 'Actions'];
 </script>
 
@@ -17,10 +23,7 @@
                     Customers
                 </h1>
 
-                <Breadcrumb :breadcrumbs="[
-                    { 'href': '/admin', 'name': 'Home' },
-                    { 'href': '', 'name': 'Customers' }
-                ]" />
+                <Breadcrumb :breadcrumbs="breadcrumbs"/>
             </div>
         </div>
 

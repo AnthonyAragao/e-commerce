@@ -11,6 +11,11 @@
 
     const { products, flash } = defineProps(["products", "flash"]);
 
+    const breadcrumbs = [
+        { 'href': '/admin', 'name': 'Home' },
+        { 'href': '', 'name': 'Products' }
+    ];
+
     const isModalVisible = ref(false);
     const idProduct = ref(null);
 
@@ -31,11 +36,7 @@
         <div class="flex justify-between items-center">
             <div>
                 <h1 class="text-3xl font-bold">Products</h1>
-
-                <Breadcrumb :breadcrumbs="[
-                    { 'href': '/admin', 'name': 'Home' },
-                    { 'href': '', 'name': 'Products' }
-                ]" />
+                <Breadcrumb :breadcrumbs="breadcrumbs" />
             </div>
 
             <Link

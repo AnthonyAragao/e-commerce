@@ -7,6 +7,10 @@
     import FilterOrders from '../../../Components/Navigation/FilterOrders.vue';
 
     const { orders } = defineProps(['orders']);
+    const breadcrumbs = [
+        { 'href': '/admin', 'name': 'Home' },
+        { 'href': '', 'name': 'Orders' }
+    ];
 
     const headers = ['Order ID', 'Customer name', 'Payment Method', 'Date', 'Status', 'Total', 'Actions',];
 </script>
@@ -15,13 +19,10 @@
     <AdminLayout>
         <h1 class="text-3xl font-bold">Orders List</h1>
 
-        <Breadcrumb :breadcrumbs="[
-            { 'href': '/admin', 'name': 'Home' },
-            { 'href': '', 'name': 'Orders' }
-        ]" />
+        <Breadcrumb :breadcrumbs="breadcrumbs"/>
 
         <FilterOrders />
-
+        
         <CardLayout customClass='mt-7'>
             <h2 class="text-base font-bold mb-4">Recent Orders</h2>
 

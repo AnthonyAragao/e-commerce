@@ -7,7 +7,8 @@
         return {
             "bg-yellow-200/70 text-yellow-600 dark:text-yellow-400 dark:bg-yellow-200/40" : status === "pending",
             "bg-red-300/40 text-red-400"                                                  : status === "declined",
-            "bg-green-200/80 text-green-500 dark:bg-green-200/20"                         : status !== "pending" && status !== "declined",
+            "bg-green-200/80 text-green-500 dark:bg-green-200/20"                         : status === "completed",
+            "bg-blue-200/70 text-blue-600 dark:text-blue-300 dark:bg-blue-200/40"         : status === "processing",
         };
     });
 
@@ -16,6 +17,7 @@
             "bg-yellow-500" : status === "pending",
             "bg-red-400"    : status === "declined",
             "bg-green-500"  : status !== "pending" && status !== "declined",
+            "bg-blue-400"   : status === "processing",
         };
     })
 </script>
