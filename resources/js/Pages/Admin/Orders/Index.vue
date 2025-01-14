@@ -17,8 +17,9 @@
 
 <template>
     <AdminLayout>
-        <h1 class="text-3xl font-bold">Orders List</h1>
+        <Head title="Orders" />
 
+        <h1 class="text-3xl font-bold">Orders List</h1>
         <Breadcrumb :breadcrumbs="breadcrumbs"/>
 
         <FilterOrders />

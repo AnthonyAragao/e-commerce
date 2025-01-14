@@ -53,8 +53,9 @@
 
 <template>
     <AdminLayout>
-        <h1 class="text-3xl font-bold">New Product</h1>
+        <Head :title="isUpdating ? `Edit Product - ${product.name}` : 'New Product'" />
 
+        <h1 class="text-3xl font-bold">New Product</h1>
         <Breadcrumb :breadcrumbs="breadcrumbs" />
 
         <CardLayout customClass="pb-20">

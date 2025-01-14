@@ -1,5 +1,4 @@
 <script setup>
-    import { Link } from '@inertiajs/inertia-vue3';
     import AdminLayout from '../../../Components/Layouts/AdminLayout.vue';
     import Breadcrumb from '../../../Components/Navigation/Breadcrumb.vue';
     import CardLayout from '../../../Components/Ui/Cards/CardLayout.vue';
@@ -8,6 +7,7 @@
     import ProductDeleteModal from '../../../Components/Ui/Modals/ProductDeleteModal.vue';
     import Pagination from '../../../Components/Navigation/Pagination.vue';
     import { ref } from 'vue';
+import { Head } from '@inertiajs/inertia-vue3';
 
     const { products, flash } = defineProps(["products", "flash"]);
 
@@ -27,6 +27,8 @@
 
 <template>
     <AdminLayout>
+        <Head title="Products" />
+
         <Alert
             :key="flash.key"
             :message="flash.message"

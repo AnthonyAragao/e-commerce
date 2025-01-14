@@ -17,15 +17,10 @@
 
 <template>
     <AdminLayout>
-        <div class="flex justify-between items-center">
-            <div>
-                <h1 class="text-3xl font-bold">
-                    Customers
-                </h1>
+        <Head title="Customers" />
 
-                <Breadcrumb :breadcrumbs="breadcrumbs"/>
-            </div>
-        </div>
+        <h1 class="text-3xl font-bold"> Customers </h1>
+        <Breadcrumb :breadcrumbs="breadcrumbs"/>
 
         <CardLayout customClass='mt-7'>
             <h2 class="text-base font-bold mb-4"> Customers List </h2>

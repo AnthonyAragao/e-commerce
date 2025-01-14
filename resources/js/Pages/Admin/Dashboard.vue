@@ -18,6 +18,8 @@
 
 <template>
     <AdminLayout>
+        <Head title="Dashboard" />
+
         <h1 class="text-3xl font-bold">Dashboard</h1>
         <Breadcrumb :breadcrumbs="breadcrumbs"/>
 

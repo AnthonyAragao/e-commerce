@@ -33,8 +33,9 @@
 
 <template>
     <AdminLayout>
+        <Head title="Order details" />
+        
         <h1 class="text-3xl font-bold">Orders Details</h1>
-
         <Breadcrumb :breadcrumbs="breadcrumbs"/>
 
         <CardLayout customClass='mt-7'>
