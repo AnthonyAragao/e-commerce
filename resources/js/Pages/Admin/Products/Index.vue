@@ -7,7 +7,6 @@
     import ProductDeleteModal from '../../../Components/Ui/Modals/ProductDeleteModal.vue';
     import Pagination from '../../../Components/Navigation/Pagination.vue';
     import { ref } from 'vue';
-import { Head } from '@inertiajs/inertia-vue3';
 
     const { products, flash } = defineProps(["products", "flash"]);
 
@@ -63,7 +62,6 @@ import { Head } from '@inertiajs/inertia-vue3';
         <Pagination :pagination="products" class="mb-4"/>
     </AdminLayout>
 
-    <!-- Modal delete product -->
     <ProductDeleteModal
         v-if="isModalVisible"
         :idProduct="idProduct"

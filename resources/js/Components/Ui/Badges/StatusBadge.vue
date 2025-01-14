@@ -16,7 +16,7 @@
         return {
             "bg-yellow-500" : status === "pending",
             "bg-red-400"    : status === "declined",
-            "bg-green-500"  : status !== "pending" && status !== "declined",
+            "bg-green-500"  : status === "completed",
             "bg-blue-400"   : status === "processing",
         };
     })

@@ -3,7 +3,13 @@
     import HeaderAdmin from '../Navigation/HeaderAdmin.vue';
     import Footer from '../Layouts/Footer.vue';
     import { useDark, useToggle } from '@vueuse/core';
-    import { ref } from 'vue';
+    import { provide, ref } from 'vue';
+
+    const activeModal    = ref(null);
+    const setActiveModal = (id) => activeModal.value = id;
+
+    provide("activeModal", activeModal);
+    provide("setActiveModal", setActiveModal)
 
     const isDarkMode = useDark({
         storageKey: 'dark-mode',

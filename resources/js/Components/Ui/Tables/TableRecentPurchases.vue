@@ -1,8 +1,9 @@
 <script setup>
     import { onMounted, reactive, ref } from "vue";
+    import ButtonDetails from "../Buttons/ButtonDetails.vue";
     import TableTemplate from "./TableTemplate.vue";
     import TableCell from "./TableCell.vue";
-    import ButtonDetails from "../Buttons/ButtonDetails.vue";
+    import ToggleModal from "../Modals/ToggleModal.vue";
     import StatusBadge from "../Badges/StatusBadge.vue";
 
     const isLoading = ref(false);
@@ -37,21 +38,6 @@
             },
         ],
     });
-
-    const modals = reactive({});
-    const modalPrevious = ref(null);
-
-    const toggleModal = (id) => {
-        if (modalPrevious.value !== null && modalPrevious.value !== id) {
-            modals[modalPrevious.value] = false;
-        }
-        modals[id] = !modals[id];
-        modalPrevious.value = modals[id] ? id : null;
-    };
-
-    const closeModalPrevious = () => {
-        modals[modalPrevious.value] = false;
-    };
 </script>
 
 <template>
@@ -70,7 +56,6 @@
                 </TableCell>
             </tr>
         </template>
-
 
         <template v-else>
             <tr
@@ -95,51 +80,12 @@
                     <StatusBadge :status="order.status" />
                 </TableCell>
                 <TableCell> ${{ order.total_price }} </TableCell>
-                <TableCell customClass='relative'>
-                    <button
-                        @click.stop="toggleModal(order.id)"
-                        class="w-full h-full text-start cursor-pointer"
-                    >
-                        <i class="fas fa-ellipsis-h text-gray-500 hover:text-gray-700 dark:hover:text-gray-400"></i>
-                    </button>
-
-                    <Transition name="fade">
-                        <div
-                            v-if="modals[order.id]"
-                            v-click-outside="closeModalPrevious"
-                            class="absolute -translate-y-[2px] -left-[90px] w-fit py-2 bg-white dark:bg-[#1F2128] border border-gray-200 dark:border-gray-700 rounded-md shadow-md z-10"
-                            data-modal
-                        >
-                            <ButtonDetails
-                                :href="`/admin/orders/${order.encrypted_id}`"
-                            />
-                        </div>
-                    </Transition>
+                <TableCell>
+                    <ToggleModal :id="order.id">
+                        <ButtonDetails :href="`/admin/orders/${order.encrypted_id}`" />
+                    </ToggleModal>
                 </TableCell>
             </tr>
         </template>
     </TableTemplate>
 </template>
-
-<style scoped>
-    .fade-enter-from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    .fade-enter-to {
-        opacity: 1;
-        transform: translateY(-2px);
-    }
-    .fade-enter-active,
-    .fade-leave-active {
-        transition: all 0.3s;
-    }
-    .fade-leave-from {
-        opacity: 1;
-        transform: translateY(-2px);
-    }
-    .fade-leave-to {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-</style>
