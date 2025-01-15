@@ -1,5 +1,6 @@
 <script setup>
     import UserLayout from "../../Components/Layouts/UserLayout.vue";
+    import CardUserProduct from "../../Components/Ui/Cards/CardUserProduct.vue";
     const {products} = defineProps(["products"])
 
     const breadcrumbs = [
@@ -24,19 +25,7 @@
             </ul>
         </aside>
 
-        <div class="flex col-span-4 col-start-2 flex-wrap gap-4">
-            <div v-for="product in products.data" :key="product.id" class="bg-white shadow-md rounded-lg p-4 w-[240px] h-[480px] overflow-hidden transition-transform transform hover:scale-105 ">
-            <img :src="product.image" alt="product.name" class="w-full h-48 object-cover object-center">
-            <div class="mt-4">
-                <h2 class="text-xl font-semibold text-gray-800">{{ product.name }}</h2>
-                <p class="mt-2 text-gray-600">{{ product.description }}</p>
-                <div class="mt-4 flex justify-between items-center">
-                <span class="text-xl font-semibold text-gray-800">{{ product.price }}</span>
-                <button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Add to Cart</button>
-                </div>
-            </div>
-            </div>
-        </div>
+        <CardUserProduct :products="products" />
     </div>
 
     </UserLayout>
