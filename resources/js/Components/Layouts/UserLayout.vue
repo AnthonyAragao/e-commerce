@@ -4,11 +4,11 @@
 </script>
 
 <template>
-
     <HeaderUser />
+
     <main class="p-7 mt-16 min-h-[calc(100vh-4rem)]">
-                <slot></slot>
-            </main>
+        <slot></slot>
+    </main>
+    
     <Footer/>
-   
 </template>
