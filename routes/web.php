@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 // ---------------------------------------- PRODUCTS -----------------------------------------------
 Route::get('/', [ProductController::class, 'index'])->name('products.index');
+Route::get('/categories/{slug}', [ProductController::class, 'category'])->name('products.category');
 Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
 
 

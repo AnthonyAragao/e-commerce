@@ -15,6 +15,11 @@ class ProductService
         return $this->productRepository->getProducts();
     }
 
+    public function getProductsByCategory($slug)
+    {
+        return $this->productRepository->getProductsByCategory($slug);
+    }
+
     public function getCategories()
     {
         return $this->productRepository->getCategories();

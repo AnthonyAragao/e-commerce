@@ -20,6 +20,17 @@ class ProductRepository implements ProductRepositoryInterface
             ->paginate(15);
     }
 
+    public function getProductsByCategory($slug)
+    {
+        $category = $this->category
+            ->whereSlug($slug)
+            ->first();
+
+        return $category->products()
+            ->with(['category', 'images'])
+            ->paginate(15);
+    }
+
     public function getCategories()
     {
         return $this->category->all();

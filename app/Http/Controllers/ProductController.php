@@ -13,9 +13,17 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = $this->productService->getProducts();
         return Inertia::render('Products/Index', [
-            'products' => $products
+            'products' => $this->productService->getProducts(),
+            'categories' => $this->productService->getCategories(),
+        ]);
+    }
+
+    public function category($slug)
+    {
+        return Inertia::render('Products/Category', [
+            'products' => $this->productService->getProductsByCategory($slug),
+            'categories' => $this->productService->getCategories(),
         ]);
     }
 
