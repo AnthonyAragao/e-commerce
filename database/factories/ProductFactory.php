@@ -23,7 +23,7 @@ class ProductFactory extends Factory
             'sku' => $this->faker->uuid(),
             'stock' => $this->faker->numberBetween(1, 100),
             'sales' => $this->faker->numberBetween(1, 100),
-            'category_id' => 1,
+            'category_id' => $this->faker->numberBetween(1, 11),
             'created_at' => now(),
             'updated_at' => now(),
         ];
