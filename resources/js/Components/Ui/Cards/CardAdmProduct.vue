@@ -1,20 +1,39 @@
 <script setup>
-    import { ref } from 'vue';
+    import { inject, ref, watch } from 'vue';
 
     const { product } = defineProps(["product"]);
     const emit = defineEmits(["deleteProduct"]);
-    const modalEditRemoveProduct = ref(false);
+
+    const activeModal    = inject("activeModal");
+    const setActiveModal = inject("setActiveModal");
+    const isModalOpen    = ref(false);
+
+    const toggleModal = () => {
+        if(activeModal.value != product.id){
+            setActiveModal(product.id);
+            isModalOpen.value = true;
+        }else{
+            closeModal();
+        }
+    }
+
+    const closeModal = () => {
+        isModalOpen.value = false;
+        setActiveModal(null);
+    }
+
+    watch(activeModal, (newValue) => {
+        if(newValue != product.id) isModalOpen.value = false
+    })
 
     const removeProduct = (id) => {
-        modalEditRemoveProduct.value = false;
+        closeModal();
         emit("deleteProduct", id);
     }
 </script>
 
 <template>
-    <div
-        class="w-[300px] h-[300px] flex flex-col justify-between p-4 rounded-md bg-white border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]"
-    >
+    <div class="w-[300px] h-[300px] flex flex-col justify-between p-4 rounded-md bg-white border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]">
         <div>
             <div class="flex gap-2 relative">
                 <img
@@ -39,7 +58,7 @@
                 </div>
 
                 <button
-                    @click.stop="modalEditRemoveProduct = !modalEditRemoveProduct"
+                    @click.stop="toggleModal"
                     class="border-[1.5px] border-gray-200 dark:border-gray-500 flex items-center bg-[#f5f5fa] rounded-md size-6 pl-[1px] dark:bg-[#313442] ml-auto"
                 >
                     <i class="fas fa-ellipsis-v p-2 rotate-90 text-xs dark:text-gray-400 text-gray-500 mr-1"></i>
@@ -47,8 +66,9 @@
 
                 <Transition name="fade">
                     <div
-                        v-if="modalEditRemoveProduct"
-                        v-click-outside="() => modalEditRemoveProduct = false"
+                        v-if="isModalOpen"
+                        v-click-outside="closeModal"
+                        :data-modal-id="product.id"
                         class="absolute w-24 flex h-12 right-0 top-7 border-[1.5px] rounded-md text-end pb-[1px] pt-[3px] px-2 bg-[#f5f5fa] dark:bg-[#313442] dark:border-gray-500 flex-col"
                     >
                         <Link
