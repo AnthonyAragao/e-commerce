@@ -38,4 +38,12 @@ class Order extends Model
     {
         return $this->belongsTo(Address::class, 'address_id');
     }
+
+    public function scopeStatuses($query)
+    {
+        return $query->select('status')
+                    ->distinct()
+                    ->get()
+                    ->pluck('status');
+    }
 }

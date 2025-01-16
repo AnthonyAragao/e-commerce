@@ -6,7 +6,7 @@
     import TableOrders from '../../../Components/Ui/Tables/TableOrders.vue';
     import FilterOrders from '../../../Components/Navigation/FilterOrders.vue';
 
-    const { orders } = defineProps(['orders']);
+    const { orders, statuses, paymentMethods, filters } = defineProps([ 'orders', 'statuses', 'paymentMethods', 'filters' ]);
     const breadcrumbs = [
         { 'href': '/admin', 'name': 'Home' },
         { 'href': '', 'name': 'Orders' }
@@ -22,8 +22,12 @@
         <h1 class="text-3xl font-bold">Orders List</h1>
         <Breadcrumb :breadcrumbs="breadcrumbs"/>
 
-        <FilterOrders />
-        
+        <FilterOrders
+            :statuses="statuses"
+            :paymentMethods="paymentMethods"
+            :filters="filters"
+        />
+
         <CardLayout customClass='mt-7'>
             <h2 class="text-base font-bold mb-4">Recent Orders</h2>
 

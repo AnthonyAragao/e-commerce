@@ -10,13 +10,13 @@ class OrderService
         private OrderRepositoryInterface $orderRepository
     ){}
 
-    public function getOrders()
+    public function getOrders(array $filters)
     {
-        return $this->orderRepository->getOrders();
+        return $this->orderRepository->getAll($filters);
     }
 
     public function getOrder(string $id)
     {
-        return $this->orderRepository->getOrder($id);
+        return $this->orderRepository->findById($id);
     }
 }

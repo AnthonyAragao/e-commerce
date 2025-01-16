@@ -4,6 +4,6 @@ namespace App\Repositories\Contracts;
 
 interface OrderRepositoryInterface
 {
-    public function getOrders();
-    public function getOrder(string $id);
+    public function getAll(array $filters);
+    public function findById(string $id);
 }

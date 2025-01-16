@@ -12,9 +12,11 @@ class OrderRepository implements OrderRepositoryInterface
         protected Order $order,
     ){}
 
-    public function getOrders()
+    public function getAll(array $filters)
     {
         return $this->order
+            ->when(isset($filters['status']), fn($query) => $query->where('status', $filters['status']))
+            ->when(isset($filters['paymentMethod']), fn($query) => $query->whereHas('payment', fn($query) => $query->where('payment_method', $filters['paymentMethod'])))
             ->with([
                 'user:id,name,email',
                 'payment'
@@ -22,8 +24,7 @@ class OrderRepository implements OrderRepositoryInterface
             ->paginate(15);
     }
 
-
-    public function getOrder(string $id)
+    public function findById(string $id)
     {
         return $this->order
             ->with([
@@ -37,5 +38,4 @@ class OrderRepository implements OrderRepositoryInterface
             ])
             ->findOrFail(Crypt::decrypt($id));
     }
-
 }
