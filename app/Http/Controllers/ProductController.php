@@ -3,19 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Services\ProductService;
+use App\Models\Category;
 use Inertia\Inertia;
 
 class ProductController extends Controller
 {
     public function __construct(
-        private ProductService $productService
+        private ProductService $productService,
     ){}
 
     public function index()
     {
         return Inertia::render('Products/Index', [
-            'products' => $this->productService->getProducts(),
-            'categories' => $this->productService->getCategories(),
+            'products' => $this->productService->listProducts(),
+            'categories' => Category::all(),
         ]);
     }
 
@@ -23,7 +24,7 @@ class ProductController extends Controller
     {
         return Inertia::render('Products/Category', [
             'products' => $this->productService->getProductsByCategory($slug),
-            'categories' => $this->productService->getCategories(),
+            'categories' => Category::all(),
         ]);
     }
 

@@ -4,17 +4,15 @@ namespace App\Repositories\Contracts;
 
 interface ProductRepositoryInterface
 {
-    public function getProducts();
+    public function getAll();
 
-    public function getCategories();
+    public function getProductsByCategory(string $slug);
 
-    public function getProductsByCategory($slug);
+    public function findBySlug(string $slug);
 
-    public function getProductBySlug($slug);
+    public function create(array $data);
 
-    public function createProduct($data);
+    public function update(string $slug, array $data);
 
-    public function updateProduct($id, $data);
-
-    public function deleteProduct($id);
+    public function delete(string $id);
 }

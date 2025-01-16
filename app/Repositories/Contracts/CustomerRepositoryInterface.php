@@ -4,6 +4,6 @@ namespace App\Repositories\Contracts;
 
 interface CustomerRepositoryInterface
 {
-    public function getCustomers();
-    public function getCustomer(string $id);
+    public function getAll();
+    public function findById(string $id);
 }

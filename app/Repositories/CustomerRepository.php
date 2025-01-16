@@ -8,10 +8,10 @@ use App\Repositories\Contracts\CustomerRepositoryInterface;
 class CustomerRepository implements CustomerRepositoryInterface
 {
     public function __construct(
-        protected User $user
+        private User $user
     ){}
 
-    public function getCustomers()
+    public function getAll()
     {
         return $this->user
                 // ->where('role', 'customer')
@@ -19,6 +19,6 @@ class CustomerRepository implements CustomerRepositoryInterface
                 ->paginate(15);
     }
 
-    public function getCustomer(string $id)
+    public function findById(string $id)
     {}
 }

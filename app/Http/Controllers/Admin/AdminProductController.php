@@ -5,24 +5,25 @@ namespace App\Http\Controllers\Admin;
 use App\Services\ProductService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+use App\Models\Category;
 
 class AdminProductController extends Controller
 {
     public function __construct(
-        private ProductService $productService
+        private ProductService $productService,
     ){}
 
     public function index()
     {
         return inertia('Admin/Products/Index', [
-            'products' => $this->productService->getProducts()
+            'products' => $this->productService->listProducts()
         ]);
     }
 
     public function create()
     {
         return inertia('Admin/Products/Form', [
-            'categories' => $this->productService->getCategories()
+            'categories' => Category::all(),
         ]);
     }
 
@@ -39,14 +40,14 @@ class AdminProductController extends Controller
 
         return inertia('Admin/Products/Form', [
             'product' => $product,
-            'categories' => $this->productService->getCategories(),
+            'categories' => Category::all(),
             'isUpdating' => true,
         ]);
     }
 
     public function update(ProductRequest $request, $slug)
     {
-        $this->productService->updateProduct($request->all(), $slug);
+        $this->productService->updateProduct($slug, $request->all());
         return to_route('admin.products.index')
             ->with('message', 'Product updated successfully');
     }

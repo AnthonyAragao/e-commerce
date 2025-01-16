@@ -54,12 +54,9 @@
                     </option>
                 </SelectInput>
             </div>
-
-
-
         </div>
 
-
+        
         <div class="flex gap-4">
             <button
                 @click="applyFilters"

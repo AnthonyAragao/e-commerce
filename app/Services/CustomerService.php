@@ -12,11 +12,11 @@ class CustomerService
 
     public function getCustomers()
     {
-        return $this->customerRepository->getCustomers();
+        return $this->customerRepository->getAll();
     }
 
     public function getCustomer(string $id)
     {
-        return $this->customerRepository->getCustomer($id);
+        return $this->customerRepository->findById($id);
     }
 }

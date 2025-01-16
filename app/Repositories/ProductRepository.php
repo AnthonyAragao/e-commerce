@@ -9,11 +9,11 @@ use App\Repositories\Contracts\ProductRepositoryInterface;
 class ProductRepository implements ProductRepositoryInterface
 {
     public function __construct(
-        protected Product $product,
-        protected Category $category
+        private Product $product,
+        private Category $category
     ){}
 
-    public function getProducts()
+    public function getAll()
     {
         return $this->product
             ->with(['category', 'images'])
@@ -31,12 +31,7 @@ class ProductRepository implements ProductRepositoryInterface
             ->paginate(15);
     }
 
-    public function getCategories()
-    {
-        return $this->category->all();
-    }
-
-    public function getProductBySlug($slug)
+    public function findBySlug($slug)
     {
         return $this->product
             ->with('category', 'images')
@@ -44,7 +39,7 @@ class ProductRepository implements ProductRepositoryInterface
             ->first();
     }
 
-    public function createProduct($data)
+    public function create($data)
     {
         DB::beginTransaction();
 
@@ -61,6 +56,7 @@ class ProductRepository implements ProductRepositoryInterface
             ]);
 
             $images = $data['images'];
+
             if (!empty($images)) {
                 foreach ($images as $image) {
                     $image_path = $image['file']->store('products', 'public');
@@ -79,7 +75,7 @@ class ProductRepository implements ProductRepositoryInterface
         }
     }
 
-    public function updateProduct($data, $slug)
+    public function update($slug, $data)
     {
         $product = $this->product
             ->where('slug', $slug)
@@ -100,7 +96,7 @@ class ProductRepository implements ProductRepositoryInterface
         return $product;
     }
 
-    public function deleteProduct($id)
+    public function delete($id)
     {
         $product = $this->product->find($id);
         foreach ($product->images as $image) {

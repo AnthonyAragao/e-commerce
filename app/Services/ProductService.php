@@ -10,38 +10,33 @@ class ProductService
         protected ProductRepositoryInterface $productRepository
     ){}
 
-    public function getProducts()
+    public function listProducts()
     {
-        return $this->productRepository->getProducts();
+        return $this->productRepository->getAll();
     }
 
-    public function getProductsByCategory($slug)
+    public function getProductsByCategory(string $slug)
     {
         return $this->productRepository->getProductsByCategory($slug);
     }
 
-    public function getCategories()
+    public function getProductBySlug(string $slug)
     {
-        return $this->productRepository->getCategories();
+        return $this->productRepository->findBySlug($slug);
     }
 
-    public function getProductBySlug($slug)
+    public function createProduct(array $data)
     {
-        return $this->productRepository->getProductBySlug($slug);
+        return $this->productRepository->create($data);
     }
 
-    public function createProduct($data)
+    public function updateProduct(string $slug, array $data)
     {
-        return $this->productRepository->createProduct($data);
+        return $this->productRepository->update($slug, $data);
     }
 
-    public function updateProduct($id, $data)
+    public function deleteProduct(string $id)
     {
-        return $this->productRepository->updateProduct($id, $data);
-    }
-
-    public function deleteProduct($id)
-    {
-        return $this->productRepository->deleteProduct($id);
+        return $this->productRepository->delete($id);
     }
 }

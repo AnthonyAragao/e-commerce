@@ -9,7 +9,7 @@ use App\Repositories\Contracts\OrderRepositoryInterface;
 class OrderRepository implements OrderRepositoryInterface
 {
     public function __construct(
-        protected Order $order,
+        private Order $order,
     ){}
 
     public function getAll(array $filters)
