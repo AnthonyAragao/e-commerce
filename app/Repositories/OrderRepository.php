@@ -15,8 +15,10 @@ class OrderRepository implements OrderRepositoryInterface
     public function getAll(array $filters)
     {
         return $this->order
-            ->when(isset($filters['status']), fn($query) => $query->where('status', $filters['status']))
+            ->when(isset($filters['status']),        fn($query) => $query->where('status', $filters['status']))
             ->when(isset($filters['paymentMethod']), fn($query) => $query->whereHas('payment', fn($query) => $query->where('payment_method', $filters['paymentMethod'])))
+            ->when(isset($filters['dateFrom']),      fn($query) => $query->where('order_date', '>=', $filters['dateFrom']))
+            ->when(isset($filters['dateTo']),        fn($query) => $query->where('order_date', '<=', $filters['dateTo']))
             ->with([
                 'user:id,name,email',
                 'payment'

@@ -1,12 +1,15 @@
 <script setup>
     import { useForm } from '@inertiajs/inertia-vue3';
     import SelectInput from '../Ui/Selects/SelectInput.vue';
+    import DateInput from '../Ui/Inputs/DateInput.vue';
 
     const { statuses, paymentMethods, filters } = defineProps([ 'statuses', 'paymentMethods', 'filters' ]);
 
     const form = useForm({
         status: filters.status || '',
         paymentMethod: filters.paymentMethod || '',
+        dateFrom: filters.dateFrom || '',
+        dateTo: filters.dateTo || '',
     });
 
     const applyFilters = () => form.get('/admin/orders');
@@ -14,6 +17,8 @@
     const resetFilters = () => {
         form.status = '';
         form.paymentMethod = '';
+        form.dateFrom = '';
+        form.dateTo = '';
         form.get('/admin/orders');
     }
 </script>
@@ -21,13 +26,14 @@
 <template>
     <div class="flex items-end justify-between mt-7 text-gray-500 font-medium">
         <div class="flex gap-4">
-            <div class="w-[250px]">
+            <div class="w-[300px]">
                 <SelectInput
+                    label="Status:"
                     v-model="form.status"
                     name="status"
-                    customClass='rounded-lg border border-gray-100 shadow-sm'
+                    customClass='border-gray-200/70'
                 >
-                    <option value="" selected>Status</option>
+                    <option value="" disabled>Status</option>
                     <option
                         v-for="status in statuses"
                         :key="status"
@@ -38,13 +44,14 @@
                 </SelectInput>
             </div>
 
-            <div class="w-[250px]">
+            <div class="w-[300px]">
                 <SelectInput
+                    label="Payment method:"
+                    name="paymentMethod"
                     v-model="form.paymentMethod"
-                    name="category"
-                    customClass='rounded-lg border border-gray-100 shadow-sm'
+                    customClass='border-gray-200/70'
                 >
-                    <option value="">Payment Method</option>
+                    <option value="" disabled>Payment Method</option>
                     <option
                         v-for="paymentMethod in paymentMethods"
                         :key="paymentMethod"
@@ -54,19 +61,34 @@
                     </option>
                 </SelectInput>
             </div>
+
+            <div class="w-[300px]">
+                <DateInput
+                    label="Date from:"
+                    name="dateFrom"
+                    v-model="form.dateFrom"
+                    customClass='border-gray-200/70'
+                />
+            </div>
+
+            <div class="w-[300px]">
+                <DateInput
+                    label="Date to:"
+                    name="dateTo"
+                    v-model="form.dateTo"
+                    customClass='border-gray-200/70'
+                />
+            </div>
         </div>
 
-        
-        <div class="flex gap-4">
-            <button
-                @click="applyFilters"
+        <div class="flex gap-2">
+            <button @click="applyFilters"
                 class="bg-white px-6 py-2 rounded-lg border border-gray-100 shadow-sm transition duration-300 hover:bg-gray-50 hover:border-gray-100 dark:bg-[#1F2128] dark:border-gray-700 dark:text-white dark:hover:bg-gray-800"
             >
                 <i class="fas fa-filter me-2"></i> Apply
             </button>
 
-            <button
-                @click="resetFilters "
+            <button @click="resetFilters"
                 class="bg-white px-6 py-2 rounded-lg border border-gray-100 shadow-sm transition duration-300 hover:bg-gray-50 hover:border-gray-100 dark:bg-[#1F2128] dark:border-gray-700 dark:text-white dark:hover:bg-gray-800"
             >
                 <i class="fas fa-sync-alt me-2"></i> Reset
