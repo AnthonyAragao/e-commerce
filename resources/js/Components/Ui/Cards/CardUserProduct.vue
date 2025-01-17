@@ -25,15 +25,13 @@
                         v-for="star in 5"
                         :key="star"
                         class="fas fa-star text-gray-400"
-                        :class="{ 'text-[#FF6500]': rating >= star }"
+                        :class="{ 'text-yellow-500': rating >= star }"
                         @click="setRating(star)"
                     ></i>
                 </div>
                 <div class="flex items-center text-xl">
                     <!-- carrinho e um coração -->
-                    <i
-                        class="fas fa-shopping-cart text-gray-400 hover:text-[#FF6500] cursor-pointer"
-                    ></i>
+                    <i class="fas fa-shopping-cart text-gray-400 hover:text-[#FF6500] cursor-pointer"></i>
                     <button>
                         <i
                             class="fa-solid fa-heart text-gray-400 ml-2 hover:text-[#FF6500]"

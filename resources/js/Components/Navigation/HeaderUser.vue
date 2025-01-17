@@ -44,7 +44,7 @@
                 class="bg-[#ffff] p-3 rounded-lg h-12 text-[13px] flex flex-col font-semibold text-gray-500 justify-center border border-gray-200/70"
             >
                 <div class="flex gap-1">
-                    <a class="hover:text-gray-800" href="">ENTRE</a>
+                    <a class="hover:text-gray-800 font-bold" href="">ENTRE</a>
                     <span class="font-normal">ou</span>
                 </div>
 
