@@ -1,16 +1,13 @@
 <script setup>
-import { ref } from "vue";
+    import { ref } from "vue";
 
-const { products } = defineProps(["products"]);
+    const { products } = defineProps(["products"]);
 
+    const rating = ref(2);
 
-const rating = ref(2);
-
-const setRating = (value) => {
-    rating.value = value;
-};
-
-
+    const setRating = (value) => {
+        rating.value = value;
+    };
 </script>
 
 <template>
@@ -28,19 +25,18 @@ const setRating = (value) => {
                         v-for="star in 5"
                         :key="star"
                         class="fas fa-star text-gray-400"
-                        :class="{ 'text-yellow-500': rating >= star }"
+                        :class="{ 'text-[#FF6500]': rating >= star }"
                         @click="setRating(star)"
                     ></i>
                 </div>
                 <div class="flex items-center text-xl">
                     <!-- carrinho e um coração -->
-                    <i class="fas fa-shopping-cart text-gray-400 hover:text-yellow-500 cursor-pointer"></i>
-                    <button
-
-                    >
+                    <i
+                        class="fas fa-shopping-cart text-gray-400 hover:text-[#FF6500] cursor-pointer"
+                    ></i>
+                    <button>
                         <i
-                            class="fa-solid fa-heart text-gray-400 ml-2 hover:text-yellow-500 "
-
+                            class="fa-solid fa-heart text-gray-400 ml-2 hover:text-[#FF6500]"
                         ></i>
                     </button>
                 </div>
@@ -60,11 +56,13 @@ const setRating = (value) => {
                 <span class="text-base font-semibold text-gray-600">
                     {{ product.sale_price }}
                 </span>
-                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%]">
+                <div
+                    class="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%]"
+                >
                     <button
-                        class="px-4 py-2 bg-orange-500 w-full text-white rounded-md hover:bg-blue-600"
+                        class="px-4 py-2 bg-[#FF6500] w-full text-white rounded-md"
                     >
-                    <i class="fas fa-shopping-cart text-white "></i>
+                        <i class="fas fa-shopping-cart text-white"></i>
                         Buy
                     </button>
                 </div>

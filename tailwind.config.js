@@ -31,6 +31,10 @@ export default {
                   600: '#9333ea', // Tailwind purple-600
                 },
             },
+
+            boxShadow: {
+                'header': '0 4px 15px 0px rgb(0 0 0 / 0.08)',
+            },
         },
     },
 };

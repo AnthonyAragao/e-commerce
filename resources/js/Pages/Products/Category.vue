@@ -7,7 +7,7 @@
 
 <template>
     <UserLayout>
-        <div class=" py-10 max-w-[1400px] mx-auto grid grid-cols-5 gap-4">
+        <div class="pb-10 max-w-[1400px] mx-auto grid grid-cols-5 gap-4">
             <aside class="col-span-1 bg-white shadow-md rounded-lg p-4">
                 <h2 class="text-xl font-semibold text-gray-800">Categories</h2>
                 <ul class="mt-4">
