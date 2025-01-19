@@ -5,7 +5,7 @@
 
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
-        showFixedHeader.value = scrollPosition > 100;
+        showFixedHeader.value = scrollPosition > 90;
     };
 
     onMounted(() => {
@@ -41,7 +41,7 @@
             </div>
 
             <div
-                class="bg-[#ffff] p-3 rounded-lg h-12 text-[13px] flex flex-col font-semibold text-gray-500 justify-center border border-gray-200/70"
+                class="bg-[#ffff] p-3 rounded-lg h-12 text-[13px] flex flex-col font-bold text-gray-500 justify-center border border-gray-200/70 text-xs"
             >
                 <div class="flex gap-1">
                     <a class="hover:text-gray-800" href="">ENTRE</a>
@@ -51,7 +51,7 @@
                 <a class="hover:text-gray-800" href="#">CADASTRA-SE</a>
             </div>
 
-            <div class="flex gap-4 h-12 items-center rounded-lg bg-[#fff] p-3 border border-gray-200/70">
+            <div class="flex gap-10 h-12 items-center rounded-lg bg-[#fff] p-4 border border-gray-200/70">
                 <a href="#" class="relative group">
                     <i class="fas fa-headset"></i>
                     <span class="infotag">SAC</span>
@@ -98,7 +98,7 @@
             </div>
 
             <div
-                class="bg-[#ffff] p-3 rounded-lg h-12 text-[13px] flex flex-col font-semibold text-gray-500 justify-center border border-gray-200/70"
+                class="bg-[#ffff] p-3 rounded-lg h-12 text-[13px] flex flex-col font-bold text-gray-500 justify-center border border-gray-200/70 text-xs"
             >
                 <div class="flex gap-1">
                     <a class="hover:text-gray-800" href="">ENTRE</a>
@@ -108,7 +108,7 @@
                 <a class="hover:text-gray-800" href="#">CADASTRA-SE</a>
             </div>
 
-            <div class="flex gap-4 h-12 items-center rounded-lg bg-[#fff] p-3 border border-gray-200/70">
+            <div class="flex gap-10 h-12 items-center rounded-lg bg-[#fff] p-4 border border-gray-200/70">
                 <a href="#" class="relative group">
                     <i class="fas fa-headset"></i>
                     <span class="infotag">SAC</span>
