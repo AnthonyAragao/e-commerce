@@ -1,13 +1,5 @@
 <script setup>
-    import { ref } from "vue";
-
     const { products } = defineProps(["products"]);
-
-    const rating = ref(2);
-
-    const setRating = (value) => {
-        rating.value = value;
-    };
 </script>
 
 <template>
@@ -17,17 +9,17 @@
         <div
             v-for="product in products.data"
             :key="product.id"
-            class="bg-white rounded-[4px] p-4 h-[478px] overflow-hidden relative shadow-md hover:shadow-lg cursor-pointer"
+            class="bg-white rounded-[4px] p-4 h-[478px] overflow-hidden relative shadow-md hover:shadow-xl cursor-pointer"
         >
             <div class="flex items-center justify-between">
-                <div class="flex items-center">
+                <div class="flex items-center text-gray-400 text-xs ">
                     <i
                         v-for="star in 5"
                         :key="star"
-                        class="fas fa-star text-gray-400 text-xs"
-                        :class="{ 'text-primary': rating >= star }"
-                        @click="setRating(star)"
+                        class="fas fa-star"
+                        :class="{ 'text-primary': product.rating >= star }"
                     ></i>
+                    <span class="ml-1 mt-[2px]">({{ product.review_count }})</span>
                 </div>
 
                 <div class="flex items-center text-xl text-gray-400">
@@ -79,4 +71,3 @@
         </div>
     </div>
 </template>
-
