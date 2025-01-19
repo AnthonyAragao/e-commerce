@@ -23,7 +23,13 @@
                 </ul>
             </aside>
 
-            <CardUserProduct :products="products" />
+            <div class="col-span-4 col-start-2 grid grid-cols-[repeat(auto-fit,_minmax(240px,_1fr))] gap-4">
+                <CardUserProduct
+                    v-for="product in products.data"
+                    :key="product.id"
+                    :product="product"
+                />
+            </div>
         </div>
     </UserLayout>
 </template>
