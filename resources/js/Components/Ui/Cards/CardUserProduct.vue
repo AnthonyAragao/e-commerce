@@ -1,5 +1,11 @@
 <script setup>
+    import { ref } from 'vue';
+
     const { products } = defineProps(["products"]);
+    const hoveredProductId = ref(null);
+
+    const handleMouseEnter = id => hoveredProductId.value = id;
+    const handleMouseLeave = () => hoveredProductId.value = null;
 </script>
 
 <template>
@@ -10,6 +16,8 @@
             v-for="product in products.data"
             :key="product.id"
             class="bg-white rounded-[4px] p-4 h-[478px] overflow-hidden relative shadow-md hover:shadow-xl cursor-pointer"
+            @mouseenter="handleMouseEnter(product.id)"
+            @mouseleave="handleMouseLeave"
         >
             <div class="flex items-center justify-between">
                 <div class="flex items-center text-gray-400 text-xs ">
@@ -63,7 +71,10 @@
                     <button
                         class="py-3 bg-primary w-full text-white rounded-[4px] flex items-center justify-center gap-1"
                     >
-                        <i class="fas fa-shopping-cart text-white"></i>
+                        <i
+                            v-if="hoveredProductId === product.id"
+                            class="fas fa-shopping-cart text-white"
+                        ></i>
                         <span class="font-bold text-xs ">BUY</span>
                     </button>
                 </div>
