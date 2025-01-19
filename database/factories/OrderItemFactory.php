@@ -24,4 +24,13 @@ class OrderItemFactory extends Factory
             'updated_at' => now(),
         ];
     }
+
+    public function configure()
+    {
+        return $this->afterCreating(function (\App\Models\OrderItem $orderItem) {
+            \App\Models\Review::factory()
+                ->count(rand(1, 5))
+                ->create(['order_item_id' => $orderItem->id]);
+        });
+    }
 }

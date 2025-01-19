@@ -15,6 +15,8 @@ class Product extends Model
 
     protected $fillable = ['name', 'slug', 'description', 'regular_price', 'sale_price', 'stock', 'sku' , 'sales', 'category_id'];
 
+    protected $appends = ['rating', 'review_count'];
+
     public static function createUniqueSlug($name)
     {
         $slug = Str::slug($name, '-');
@@ -46,5 +48,15 @@ class Product extends Model
     public function reviews()
     {
         return $this->hasManyThrough(Review::class, OrderItem::class, 'product_id', 'order_item_id');
+    }
+
+    public function getRatingAttribute()
+    {
+        return $this->reviews->avg('rating');
+    }
+
+    public function getReviewCountAttribute()
+    {
+        return $this->reviews->count();
     }
 }
