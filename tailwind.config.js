@@ -30,6 +30,7 @@ export default {
                 purple: {
                   600: '#9333ea', // Tailwind purple-600
                 },
+                primary: '#FF6500'
             },
 
             boxShadow: {
