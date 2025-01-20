@@ -89,9 +89,9 @@
                 </Transition>
             </div>
 
-            <div class="mt-1">
+            <div class="mt-1 ">
                 <h3 class="zinc-900 text-md font-medium dark:text-gray-200">Summary</h3>
-                <p class="text-xs text-gray-500 dark:text-[#d1d0d0] line-clamp-4">
+                <p :title="product.description" class="text-xs  text-gray-500 dark:text-[#d1d0d0] line-clamp-4">
                     {{ product.description }}
                 </p>
             </div>
