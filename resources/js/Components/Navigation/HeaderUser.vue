@@ -44,11 +44,11 @@
                 class="bg-[#ffff] p-3 rounded-[4px] h-12 text-[13px] flex flex-col font-bold text-gray-500 justify-center border border-gray-200/70 text-xs"
             >
                 <div class="flex gap-1">
-                    <a class="hover:text-gray-800 font-bold" href="">SIGN IN</a>
+                    <a class="hover:text-gray-800 font-bold" href="">LOGIN</a>
                     <span class="font-normal">or</span>
                 </div>
 
-                <a class="hover:text-gray-800" href="#">SIGN UP</a>
+                <a class="hover:text-gray-800" href="#">REGISTER</a>
             </div>
 
             <div class="flex gap-10 h-12 items-center rounded-[4px] bg-[#fff] p-4 border border-gray-200/70">
@@ -99,14 +99,13 @@
             </div>
 
             <div
-                class="bg-[#ffff] p-3 rounded-[4px] h-12 text-[13px] flex flex-col font-bold text-gray-500 justify-center border border-gray-200/70 text-xs"
+                class="bg-[#ffff] p-3 rounded-[4px] h-12 text-[13px] flex flex-col font-bold text-gray-500 justify-center border border-gray-200/70 text-xs "
             >
                 <div class="flex gap-1">
-                    <a class="hover:text-gray-800" href="">SIGN IN</a>
+                    <a class="hover:text-gray-800" href="">LOGIN</a>
                     <span class="font-normal">or</span>
                 </div>
-
-                <a class="hover:text-gray-800" href="#">SIGN UP</a>
+                <a class="hover:text-gray-800" href="#">REGISTER</a>
             </div>
 
             <div class="flex gap-10 h-12 items-center rounded-[4px] bg-[#fff] p-4 border border-gray-200/70">

@@ -1,7 +1,7 @@
 <script setup>
     import { ref } from 'vue';
 
-    const { product } = defineProps(["product"]);
+    const { product }      = defineProps(["product"]);
     const hoveredProductId = ref(null);
 
     const handleMouseEnter = (id) => hoveredProductId.value = id;
