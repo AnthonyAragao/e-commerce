@@ -2,6 +2,7 @@
     import { ref , onMounted } from "vue";
 
     const showFixedHeader  = ref(false);
+    const search           = ref("");
 
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
@@ -34,6 +35,7 @@
                 <input
                     placeholder="Search on the store"
                     type="search"
+                    v-model="search"
                     class="py-[14px] pl-8 pr-2 bg-[#ffff] text-sm rounded-[4px] w-full focus:outline-none border border-gray-200/70 dark:bg-[#313442] dark:text-white"
                 />
             </div>
@@ -91,6 +93,7 @@
                 <input
                     placeholder="Search on the store"
                     type="search"
+                    v-model="search"
                     class="py-[14px] pl-8 pr-2 bg-[#ffff] text-sm rounded-[4px] w-full focus:outline-none border border-gray-200/70 dark:bg-[#313442] dark:text-white"
                 />
             </div>
