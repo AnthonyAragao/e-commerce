@@ -10,7 +10,7 @@
 
 <template>
     <div
-        class="bg-white rounded-[4px] p-4 h-[478px] overflow-hidden relative shadow-md hover:shadow-xl cursor-pointer"
+        class="bg-white rounded-[4px] p-4 h-[478px] overflow-hidden relative shadow-sm hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.05)] cursor-pointer"
         @mouseenter="handleMouseEnter(product.id)"
         @mouseleave="handleMouseLeave"
     >
