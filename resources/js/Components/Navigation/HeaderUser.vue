@@ -42,11 +42,11 @@
                 class="bg-[#ffff] p-3 rounded-md h-12 text-[13px] flex flex-col font-bold text-gray-500 justify-center border border-gray-200/70 text-xs"
             >
                 <div class="flex gap-1">
-                    <a class="hover:text-gray-800 font-bold" href="">ENTRE</a>
-                    <span class="font-normal">ou</span>
+                    <a class="hover:text-gray-800 font-bold" href="">SIGN IN</a>
+                    <span class="font-normal">or</span>
                 </div>
 
-                <a class="hover:text-gray-800" href="#">CADASTRA-SE</a>
+                <a class="hover:text-gray-800" href="#">SIGN UP</a>
             </div>
 
             <div class="flex gap-10 h-12 items-center rounded-md bg-[#fff] p-4 border border-gray-200/70">
@@ -56,11 +56,11 @@
                 </a>
                 <a href="#" class="relative group">
                     <i class="fas fa-heart"></i>
-                    <span class="infotag">Favoritos</span>
+                    <span class="infotag">Favorites</span>
                 </a>
                 <a href="#" class="relative group">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="infotag">Carrinho</span>
+                    <span class="infotag">Cart</span>
                 </a>
             </div>
         </div>
@@ -99,11 +99,11 @@
                 class="bg-[#ffff] p-3 rounded-md h-12 text-[13px] flex flex-col font-bold text-gray-500 justify-center border border-gray-200/70 text-xs"
             >
                 <div class="flex gap-1">
-                    <a class="hover:text-gray-800" href="">ENTRE</a>
-                    <span class="font-normal">ou</span>
+                    <a class="hover:text-gray-800" href="">SIGN IN</a>
+                    <span class="font-normal">or</span>
                 </div>
 
-                <a class="hover:text-gray-800" href="#">CADASTRA-SE</a>
+                <a class="hover:text-gray-800" href="#">SIGN UP</a>
             </div>
 
             <div class="flex gap-10 h-12 items-center rounded-md bg-[#fff] p-4 border border-gray-200/70">
@@ -113,11 +113,11 @@
                 </a>
                 <a href="#" class="relative group">
                     <i class="fas fa-heart"></i>
-                    <span class="infotag">Favoritos</span>
+                    <span class="infotag">Favorites</span>
                 </a>
                 <a href="#" class="relative group">
                     <i class="fas fa-shopping-cart"></i>
-                    <span class="infotag">Carrinho</span>
+                    <span class="infotag">Cart</span>
                 </a>
             </div>
         </div>

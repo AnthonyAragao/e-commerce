@@ -4,8 +4,8 @@
     const { product } = defineProps(["product"]);
     const hoveredProductId = ref(null);
 
-    const handleMouseEnter = id => hoveredProductId.value = id;
-    const handleMouseLeave = () => hoveredProductId.value = null;
+    const handleMouseEnter = (id) => hoveredProductId.value = id;
+    const handleMouseLeave = ()   => hoveredProductId.value = null;
 </script>
 
 <template>
@@ -14,23 +14,36 @@
         @mouseenter="handleMouseEnter(product.id)"
         @mouseleave="handleMouseLeave"
     >
-        <div class="flex items-center justify-between">
-            <div class="flex items-center text-gray-400 text-xs ">
-                <i
-                    v-for="star in 5"
-                    :key="star"
-                    class="fas fa-star"
-                    :class="{ 'text-primary': product.rating >= star }"
-                ></i>
-                <span class="ml-1 mt-[2px]">({{ product.review_count }})</span>
-            </div>
+        <div class="flex items-center">
+            <Transition name="stars-fade">
+                <div
+                    v-if="hoveredProductId !== product.id"
+                    class="flex items-center text-gray-400 text-xs ml-auto hover-scale"
+                >
+                    <i
+                        v-for="star in 5"
+                        :key="star"
+                        :class="{
+                            'fas fa-star': product.rating >= star,
+                            'far fa-star': product.rating < star
+                        }"
+                        class="text-primary"
+                    ></i>
+                    <span class="ml-1 mt-[2px]">({{ product.review_count }})</span>
+                </div>
+            </Transition>
 
-            <div class="flex items-center text-xl text-gray-400">
-                <i class="fas fa-shopping-cart hover:text-primary cursor-pointer"></i>
-                <button>
-                    <i class="fa-solid fa-heart ml-2 hover:text-primary"></i>
-                </button>
-            </div>
+            <Transition name="icon-fade">
+                <div
+                    v-if="hoveredProductId === product.id"
+                    class="flex items-center text-lg text-gray-400 ml-auto gap-2"
+                >
+                    <i class="fas fa-shopping-cart hover:text-primary cursor-pointer hover-scale"></i>
+                    <button>
+                        <i class="fa-solid fa-heart hover:text-primary cursor-pointer hover-scale"></i>
+                    </button>
+                </div>
+            </Transition>
         </div>
 
         <div class="mt-6 flex justify-center">
@@ -55,7 +68,7 @@
                     R$ {{ product.sale_price }}
                 </p>
 
-                <p>On view in Pix</p>
+                <p>One time payment</p>
                 <p>
                     or up to
                     <span class="font-bold">10x of R$ {{ (product.sale_price / 10).toFixed(2).replace('.', ',') }}</span>
@@ -76,3 +89,46 @@
         </div>
     </div>
 </template>
+
+<style scoped>
+    .stars-fade-enter-active {
+        transition: opacity 0.3s ease;
+    }
+
+    .stars-fade-leave-active {
+        display: none;
+    }
+
+    .icon-fade-enter-from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    .icon-fade-enter-to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .icon-fade-leave-active {
+        transition: opacity 0s;
+    }
+
+    .hover-scale {
+        animation: scale-bounce 0.5s ease-in;
+    }
+
+    @keyframes scale-bounce {
+        0% {
+            transform: scaleY(0);
+        }
+        25% {
+            transform: scaleY(1.1);
+        }
+        50% {
+            transform: scaleY(0.9);
+        }
+        100% {
+            transform: scaleY(1);
+        }
+    }
+</style>
