@@ -16,7 +16,7 @@ class ProductRepository implements ProductRepositoryInterface
     public function getAll()
     {
         return $this->product
-            ->with(['category', 'images'])
+            ->with(['category', 'images', 'reviews'])
             ->paginate(15);
     }
 
@@ -27,7 +27,7 @@ class ProductRepository implements ProductRepositoryInterface
             ->first();
 
         return $category->products()
-            ->with(['category', 'images'])
+            ->with(['category', 'images', 'reviews'])
             ->paginate(15);
     }
 

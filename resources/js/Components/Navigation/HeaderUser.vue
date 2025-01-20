@@ -5,7 +5,7 @@
 
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
-        showFixedHeader.value = scrollPosition > 100;
+        showFixedHeader.value = scrollPosition > 90;
     };
 
     onMounted(() => {
@@ -20,17 +20,15 @@
         >
             <button
                 type="button"
-                class="flex items-center justify-center h-12 w-12 rounded-lg bg-[#ffff] dark:bg-[#313442] dark:text-white border border-gray-200/70"
+                class="flex items-center justify-center h-12 w-12 rounded-md bg-[#ffff] dark:bg-[#313442] dark:text-white border border-gray-200/70"
             >
                 <i class="fas fa-bars"></i>
             </button>
 
             <div
-                class="flex h-12 w-[70%] justify-center px-3 rounded-lg relative"
+                class="flex h-12 w-[70%] justify-center px-3 rounded-md relative"
             >
-                <div
-                    class="absolute inset-y-0 left-0 flex items-center pl-6 pointer-events-none"
-                >
+                <div class="absolute inset-y-0 left-0 flex items-center pl-6 pointer-events-none">
                     <i class="fas fa-search text-gray-400"></i>
                 </div>
                 <input
@@ -41,7 +39,7 @@
             </div>
 
             <div
-                class="bg-[#ffff] p-3 rounded-lg h-12 text-[13px] flex flex-col font-semibold text-gray-500 justify-center border border-gray-200/70"
+                class="bg-[#ffff] p-3 rounded-md h-12 text-[13px] flex flex-col font-bold text-gray-500 justify-center border border-gray-200/70 text-xs"
             >
                 <div class="flex gap-1">
                     <a class="hover:text-gray-800 font-bold" href="">ENTRE</a>
@@ -51,7 +49,7 @@
                 <a class="hover:text-gray-800" href="#">CADASTRA-SE</a>
             </div>
 
-            <div class="flex gap-4 h-12 items-center rounded-lg bg-[#fff] p-3 border border-gray-200/70">
+            <div class="flex gap-10 h-12 items-center rounded-md bg-[#fff] p-4 border border-gray-200/70">
                 <a href="#" class="relative group">
                     <i class="fas fa-headset"></i>
                     <span class="infotag">SAC</span>
@@ -77,13 +75,13 @@
         >
             <button
                 type="button"
-                class="flex items-center justify-center h-12 w-12 rounded-lg bg-[#ffff] dark:bg-[#313442] dark:text-white border border-gray-200/70"
+                class="flex items-center justify-center h-12 w-12 rounded-md bg-[#ffff] dark:bg-[#313442] dark:text-white border border-gray-200/70"
             >
                 <i class="fas fa-bars"></i>
             </button>
 
             <div
-                class="flex h-12 w-[70%] justify-center px-3 rounded-lg relative"
+                class="flex h-12 w-[70%] justify-center px-3 rounded-md relative"
             >
                 <div
                     class="absolute inset-y-0 left-0 flex items-center pl-6 pointer-events-none"
@@ -98,7 +96,7 @@
             </div>
 
             <div
-                class="bg-[#ffff] p-3 rounded-lg h-12 text-[13px] flex flex-col font-semibold text-gray-500 justify-center border border-gray-200/70"
+                class="bg-[#ffff] p-3 rounded-md h-12 text-[13px] flex flex-col font-bold text-gray-500 justify-center border border-gray-200/70 text-xs"
             >
                 <div class="flex gap-1">
                     <a class="hover:text-gray-800" href="">ENTRE</a>
@@ -108,7 +106,7 @@
                 <a class="hover:text-gray-800" href="#">CADASTRA-SE</a>
             </div>
 
-            <div class="flex gap-4 h-12 items-center rounded-lg bg-[#fff] p-3 border border-gray-200/70">
+            <div class="flex gap-10 h-12 items-center rounded-md bg-[#fff] p-4 border border-gray-200/70">
                 <a href="#" class="relative group">
                     <i class="fas fa-headset"></i>
                     <span class="infotag">SAC</span>
