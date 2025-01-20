@@ -49,7 +49,7 @@
         </div>
 
         <CardLayout>
-            <div class="flex flex-wrap justify-center gap-4">
+            <div class=" grid grid-cols-[repeat(auto-fit,_minmax(280px,_1fr))] gap-[20px]">
                 <CardAdmProduct
                     v-for="product in products.data"
                     :key="product.id"

@@ -33,7 +33,7 @@
 </script>
 
 <template>
-    <div class="w-[300px] h-[300px] flex flex-col justify-between p-4 rounded-md bg-white border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]">
+    <div class=" h-[300px] flex flex-col justify-between p-4 rounded-md bg-white border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]">
         <div>
             <div class="flex gap-2 relative">
                 <img
