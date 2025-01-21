@@ -22,22 +22,20 @@
 </script>
 
 <template>
-    <div class="flex  bg-[#F5F5FA]" :class="{'dark': isDarkMode}" >
-
+    <div class="grid grid-cols-[224px,1fr]" :class="{'dark': isDarkMode}">
         <Sidebar
             :isDarkModeProps="isDarkModeRef"
             @toggle-dark-mode="toggleDarkMode"
         />
 
-        <div class="flex-1 flex flex-col dark:bg-zinc-900 dark:text-white ml-56">
+        <div class="col-start-2 dark:bg-zinc-900 dark:text-white">
             <HeaderAdmin />
 
             <main class="p-7 mt-16 min-h-[calc(100vh-4rem)]">
                 <slot></slot>
             </main>
-           <Footer />
+
+            <Footer />
         </div>
     </div>
 </template>
-
-

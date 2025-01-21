@@ -24,7 +24,7 @@
 
 <template>
    <aside
-        class="fixed h-screen bg-white w-56 text-[#9696AC] flex flex-col justify-between shadow-md z-50 dark:bg-[#1F2128] dark:border-r-2 dark:border-[#313442]"
+        class="fixed w-56 h-screen bg-white text-[#9696AC] shadow-md dark:bg-[#1F2128] dark:border-r-2 dark:border-[#313442]"
     >
         <div class="p-4">
             <div class="text-lg font-bold">
@@ -76,7 +76,7 @@
             </nav>
         </div>
 
-        <div class="p-4">
+        <div class="p-4 absolute bottom-0">
             <div class="flex justify-between items-center bg-[#E8EDF2] py-4 px-12 rounded-xl dark:bg-[#313442]">
                 <i class="fas fa-moon text-purple-500"></i>
 
@@ -84,10 +84,7 @@
                     class="relative w-12 h-4 bg-gray-300 rounded-full cursor-pointer grid grid-cols-6 items-center transition-all duration-300 dark:bg-[#2C2C35]"
                     @click="toggleDarkMode"
                 >
-                    <div
-                        :class="['absolute w-5 h-5  rounded-full transition-all duration-500', ballPosition]"
-                    >
-                    </div>
+                    <div :class="['absolute w-5 h-5  rounded-full transition-all duration-500', ballPosition]"></div>
                 </div>
 
                 <i class="fas fa-sun text-orange-400"></i>
