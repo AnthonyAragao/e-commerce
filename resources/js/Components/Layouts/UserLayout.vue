@@ -1,5 +1,5 @@
 <script setup>
-    import HeaderUser from "../../Components/Navigation/HeaderUser.vue";
+    import HeaderUser from "../Navigation/Headers/HeaderUser.vue";
     import Footer from '../Layouts/Footer.vue';
 </script>
 

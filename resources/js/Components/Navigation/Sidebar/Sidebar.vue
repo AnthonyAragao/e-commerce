@@ -1,4 +1,5 @@
 <script setup>
+    import SidebarLink from './SidebarLink.vue';
     import { ref, watch } from 'vue';
 
     const emit = defineEmits(['toggle-dark-mode']);
@@ -31,51 +32,47 @@
             </div>
 
             <nav class="flex flex-col py-4 space-y-2 cursor-pointer text-sm font-semibold mt-4">
-                <Link
+                <SidebarLink
                     href="/admin/dashboard"
-                    class="grid grid-cols-6 px-2 py-3 rounded-xl items-center  hover:bg-[#7364DB] hover:text-white transition duration-300"
-                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/dashboard')}"
-                >
-                    <i class="fa-solid fa-chart-line mx-auto"></i>
-                    <span>Dashboard</span>
-                </Link>
+                    icon="fa-solid fa-chart-line"
+                    text="Dashboard"
+                    :isActive="$page.url.startsWith('/admin/dashboard')"
+                />
 
-                <Link
+                <SidebarLink
                     href="/admin/products"
-                    class="grid grid-cols-6 px-2 py-3 rounded-xl items-center hover:bg-[#7364DB] hover:text-white transition duration-300"
-                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/products')}"
-                >
-                    <i class="fas fa-box mx-auto"></i>
-                    <span>Products</span>
-                </Link>
+                    icon="fas fa-box"
+                    text="Products"
+                    :isActive="$page.url.startsWith('/admin/products')"
+                />
 
-                <Link
+                <SidebarLink
                     href="/admin/orders"
-                    class="grid grid-cols-6 px-2 py-3 rounded-xl items-center hover:bg-[#7364DB] hover:text-white transition duration-300"
-                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/orders')}"
-                >
-                    <i class="fas fa-shopping-cart mx-auto "></i>
-                    <span>Orders</span>
-                </Link>
+                    icon="fas fa-shopping-cart"
+                    text="Orders"
+                    :isActive="$page.url.startsWith('/admin/orders')"
+                />
 
-                <Link
+                <SidebarLink
                     href="/admin/customers"
-                    class="grid grid-cols-6 px-2 py-3 rounded-xl items-center hover:bg-[#7364DB] hover:text-white transition duration-300"
-                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/customers')}"
-                >
+                    icon="fas fa-users"
+                    text="Customers"
+                    :isActive="$page.url.startsWith('/admin/customers')"
+                />
 
-                    <i st class="fas fa-users mx-auto"></i>
-                    <span>Customers</span>
-                </Link>
+                <SidebarLink
+                    href="/admin/reviews"
+                    icon="fas fa-star"
+                    text="Reviews"
+                    :isActive="$page.url.startsWith('/admin/reviews')"
+                />
 
-                <Link
+                <SidebarLink
                     href="/admin/settings"
-                    class="grid grid-cols-6 px-2 py-3 rounded-xl items-center hover:bg-[#7364DB] hover:text-white transition duration-300"
-                    :class="{'bg-[#7364DB] text-white': $page.url.startsWith('/admin/settings')}"
-                >
-                    <i class="fas fa-cog mx-auto"></i>
-                    <span>Settings</span>
-                </Link>
+                    icon="fas fa-cog"
+                    text="Settings"
+                    :isActive="$page.url.startsWith('/admin/settings')"
+                />
             </nav>
         </div>
 

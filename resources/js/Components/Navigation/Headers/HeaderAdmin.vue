@@ -32,7 +32,6 @@
                     class="w-8 h-8 rounded-full cursor-pointer"
                 >
             </div>
-
         </div>
   </header>
 </template>

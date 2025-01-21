@@ -1,6 +1,6 @@
 <script setup>
-    import Sidebar from '../Navigation/Sidebar.vue';
-    import HeaderAdmin from '../Navigation/HeaderAdmin.vue';
+    import Sidebar from '../Navigation/Sidebar/Sidebar.vue';
+    import HeaderAdmin from '../Navigation/Headers/HeaderAdmin.vue';
     import Footer from '../Layouts/Footer.vue';
     import { useDark, useToggle } from '@vueuse/core';
     import { provide, ref } from 'vue';
