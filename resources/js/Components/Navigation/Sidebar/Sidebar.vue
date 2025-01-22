@@ -76,8 +76,8 @@
             </nav>
         </div>
 
-        <div class="p-4 absolute bottom-0">
-            <div class="flex justify-between items-center bg-[#E8EDF2] py-4 px-12 rounded-xl dark:bg-[#313442]">
+        <div class="p-4 absolute bottom-0 w-full">
+            <div class="flex items-center justify-center gap-4 py-4 rounded-xl bg-[#E8EDF2] dark:bg-[#313442]">
                 <i class="fas fa-moon text-purple-500"></i>
 
                 <div

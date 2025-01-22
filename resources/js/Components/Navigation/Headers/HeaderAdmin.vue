@@ -16,20 +16,20 @@
             </div>
         </div>
 
-        <div class="flex justify-between gap-6 items-center">
+        <div class="flex justify-between gap-6 items-center cursor-pointer">
             <span>
-                <i class="fas fa-bell text-gray-400 cursor-pointer"></i>
+                <i class="fas fa-bell text-gray-400"></i>
             </span>
 
             <span>
-                <i class="fas fa-envelope text-gray-400 cursor-pointer"></i>
+                <i class="fas fa-envelope text-gray-400"></i>
             </span>
 
             <div class="flex items-center">
                 <img
                     src="https://randomuser.me/api/portraits/men/75.jpg"
                     alt="User"
-                    class="w-8 h-8 rounded-full cursor-pointer"
+                    class="w-8 h-8 rounded-full"
                 >
             </div>
         </div>
