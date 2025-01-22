@@ -37,13 +37,19 @@
         </div>
 
         <div
-            class="bg-[#ffff] p-3 rounded-[4px] h-12 text-[13px] flex flex-col text-gray-500 justify-center border border-gray-200/70 text-xs "
+            class="flex items-center gap-1 bg-[#ffff] p-3 rounded-[4px] h-12 text-[13px]  text-gray-500 border border-gray-200/70 text-xs"
         >
-            <div class="flex gap-1">
-                <a class="hover:text-gray-800 font-bold" href="">LOGIN</a>
-                <span>or</span>
+            <div class="flex items-center justify-center h-8 w-8 rounded-full border-[3px] border-gray-300/70 overflow-hidden">
+                <i class="fas fa-user"></i>
             </div>
-            <a class="hover:text-gray-800 font-bold" href="#">REGISTER</a>
+
+            <div>
+                <div class="flex gap-1">
+                    <a class="hover:text-gray-800 font-bold" href="">LOGIN</a>
+                    <span>or</span>
+                </div>
+                <a class="hover:text-gray-800 font-bold" href="#">REGISTER</a>
+            </div>
         </div>
 
         <div class="flex gap-10 h-12 items-center rounded-[4px] bg-[#fff] p-4 border border-gray-200/70">
