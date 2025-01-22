@@ -10,15 +10,18 @@
 
 <template>
     <div
-        class="bg-white rounded-[4px] p-4 h-[478px] overflow-hidden relative shadow-sm hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.05)] cursor-pointer"
+        class="bg-white rounded-[4px] p-4 h-[478px] overflow-hidden group relative shadow-sm hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.05)] cursor-pointer"
         @mouseenter="handleMouseEnter(product.id)"
         @mouseleave="handleMouseLeave"
     >
-        <div class="flex items-center">
+
+        <div
+        class="flex items-center ">
             <Transition name="stars-fade">
                 <div
-                    v-if="hoveredProductId !== product.id"
-                    class="flex items-center text-gray-400 text-xs ml-auto hover-scale"
+
+                    class="flex items-center transition-all w-full animated
+                    hover-scale text-gray-400 text-xs ml-auto "
                 >
                     <i
                         v-for="star in 5"
@@ -38,7 +41,8 @@
                     v-if="hoveredProductId === product.id"
                     class="flex items-center text-lg text-gray-400 ml-auto gap-2"
                 >
-                    <i class="fas fa-shopping-cart hover:text-primary cursor-pointer hover-scale"></i>
+                    <!-- <span class="text-sm hover:text-primary hover-scale">Reviews</span> -->
+                    <!-- <i class="fas fa-shopping-cart hover:text-primary cursor-pointer hover-scale"></i> -->
                     <button>
                         <i class="fa-solid fa-heart hover:text-primary cursor-pointer hover-scale"></i>
                     </button>
@@ -60,7 +64,7 @@
             </h2>
             <div class="mt-6 flex flex-col text-xs text-gray-600">
                 <div class="flex items-center justify-between">
-                    <p class="line-through">R$ {{ product.regular_price }}</p>
+                    <p class="line-through text-red-600">R$ {{ product.regular_price }}</p>
                     <p class="font-bold text-[10px]">{{ product.stock }} units left</p>
                 </div>
 
@@ -75,15 +79,24 @@
                 </p>
             </div>
 
-            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[90%]">
+            <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[90%] flex gap-2">
                 <button
-                    class="py-3 bg-primary w-full text-white rounded-[4px] flex items-center justify-center gap-1"
+                    class="py-3 bg-primary w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-[#EA2F05] "
                 >
                     <i
                         v-if="hoveredProductId === product.id"
                         class="fas fa-shopping-cart text-white"
                     ></i>
-                    <span class="font-bold text-xs ">BUY</span>
+                    <span class="font-bold text-xs ">Cart</span>
+                </button>
+                <button
+                    class="py-3 bg-zinc-900 w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-zinc-950 "
+                >
+                    <i
+                        v-if="hoveredProductId === product.id"
+                        class="fas fa-dollar-sign text-white"
+                    ></i>
+                    <span class="font-bold text-xs ">BUY NOW</span>
                 </button>
             </div>
         </div>
@@ -131,4 +144,30 @@
             transform: scaleY(1);
         }
     }
+    @keyframes fadeOutIn
+    {
+        0% {
+            transform: scaleY(0);
+        }
+        1% {
+
+            transform: scaleY(0);
+        }
+        34%{
+
+            transform: scaleY(1.1);
+        }
+        67%{
+
+            transform: scaleY(0.9);
+        }
+        100%{
+
+            transform: scaleY(1);
+        }
+}
+
+.group:hover .animated {
+  animation:  fadeOutIn 0.5s ease-in-out;
+}
 </style>
