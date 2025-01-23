@@ -17,7 +17,7 @@ class ProductRepository implements ProductRepositoryInterface
     {
         return $this->product
             ->with(['category', 'images', 'reviews'])
-            ->paginate(15);
+            ->paginate(16);
     }
 
     public function getProductsByCategory($slug)
@@ -28,7 +28,7 @@ class ProductRepository implements ProductRepositoryInterface
 
         return $category->products()
             ->with(['category', 'images', 'reviews'])
-            ->paginate(15);
+            ->paginate(16);
     }
 
     public function findBySlug($slug)

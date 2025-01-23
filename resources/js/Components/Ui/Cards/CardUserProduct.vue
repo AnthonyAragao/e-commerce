@@ -64,7 +64,7 @@
             </h2>
             <div class="mt-6 flex flex-col text-xs text-gray-600">
                 <div class="flex items-center justify-between">
-                    <p class="line-through text-red-600">R$ {{ product.regular_price }}</p>
+                    <p class="line-through text-red-600/70">R$ {{ product.regular_price }}</p>
                     <p class="font-bold text-[10px]">{{ product.stock }} units left</p>
                 </div>
 
@@ -87,7 +87,7 @@
                         v-if="hoveredProductId === product.id"
                         class="fas fa-shopping-cart text-white"
                     ></i>
-                    <span class="font-bold text-xs ">Cart</span>
+                    <span class="font-bold text-xs">CART</span>
                 </button>
                 <button
                     class="py-3 bg-zinc-900 w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-zinc-950 "

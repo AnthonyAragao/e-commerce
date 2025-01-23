@@ -1,6 +1,7 @@
 <script setup>
     import UserLayout from "../../Components/Layouts/UserLayout.vue";
     import CardUserProduct from "../../Components/Ui/Cards/CardUserProduct.vue";
+    import Pagination from "../../Components/Navigation/Pagination.vue";
 
     const { products, categories } = defineProps([ "products", "categories" ])
 </script>
@@ -40,6 +41,10 @@
                     :key="product.id"
                     :product="product"
                 />
+
+                <div class="col-span-4 flex justify-center mt-8">
+                    <Pagination :pagination="products"/>
+                </div>
             </div>
         </div>
     </UserLayout>
