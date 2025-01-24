@@ -17,7 +17,8 @@ class ProductRepository implements ProductRepositoryInterface
     {
         return $this->product
             ->with(['category', 'images', 'reviews'])
-            ->paginate(16);
+            ->orderBy('created_at', 'desc')
+            ->paginate(15);
     }
 
     public function getProductsByCategory($slug)

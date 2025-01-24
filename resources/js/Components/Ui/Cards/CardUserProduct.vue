@@ -19,9 +19,7 @@
         class="flex items-center ">
             <Transition name="stars-fade">
                 <div
-
-                    class="flex items-center transition-all w-full animated
-                    hover-scale text-gray-400 text-xs ml-auto "
+                    class="flex items-center transition-all w-full animated hover-scale text-gray-400 text-xs ml-auto "
                 >
                     <i
                         v-for="star in 5"
