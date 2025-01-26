@@ -1,6 +1,6 @@
 <script setup>
     import UserLayout from "../../Components/Layouts/UserLayout.vue";
-    import CardUserProduct from "../../Components/Ui/Cards/CardUserProduct.vue";
+    import CardProduct from "../../Components/Ui/Cards/CardProduct.vue";
     import Pagination from "../../Components/Navigation/Pagination.vue";
 
     const { products, categories } = defineProps([ "products", "categories" ])
@@ -36,14 +36,17 @@
             </aside>
 
             <div class="col-span-4 col-start-2 grid grid-cols-[repeat(auto-fit,_minmax(240px,_1fr))] gap-4">
-                <CardUserProduct
+                <CardProduct
                     v-for="product in products.data"
                     :key="product.id"
                     :product="product"
                 />
 
                 <div class="col-span-4 flex justify-center mt-8">
-                    <Pagination :pagination="products"/>
+                    <Pagination
+                        :pagination="products"
+                        color="#F23005"
+                    />
                 </div>
             </div>
         </div>
