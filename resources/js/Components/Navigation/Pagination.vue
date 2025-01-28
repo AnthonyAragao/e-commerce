@@ -46,7 +46,4 @@
             </Link>
         </template>
     </nav>
-
-    <!-- o Tailwind não processar dinamicamente as cores passadas em templates como strings interpoladas. Aqui está uma solução temporaria.-->
-    <div class="bg-[#7364DB] hidden"><div class="bg-[#F23005]"></div></div>
 </template>

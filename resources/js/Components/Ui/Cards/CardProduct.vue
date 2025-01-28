@@ -14,12 +14,10 @@
         @mouseenter="handleMouseEnter(product.id)"
         @mouseleave="handleMouseLeave"
     >
-
-        <div
-        class="flex items-center ">
+        <div class="flex items-center">
             <Transition name="stars-fade">
                 <div
-                    class="flex items-center transition-all w-full animated hover-scale text-gray-400 text-xs ml-auto "
+                    class="flex items-center transition-all w-full animated hover-scale text-gray-400 text-xs ml-auto"
                 >
                     <i
                         v-for="star in 5"
@@ -142,8 +140,7 @@
             transform: scaleY(1);
         }
     }
-    @keyframes fadeOutIn
-    {
+    @keyframes fadeOutIn {
         0% {
             transform: scaleY(0);
         }
@@ -163,9 +160,9 @@
 
             transform: scaleY(1);
         }
-}
+    }
 
-.group:hover .animated {
-  animation:  fadeOutIn 0.5s ease-in-out;
-}
+    .group:hover .animated {
+        animation:  fadeOutIn 0.5s ease-in-out;
+    }
 </style>
