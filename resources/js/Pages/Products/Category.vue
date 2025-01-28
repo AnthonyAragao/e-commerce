@@ -35,19 +35,19 @@
                 </div>
             </aside>
 
-            <div class="col-span-4 col-start-2 grid grid-cols-[repeat(auto-fit,_minmax(240px,_1fr))] gap-4">
+            <div class="col-span-4 grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4">
                 <CardProduct
                     v-for="product in products.data"
                     :key="product.id"
                     :product="product"
                 />
+            </div>
 
-                <div class="col-span-4 flex justify-center mt-8">
-                    <Pagination
-                        :pagination="products"
-                        color="#F23005"
-                    />
-                </div>
+            <div class="col-span-4 col-start-2 mt-4">
+                <Pagination
+                    :pagination="products"
+                    color="#F23005"
+                />
             </div>
         </div>
     </UserLayout>
