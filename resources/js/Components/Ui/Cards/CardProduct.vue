@@ -10,7 +10,7 @@
 
 <template>
     <div
-        class="bg-white rounded-[4px] p-4 h-[478px] overflow-hidden group relative shadow-sm hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.05)] cursor-pointer"
+        class="bg-white rounded-[4px] p-4 h-[478px] overflow-hidden group relative shadow-sm hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.05)] "
         @mouseenter="handleMouseEnter(product.id)"
         @mouseleave="handleMouseLeave"
     >
@@ -77,7 +77,7 @@
 
             <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[90%] flex gap-2">
                 <button
-                    class="py-3 bg-primary w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-[#EA2F05] "
+                    class="py-3 bg-primary w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-[#E22D05] "
                 >
                     <i
                         v-if="hoveredProductId === product.id"
