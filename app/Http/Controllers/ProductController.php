@@ -31,10 +31,11 @@ class ProductController extends Controller
     public function show($slug)
     {
         $product = $this->productService->getProductBySlug($slug);
+        $relatedProducts = $this->productService->getRelatedProducts($product);
 
         return Inertia::render('Products/Show', [
             'product' => $product,
-            'categories' => Category::all(),
+            'relatedProducts' => $relatedProducts,
         ]);
     }
 }

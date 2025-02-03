@@ -32,6 +32,17 @@ class ProductRepository implements ProductRepositoryInterface
             ->paginate(16);
     }
 
+    public function getRelatedProducts($product)
+    {
+        return $this->product
+            ->where('category_id', $product->category_id)
+            ->where('id', '!=', $product->id)
+            ->with('images')
+            ->inRandomOrder()
+            ->limit(5)
+            ->get();
+    }
+
     public function findBySlug($slug)
     {
         return $this->product

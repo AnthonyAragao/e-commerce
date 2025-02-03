@@ -36,7 +36,9 @@ export default {
 
             boxShadow: {
                 'header': '0 4px 15px 0px rgb(0 0 0 / 0.08)',
+                'card-reviews': 'rgba(40, 41, 61, 0.04) 0px 1px 2px, rgba(96, 97, 112, 0.16) 0px 2px 4px;',
             },
+
         },
     },
 };
