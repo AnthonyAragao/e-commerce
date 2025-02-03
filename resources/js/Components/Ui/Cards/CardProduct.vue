@@ -85,7 +85,9 @@
                     ></i>
                     <span class="font-bold text-xs">CART</span>
                 </button>
-                <button
+
+                <Link
+                    :href="`/products/${product.slug}`"
                     class="py-3 bg-zinc-900 w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-zinc-950 "
                 >
                     <i
@@ -93,7 +95,7 @@
                         class="fas fa-dollar-sign text-white"
                     ></i>
                     <span class="font-bold text-xs ">BUY NOW</span>
-                </button>
+                </Link>
             </div>
         </div>
     </div>

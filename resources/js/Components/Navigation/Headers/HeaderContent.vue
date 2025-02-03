@@ -32,7 +32,7 @@
                 type="search"
                 v-model="searchValue"
                 @input="emit('search', $event.target.value)"
-                class="py-[14px] pl-8 pr-2 bg-[#ffff] text-sm rounded-[4px] w-full focus:outline-none border border-gray-200/70 dark:bg-[#313442] dark:text-white"
+                class="py-[13px] pl-8 pr-2 bg-[#ffff] text-sm rounded-[4px] w-full focus:outline-none border border-gray-200/70 dark:bg-[#313442] dark:text-white"
             />
         </div>
 
