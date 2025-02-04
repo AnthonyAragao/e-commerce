@@ -45,7 +45,7 @@
 
             <div>
                 <div class="flex gap-1">
-                    <a class="hover:text-gray-800 font-bold" href="">LOGIN</a>
+                    <Link class="hover:text-gray-800 font-bold" href="/login">LOGIN</Link>
                     <span>or</span>
                 </div>
                 <a class="hover:text-gray-800 font-bold" href="#">REGISTER</a>
