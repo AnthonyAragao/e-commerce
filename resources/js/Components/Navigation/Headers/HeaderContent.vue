@@ -36,12 +36,8 @@
             />
         </div>
 
-        <div
-            class="flex items-center gap-1 bg-[#ffff] p-3 rounded-[4px] h-12 text-[13px]  text-gray-500 border border-gray-200/70 text-xs"
-        >
-            <div class="flex items-center justify-center h-8 w-8 rounded-full border-[3px] border-gray-300/70 overflow-hidden">
-                <i class="fas fa-user"></i>
-            </div>
+        <div class="flex items-center gap-2 bg-[#ffff] p-3 rounded-[4px] h-12 text-[13px]  text-gray-500 border border-gray-200/70 text-xs">
+            <img src="/img/user-svg.svg" alt="" class="size-7" />
 
             <div>
                 <div class="flex gap-1">
@@ -54,15 +50,15 @@
 
         <div class="flex gap-10 h-12 items-center rounded-[4px] bg-[#fff] p-4 border border-gray-200/70">
             <a href="#" class="relative group">
-                <i class="fas fa-headset"></i>
+                <img src="/img/headset-svg.svg" alt="sac" class="size-5" />
                 <span class="infotag">SAC</span>
             </a>
             <a href="#" class="relative group">
-                <i class="fas fa-heart"></i>
+                <img src="/img/heart-svg.svg" alt="favorites" class="size-5" />
                 <span class="infotag">Favorites</span>
             </a>
             <a href="#" class="relative group">
-                <i class="fas fa-shopping-cart"></i>
+                <img src="/img/cart-svg.svg" alt="cart" class="size-6" />
                 <span class="infotag">Cart</span>
             </a>
         </div>

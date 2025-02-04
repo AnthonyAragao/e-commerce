@@ -124,11 +124,12 @@
 
             <p class="text-sm text-gray-700">({{ product.review_count }}) reviews</p>
 
-            <div class="grid grid-cols-2 gap-6">
+            
+            <div class="grid grid-cols-2 gap-x-6">
                 <div
                     v-for="review in 4"
                     :key="review"
-                    class="rounded-3xl w-full bg-white p-4 mt-4 shadow-card-reviews"
+                    class="rounded-3xl w-full bg-white p-4 mt-4 shadow-card-reviews border border-[rgb(242, 243, 244)]"
                 >
                     <p class="text-sm text-black font-semibold">John Doe</p>
 
