@@ -46,7 +46,11 @@ class ProductRepository implements ProductRepositoryInterface
     public function findBySlug($slug)
     {
         return $this->product
-            ->with('category', 'images')
+            ->with([
+                'category',
+                'images',
+                'reviews' => fn($query) => $query->with('user:id,name'),
+            ])
             ->where('slug', $slug)
             ->first();
     }

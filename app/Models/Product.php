@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-
 class Product extends Model
 {
     use HasFactory;
@@ -14,6 +13,8 @@ class Product extends Model
     protected $table = 'products';
 
     protected $fillable = ['name', 'slug', 'description', 'regular_price', 'sale_price', 'stock', 'sku' , 'sales', 'category_id'];
+
+    protected $hidden = ['created_at', 'updated_at', 'category_id'];
 
     protected $appends = ['rating', 'review_count'];
 
@@ -52,7 +53,7 @@ class Product extends Model
 
     public function getRatingAttribute()
     {
-        return $this->reviews->avg('rating');
+        return round($this->reviews->avg('rating'),1);
     }
 
     public function getReviewCountAttribute()

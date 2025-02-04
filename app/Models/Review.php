@@ -12,4 +12,11 @@ class Review extends Model
     protected $table = 'reviews';
 
     protected $guarded = [];
+
+    protected $hidden = [ 'updated_at', 'user_id', 'order_item_id' ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
