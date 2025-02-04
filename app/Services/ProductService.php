@@ -25,6 +25,11 @@ class ProductService
         return $this->productRepository->findBySlug($slug);
     }
 
+    public function getRelatedProducts($product)
+    {
+        return $this->productRepository->getRelatedProducts($product);
+    }
+
     public function createProduct(array $data)
     {
         return $this->productRepository->create($data);

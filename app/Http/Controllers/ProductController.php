@@ -28,6 +28,14 @@ class ProductController extends Controller
         ]);
     }
 
-    public function show($id)
-    {}
+    public function show($slug)
+    {
+        $product = $this->productService->getProductBySlug($slug);
+        $relatedProducts = $this->productService->getRelatedProducts($product);
+
+        return Inertia::render('Products/Show', [
+            'product' => $product,
+            'relatedProducts' => $relatedProducts,
+        ]);
+    }
 }
