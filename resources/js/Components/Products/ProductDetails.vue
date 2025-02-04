@@ -1,5 +1,8 @@
 <script setup>
-    const { product } = defineProps(['product']);
+    import { ref } from 'vue';
+
+    const { product }   = defineProps(['product']);
+    const selectedImage = ref(product.images[0].image_path);
 </script>
 
 <template>
@@ -13,6 +16,7 @@
                 <div
                     v-for="imagem in product.images"
                     :key="imagem.id"
+                    @click="selectedImage = imagem.image_path"
                     class="size-14 my-6 p-1 bg-white rounded-md cursor-pointer border border-gray-300 overflow-hidden mx-auto"
                 >
                     <img
@@ -29,9 +33,9 @@
 
             <div class="w-full min-h-[550px] bg-white flex justify-center items-center rounded-md shadow-card-reviews border border-gray-100">
                 <img
-                    :src="`/storage/${product.images[0].image_path}`"
+                    :src="`/storage/${selectedImage}`"
                     :alt="product.name"
-                    class="max-w-full h-auto object-cover object-center"
+                    class="max-w-full object-cover object-center h-auto max-h-[520px]"
                 />
             </div>
         </div>
