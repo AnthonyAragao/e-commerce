@@ -15,7 +15,7 @@ const toggleDarkMode = useToggle(isDarkMode);
 </script>
 
 <template>
-    <main class=" h-full min-md:min-h-[calc(100vh-36px)] w-full relative dark:bg-zinc-900" :class="{ dark: isDarkMode }">
+    <main class=" max-md:h-full h-[calc(100vh-3rem)] w-full relative dark:bg-zinc-900" :class="{ dark: isDarkMode }">
         <div
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md"
         >
