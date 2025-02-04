@@ -3,18 +3,18 @@
 </script>
 
 <template>
-    <div class="max-w-[1400px] mx-auto my-10">
+    <div class="max-w-[1400px] mx-auto mt-24 mb-10">
         <div class="flex items-center gap-2">
             <i class="fas fa-star text-primary"></i>
             <h2 class="text-2xl font-bold text-gray-700 uppercase">user reviews</h2>
         </div>
 
-        <div class="flex items-center gap-12 mt-4">
+        <div class="flex items-center gap-12 my-4">
             <div class="flex items-end gap-2 text-primary">
                 <h2 class="text-6xl font-bold">
                     {{ product.rating }}
                 </h2>
-                <p class="text-xl mb-1">/5</p>
+                <p class="text-xl mb-1 font-semibold">/5</p>
             </div>
 
             <div>
@@ -31,12 +31,11 @@
             </div>
         </div>
 
-
         <div class="grid grid-cols-2 gap-x-6">
             <div
                 v-for="(review, index) in product.reviews.slice(0, 4)"
                 :key="index"
-                class="rounded-3xl w-full bg-white p-4 mt-4 min-h-44 shadow-card-reviews border border-[rgb(242, 243, 244)]"
+                class="rounded-3xl w-full bg-white p-4 mt-6 min-h-44 shadow-card-reviews border border-[rgb(242, 243, 244)]"
             >
                 <p class="text-sm text-black font-semibold">{{ review.user.name }}</p>
 
