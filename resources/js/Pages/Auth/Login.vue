@@ -1,5 +1,6 @@
 <script setup>
 import { useDark, useToggle } from "@vueuse/core";
+import Footer from "../../Components/Layouts/Footer.vue";
 
 // Configuração do modo escuro
 const isDarkMode = useDark({
@@ -9,10 +10,12 @@ const isDarkMode = useDark({
 });
 
 const toggleDarkMode = useToggle(isDarkMode);
+
+
 </script>
 
 <template>
-    <main class="h-full w-full relative dark:bg-zinc-900" :class="{ dark: isDarkMode }">
+    <main class=" h-full min-md:min-h-[calc(100vh-36px)] w-full relative dark:bg-zinc-900" :class="{ dark: isDarkMode }">
         <div
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md"
         >
@@ -32,7 +35,7 @@ const toggleDarkMode = useToggle(isDarkMode);
                     alt=""
                 />
                 <span
-                    class="text-[10px] text-gray-700 font-semibold dark:text-gray-300"
+                    class="text-[10px] text-gray-600 font-semibold dark:text-gray-400"
                     >Always in your direction</span
                 >
             </div>
@@ -103,11 +106,20 @@ const toggleDarkMode = useToggle(isDarkMode);
                 </form>
             </div>
         </div>
+
+        <button
+            @click="toggleDarkMode()"
+            class="absolute top-4 right-4 p-2 rounded-lg bg-white  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]"
+        >
+            {{ isDarkMode ? "🌙" : "☀️" }}
+        </button>
     </main>
-    <button
-        @click="toggleDarkMode()"
-        class="absolute top-4 right-4 p-2 rounded-lg bg-gray-700 dark:bg-zinc-700"
-    >
-        {{ isDarkMode ? "🌙" : "☀️" }}
-    </button>
+    <Footer />
+
+
+
 </template>
+
+<style scoped>
+
+</style>
