@@ -24,3 +24,7 @@ input {
 html{
     background-color:#F5F5FA;
 }
+/* Aplica bg-zinc-900 quando html tem classe dark */
+html.dark {
+    background-color:  #18181b;
+  }
