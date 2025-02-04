@@ -7,7 +7,7 @@
 
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
-        showFixedHeader.value = scrollPosition > 90;
+        showFixedHeader.value = scrollPosition > 50;
     };
 
     onMounted(() => {
