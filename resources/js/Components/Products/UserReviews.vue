@@ -9,14 +9,28 @@
             <h2 class="text-2xl font-bold text-gray-700 uppercase">user reviews</h2>
         </div>
 
-        <div class="flex items-end gap-2 text-primary">
-            <h2 class="text-6xl font-bold">
-                {{ product.rating }}
-            </h2>
-            <p class="text-xl mb-1">/5</p>
+        <div class="flex items-center gap-12 mt-4">
+            <div class="flex items-end gap-2 text-primary">
+                <h2 class="text-6xl font-bold">
+                    {{ product.rating }}
+                </h2>
+                <p class="text-xl mb-1">/5</p>
+            </div>
+
+            <div>
+                <p class="text-sm text-gray-700">({{ product.review_count }}) reviews</p>
+                <i
+                    v-for="star in 5"
+                    :key="star"
+                    :class="{
+                        'fas fa-star' : product.rating >= star,
+                        'far fa-star' : product.rating < star
+                    }"
+                    class="text-primary"
+                ></i>
+            </div>
         </div>
 
-        <p class="text-sm text-gray-700">({{ product.review_count }}) reviews</p>
 
         <div class="grid grid-cols-2 gap-x-6">
             <div

@@ -34,7 +34,7 @@ class ProductFactory extends Factory
     {
         return $this->afterCreating(function (\App\Models\Product $product) {
             \App\Models\ProductImage::factory()
-                ->count(1)
+                ->count(5)
                 ->create(['product_id' => $product->id]);
         });
     }
