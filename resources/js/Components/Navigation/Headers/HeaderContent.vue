@@ -1,5 +1,6 @@
 <script setup>
     import { watch, ref } from 'vue';
+    import ButtonDarkMode from '../../Ui/Buttons/ButtonDarkMode.vue';
 
     const { search }  = defineProps(['search']);
     const emit        = defineEmits(['search']);
@@ -8,18 +9,23 @@
     watch(() => search, (value) => {
         searchValue.value = value;
     });
+
+
 </script>
 
 <template>
     <div
         class="flex h-[80%] dark:bg-zinc-900 justify-between w-[1420px] mx-auto p-2 items-center gap-2"
     >
-        <button
+        <!-- <button
             type="button"
             class="flex items-center justify-center h-12 w-12 rounded-[4px] bg-[#ffff] dark:bg-[#313442] dark:text-white border border-gray-200/70"
         >
             <i class="fas fa-bars"></i>
-        </button>
+        </button> -->
+        <div class="h-12 w-12">
+            <ButtonDarkMode />
+        </div>
 
         <div class="flex-1 h-12  justify-center  rounded-[4px] relative">
             <div
