@@ -40,7 +40,7 @@
                     <!-- <span class="text-sm hover:text-primary hover-scale">Reviews</span> -->
                     <!-- <i class="fas fa-shopping-cart hover:text-primary cursor-pointer hover-scale"></i> -->
                     <button>
-                        <i class="fa-solid fa-heart hover:text-primary hover:text-[#7364db] cursor-pointer hover-scale"></i>
+                        <i class="fa-solid fa-heart hover:text-primary dark:hover:text-[#7364db] cursor-pointer hover-scale"></i>
                     </button>
                 </div>
             </Transition>
