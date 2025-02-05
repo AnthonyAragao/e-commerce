@@ -26,7 +26,7 @@
                             'fas fa-star': product.rating >= star,
                             'far fa-star': product.rating < star
                         }"
-                        class="text-primary"
+                        class="text-primary dark:text-[#7364db]"
                     ></i>
                     <span class="ml-1 mt-[2px]">({{ product.review_count }})</span>
                 </div>
@@ -40,7 +40,7 @@
                     <!-- <span class="text-sm hover:text-primary hover-scale">Reviews</span> -->
                     <!-- <i class="fas fa-shopping-cart hover:text-primary cursor-pointer hover-scale"></i> -->
                     <button>
-                        <i class="fa-solid fa-heart hover:text-primary cursor-pointer hover-scale"></i>
+                        <i class="fa-solid fa-heart hover:text-primary hover:text-[#7364db] cursor-pointer hover-scale"></i>
                     </button>
                 </div>
             </Transition>
@@ -60,11 +60,11 @@
             </h2>
             <div class="mt-6 flex flex-col text-xs text-gray-600 dark:text-gray-400">
                 <div class="flex items-center justify-between">
-                    <p class="line-through text-red-600/70">R$ {{ product.regular_price }}</p>
+                    <p class="line-through text-red-600/70 dark:text-purple-600">R$ {{ product.regular_price }}</p>
                     <p class="font-bold text-[10px]">{{ product.stock }} units left</p>
                 </div>
 
-                <p class="text-xl font-bold text-primary">
+                <p class="text-xl font-bold text-primary dark:text-[#7364db]">
                     R$ {{ product.sale_price }}
                 </p>
 
@@ -77,7 +77,7 @@
 
             <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[90%] flex gap-2">
                 <button
-                    class="py-3 bg-primary w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-[#E22D05] "
+                    class="py-3 bg-primary dark:bg-[#7364db] w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-[#E22D05] "
                 >
                     <i
                         v-if="hoveredProductId === product.id"
