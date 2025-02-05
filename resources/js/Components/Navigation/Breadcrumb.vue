@@ -21,7 +21,7 @@
 
             <span
                 v-if="!breadcrumb.href"
-                class="text-[#7364DB] font-bold cursor-default"
+                class="text-primary dark:text-[#7364DB] font-bold cursor-default"
             >
                 {{ breadcrumb.name }}
             </span>

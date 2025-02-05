@@ -42,7 +42,7 @@
 
             <Link
                 href="/admin/products/create"
-                class="text-sm bg-[#7364DB] text-white px-4 py-1 rounded-md shadow-md font-bold hover:bg-[#5B4CDB] transition duration-300"
+                class="text-sm bg-primary dark:bg-[#7364DB] text-white px-4 py-1 rounded-md shadow-md font-bold hover:bg-primary dark:hover:bg-[#5B4CDB] transition duration-300"
             >
                 <i class="fas fa-plus"></i> Add Product
             </Link>

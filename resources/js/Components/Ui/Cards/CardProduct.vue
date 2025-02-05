@@ -10,7 +10,7 @@
 
 <template>
     <div
-        class="bg-white rounded-[4px] p-4 h-[478px] overflow-hidden group relative shadow-sm hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.05)] "
+        class="bg-white  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128] rounded-[4px] p-4 h-[478px] overflow-hidden group relative shadow-sm hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.05)] "
         @mouseenter="handleMouseEnter(product.id)"
         @mouseleave="handleMouseLeave"
     >
@@ -55,10 +55,10 @@
         </div>
 
         <div class="mt-4">
-            <h2 class="text-sm font-semibold text-gray-800 line-clamp-3">
+            <h2 class="text-sm font-semibold text-gray-800 line-clamp-3 dark:text-gray-300">
                 {{ product.description }}
             </h2>
-            <div class="mt-6 flex flex-col text-xs text-gray-600">
+            <div class="mt-6 flex flex-col text-xs text-gray-600 dark:text-gray-400">
                 <div class="flex items-center justify-between">
                     <p class="line-through text-red-600/70">R$ {{ product.regular_price }}</p>
                     <p class="font-bold text-[10px]">{{ product.stock }} units left</p>

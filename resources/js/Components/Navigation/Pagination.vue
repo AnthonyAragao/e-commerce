@@ -1,6 +1,7 @@
 <script setup>
-    const { pagination, color = "#7364DB" } = defineProps(["pagination", "color"]);
+    const { pagination } = defineProps(["pagination" ]);
 </script>
+<!-- #7364DB -->
 
 <template>
     <nav class="space-x-1">
@@ -12,7 +13,7 @@
                 preserve-scroll
                 class="px-4 py-2 text-sm font-bold rounded-lg text-gray-500 border border-gray-300 cursor-default transition duration-150 dark:text-gray-200 dark:bg-gray-700 dark:border-gray-800"
                 :class="{
-                    [`hover:bg-[${color}] dark:hover:bg-[${color}] hover:text-white hover:border-[${color}] cursor-pointer`]: link.url !== null,
+                    [`hover:bg-primary hover:text-white hover:border-primary cursor-pointer`]: link.url !== null,
                 }"
             >
                 <i class="fa-solid fa-arrow-left mr-1"></i> Previous
@@ -25,7 +26,7 @@
                 preserve-scroll
                 class="px-4 py-2 text-sm font-bold rounded-lg text-gray-500 border border-gray-300 cursor-default transition duration-150 dark:text-gray-200 dark:bg-gray-700 dark:border-gray-800"
                 :class="{
-                    [`hover:bg-[${color}] dark:hover:bg-[${color}] hover:text-white hover:border-[${color}] cursor-pointer`]: link.url !== null,
+                    [`hover:bg-primary hover:text-white hover:border-primary  cursor-pointer`]: link.url !== null,
                 }"
             >
                 Next <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -38,8 +39,8 @@
                 preserve-scroll
                 class="px-4 py-2 text-sm font-bold rounded-lg text-gray-700 dark:text-white"
                 :class="{
-                    [`hover:bg-[${color}] hover:text-white dark:hover:bg-[${color}]`]: !link.active,
-                    [`bg-[${color}] text-white`]: link.active,
+                    [`hover:bg-primary hover:text-white`]: !link.active,
+                    [`bg-primary dark:bg-[#7364DB] text-white`]: link.active,
                 }"
             >
                 {{ link.label }}
