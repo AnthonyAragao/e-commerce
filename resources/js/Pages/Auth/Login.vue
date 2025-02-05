@@ -1,15 +1,7 @@
 <script setup>
 import { useDark, useToggle } from "@vueuse/core";
 import Footer from "../../Components/Layouts/Footer.vue";
-
-// Configuração do modo escuro
-const isDarkMode = useDark({
-    storageKey: "dark-mode",
-    valueDark: "dark",
-    valueLight: "light",
-});
-
-const toggleDarkMode = useToggle(isDarkMode);
+import ButtonDarkMode from "../../Components/Ui/Buttons/ButtonDarkMode.vue";
 
 
 </script>
@@ -29,10 +21,9 @@ const toggleDarkMode = useToggle(isDarkMode);
                 >
                 <img class="h-[39px] dark:hidden" src="img/logo.png" alt="" />
                 <img
-                    v-if="isDarkMode"
-                    class="h-[39px]"
+                    class="hidden dark:block h-[39px]"
                     src="img/logo-dark.png"
-                    alt=""
+                    alt="teste"
                 />
                 <span
                     class="text-[10px] text-gray-600 font-semibold dark:text-gray-400"
@@ -106,13 +97,10 @@ const toggleDarkMode = useToggle(isDarkMode);
                 </form>
             </div>
         </div>
+        <div class="absolute top-4 right-4">
+            <ButtonDarkMode />
+        </div>
 
-        <button
-            @click="toggleDarkMode()"
-            class="absolute top-4 right-4 p-2 rounded-lg bg-white  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]"
-        >
-            {{ isDarkMode ? "🌙" : "☀️" }}
-        </button>
     </main>
     <Footer />
 
