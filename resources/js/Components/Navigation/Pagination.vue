@@ -13,7 +13,7 @@
                 preserve-scroll
                 class="px-4 py-2 text-sm font-bold rounded-lg text-gray-500 border border-gray-300 cursor-default transition duration-150 dark:text-gray-200 dark:bg-gray-700 dark:border-gray-800"
                 :class="{
-                    [`hover:bg-primary hover:text-white hover:border-primary cursor-pointer`]: link.url !== null,
+                    [`hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-[#7364db] dark:hover-border-[#7364db] cursor-pointer`]: link.url !== null,
                 }"
             >
                 <i class="fa-solid fa-arrow-left mr-1"></i> Previous
@@ -26,7 +26,7 @@
                 preserve-scroll
                 class="px-4 py-2 text-sm font-bold rounded-lg text-gray-500 border border-gray-300 cursor-default transition duration-150 dark:text-gray-200 dark:bg-gray-700 dark:border-gray-800"
                 :class="{
-                    [`hover:bg-primary hover:text-white hover:border-primary  cursor-pointer`]: link.url !== null,
+                    [`hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-[#7364db] cursor-pointer`]: link.url !== null,
                 }"
             >
                 Next <i class="fa-solid fa-arrow-right ml-1"></i>
@@ -39,8 +39,8 @@
                 preserve-scroll
                 class="px-4 py-2 text-sm font-bold rounded-lg text-gray-700 dark:text-white"
                 :class="{
-                    [`hover:bg-primary hover:text-white`]: !link.active,
-                    [`bg-primary dark:bg-[#7364DB] text-white`]: link.active,
+                    [`hover:bg-primary dark:hover:bg-[#7364db] hover:text-white`]: !link.active,
+                    [`bg-primary dark:bg-[#7364DB]  text-white`]: link.active,
                 }"
             >
                 {{ link.label }}
