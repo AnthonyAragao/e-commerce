@@ -23,9 +23,9 @@
         >
             <i class="fas fa-bars"></i>
         </button> -->
-        <div class="h-12 w-12">
+
             <ButtonDarkMode />
-        </div>
+        
 
         <div class="flex-1 h-12  justify-center  rounded-[4px] relative">
             <div
