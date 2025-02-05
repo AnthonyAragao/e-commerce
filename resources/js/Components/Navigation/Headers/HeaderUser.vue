@@ -16,7 +16,7 @@
 </script>
 
 <template>
-    <nav class="bg-[#F5F5FA] h-[88px] flex items-center z-10 w-full">
+    <nav class="bg-[#F5F5FA] dark:bg-zinc-900 h-[88px] flex items-center z-10 w-full">
         <HeaderContent
             :search="search"
             @search="search = $event"
@@ -24,7 +24,7 @@
     </nav>
 
     <nav
-        class="bg-[#F5F5FA] h-[88px] flex items-center z-10 w-full fixed left-1/2 top-0 -translate-x-1/2 -translate-y-full transition-transform duration-300"
+        class="bg-[#F5F5FA] dark:bg-zinc-900 h-[88px] flex items-center z-10 w-full fixed left-1/2 top-0 -translate-x-1/2 -translate-y-full transition-transform duration-300"
         :class="{'translate-y-0': showFixedHeader}"
     >
         <HeaderContent

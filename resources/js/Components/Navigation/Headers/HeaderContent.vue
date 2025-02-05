@@ -25,7 +25,7 @@
         </button> -->
 
             <ButtonDarkMode />
-        
+
 
         <div class="flex-1 h-12  justify-center  rounded-[4px] relative">
             <div
@@ -38,23 +38,23 @@
                 type="search"
                 v-model="searchValue"
                 @input="emit('search', $event.target.value)"
-                class="py-[13px] pl-8 pr-2 bg-[#ffff] text-sm rounded-[4px] w-full focus:outline-none border border-gray-200/70 dark:bg-[#313442] dark:text-white"
+                class="py-[13px] pl-8 pr-2  text-sm rounded-[4px] w-full focus:outline-none  bg-white  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128] dark:text-white"
             />
         </div>
 
-        <div class="flex items-center gap-2 bg-[#ffff] p-3 rounded-[4px] h-12 text-[13px]  text-gray-500 border border-gray-200/70 text-xs">
+        <div class="flex items-center gap-2 p-3 rounded-[4px] h-12 text-[13px]  text-gray-500 bg-white  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128] text-xs">
             <img src="/img/user-svg.svg" alt="" class="size-7" />
 
             <div>
                 <div class="flex gap-1">
-                    <Link class="hover:text-gray-800 font-bold" href="/login">LOGIN</Link>
+                    <Link class="hover:text-gray-800 dark:hover:text-gray-300 font-bold" href="/login">LOGIN</Link>
                     <span>or</span>
                 </div>
-                <a class="hover:text-gray-800 font-bold" href="#">REGISTER</a>
+                <a class="hover:text-gray-800 dark:hover:text-gray-300 font-bold" href="#">REGISTER</a>
             </div>
         </div>
 
-        <div class="flex gap-10 h-12 items-center rounded-[4px] bg-[#fff] p-4 border border-gray-200/70">
+        <div class="flex gap-10 h-12 items-center rounded-[4px] p-4 bg-white  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]">
             <a href="#" class="relative group">
                 <img src="/img/headset-svg.svg" alt="sac" class="size-5" />
                 <span class="infotag">SAC</span>
