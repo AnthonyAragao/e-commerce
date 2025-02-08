@@ -65,7 +65,7 @@
             v-if="product.reviews.length > 4"
             class="w-full text-center mt-10"
         >
-            <a href="#" class="text-primary text-sm mt-4 font-bold uppercase">See all reviews</a>
+            <a href="#" class="text-primary text-sm mt-4 font-bold uppercase dark:text-secondary">See all reviews</a>
         </div>
     </div>
 </template>

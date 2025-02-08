@@ -24,12 +24,10 @@
 
 <template>
    <aside
-        class="fixed w-56 h-screen bg-white text-[#9696AC] shadow-md dark:bg-[#1F2128] dark:border-r-2 dark:border-[#313442]"
+        class="fixed w-56 h-screen bg-white shadow-md dark:bg-[#1F2128] border-r-2 dark:border-[#313442]"
     >
         <div class="p-4">
-            <div class="text-lg font-bold">
-                Dashboard
-            </div>
+            <p class="text-lg font-bold text-gray-500 dark:text-white">Dashboard</p>
 
             <nav class="flex flex-col py-4 space-y-2 cursor-pointer text-sm font-semibold mt-4">
                 <SidebarLink
@@ -77,7 +75,7 @@
         </div>
 
         <div class="p-4 absolute bottom-0 w-full">
-            <div class="flex items-center justify-center gap-4 py-4 rounded-xl bg-[#E8EDF2] dark:bg-[#313442]">
+            <div class="flex items-center justify-center gap-4 py-4 rounded-xl bg-[#E8EDF2] dark:bg-[#313442] border border-gray-300/70 dark:border-gray-600">
                 <i class="fas fa-moon text-purple-500"></i>
 
                 <div
