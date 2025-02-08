@@ -16,7 +16,7 @@
     const breadcrumbs = [
         { 'href': '/admin', 'name': 'Home' },
         { 'href': '/admin/products', 'name': 'Products' },
-        { 'href': '', 'name': 'New Product' }
+        { 'href': '', 'name': isUpdating ? `Edit Product - ${product.name}` : 'New Product' }
     ];
 
     const isSubmitting = ref(false);

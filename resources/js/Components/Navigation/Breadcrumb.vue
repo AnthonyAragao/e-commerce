@@ -3,8 +3,7 @@
 </script>
 
 <template>
-    <div class="space-x-2 mt-2 text-gray-400 font-semibold text-sm">
-
+    <div class="space-x-2 mt-2 text-gray-500 dark:text-gray-400 font-semibold text-sm">
         <Link
             v-for="(breadcrumb, index) in breadcrumbs"
             :key="index"
@@ -21,7 +20,7 @@
 
             <span
                 v-if="!breadcrumb.href"
-                class="text-primary dark:text-[#7364DB] font-bold cursor-default"
+                class="text-primary dark:text-secondary font-bold cursor-default"
             >
                 {{ breadcrumb.name }}
             </span>

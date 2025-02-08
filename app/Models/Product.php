@@ -14,7 +14,7 @@ class Product extends Model
 
     protected $fillable = ['name', 'slug', 'description', 'regular_price', 'sale_price', 'stock', 'sku' , 'sales', 'category_id'];
 
-    protected $hidden = ['created_at', 'updated_at', 'category_id'];
+    protected $hidden = ['created_at', 'updated_at'];
 
     protected $appends = ['rating', 'review_count'];
 

@@ -45,10 +45,7 @@
             </div>
 
             <div class="col-span-4 col-start-2 mt-4">
-                <Pagination
-                    :pagination="products"
-                    color="#F23005"
-                />
+                <Pagination :pagination="products"/>
             </div>
         </div>
     </UserLayout>
