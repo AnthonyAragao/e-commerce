@@ -6,8 +6,8 @@
 <template>
     <div class="max-w-[1400px] mx-auto my-16">
         <div class="flex items-center gap-2">
-            <i class="fas fa-box-open text-primary"></i>
-            <h2 class="text-2xl font-bold text-gray-700 uppercase">products from the same category</h2>
+            <i class="fas fa-box-open text-primary dark:text-secondary"></i>
+            <h2 class="text-2xl font-bold text-gray-700 uppercase dark:text-gray-100">products from the same category</h2>
         </div>
 
         <div class="grid grid-cols-4 gap-4 mt-4">

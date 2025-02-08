@@ -10,7 +10,7 @@
 
 <template>
     <div
-        class="bg-white  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128] rounded-[4px] p-4 h-[478px] overflow-hidden group relative shadow-sm hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.05)] "
+        class="bg-white border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128] rounded-[4px] p-4 h-[478px] overflow-hidden group relative shadow-sm hover:shadow-[0_2px_4px_0_rgba(0,0,0,0.05),0_1px_2px_0_rgba(0,0,0,0.05)] "
         @mouseenter="handleMouseEnter(product.id)"
         @mouseleave="handleMouseLeave"
     >
@@ -26,7 +26,7 @@
                             'fas fa-star': product.rating >= star,
                             'far fa-star': product.rating < star
                         }"
-                        class="text-primary dark:text-[#7364db]"
+                        class="text-primary dark:text-secondary"
                     ></i>
                     <span class="ml-1 mt-[2px]">({{ product.review_count }})</span>
                 </div>
@@ -40,7 +40,7 @@
                     <!-- <span class="text-sm hover:text-primary hover-scale">Reviews</span> -->
                     <!-- <i class="fas fa-shopping-cart hover:text-primary cursor-pointer hover-scale"></i> -->
                     <button>
-                        <i class="fa-solid fa-heart hover:text-primary dark:hover:text-[#7364db] cursor-pointer hover-scale"></i>
+                        <i class="fa-solid fa-heart hover:text-primary dark:hover:text-secondary cursor-pointer hover-scale"></i>
                     </button>
                 </div>
             </Transition>
@@ -64,7 +64,7 @@
                     <p class="font-bold text-[10px]">{{ product.stock }} units left</p>
                 </div>
 
-                <p class="text-xl font-bold text-primary dark:text-[#7364db]">
+                <p class="text-xl font-bold text-primary dark:text-secondary">
                     R$ {{ product.sale_price }}
                 </p>
 
@@ -77,7 +77,7 @@
 
             <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[90%] flex gap-2">
                 <button
-                    class="py-3 bg-primary dark:bg-[#7364db] w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-[#E22D05] "
+                    class="py-3 bg-primary dark:bg-secondary w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-[#E22D05] "
                 >
                     <i
                         v-if="hoveredProductId === product.id"
