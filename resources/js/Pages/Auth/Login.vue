@@ -1,34 +1,30 @@
 <script setup>
-import { useDark, useToggle } from "@vueuse/core";
-import Footer from "../../Components/Layouts/Footer.vue";
-import ButtonDarkMode from "../../Components/Ui/Buttons/ButtonDarkMode.vue";
-
-
+    import Footer from "../../Components/Layouts/Footer.vue";
+    import ButtonDarkMode from "../../Components/Ui/Buttons/ButtonDarkMode.vue";
 </script>
 
 <template>
-    <main class=" max-md:h-full h-[calc(100vh-3rem)] w-full relative dark:bg-zinc-900" :class="{ dark: isDarkMode }">
-        <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md"
-        >
-            <!-- Botão de toggle para modo escuro -->
-
+    <main
+        class="max-md:h-full h-[calc(100vh-3rem)] w-full relative dark:bg-zinc-900"
+        :class="{ dark: isDarkMode }"
+    >
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md">
             <div
                 class="bg-white  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128] w-full h-12 mb-4 flex items-center justify-center px-4 gap-1"
             >
-                <span class="text-[16px] font-semibold dark:text-gray-100"
-                    >E-commerce</span
-                >
-                <img class="h-[39px] dark:hidden" src="img/logo.png" alt="" />
+                <span class="text-[16px] font-semibold dark:text-gray-100">E-commerce</span>
+
                 <img
-                    class="hidden dark:block h-[39px]"
-                    src="img/logo-dark.png"
-                    alt="teste"
+                    :src="isDarkMode ? '/img/logo-dark.png' : '/img/logo.png'"
+                    alt="Logo"
+                    class="h-[30px]"
                 />
+
                 <span
                     class="text-[10px] text-gray-600 font-semibold dark:text-gray-400"
-                    >Always in your direction</span
                 >
+                    Always in your direction
+                </span>
             </div>
 
             <div class="p-4 w-[350px]  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128] bg-white h-[460px]">

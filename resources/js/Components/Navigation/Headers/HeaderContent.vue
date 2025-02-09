@@ -14,20 +14,19 @@
 </script>
 
 <template>
-    <div
-        class="flex h-[80%] dark:bg-zinc-900 justify-between w-[1420px] mx-auto p-2 items-center gap-2"
-    >
-        <!-- <button
-            type="button"
-            class="flex items-center justify-center h-12 w-12 rounded-[4px] bg-[#ffff] dark:bg-[#313442] dark:text-white border border-gray-200/70"
+    <div class="flex h-[80%] dark:bg-zinc-900 justify-between w-[1420px] mx-auto p-2 items-center gap-2">
+        <Link
+            href="/"
+            class="py-2 px-4 rounded-[4px] bg-white border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]"
         >
-            <i class="fas fa-bars"></i>
-        </button> -->
+            <img
+                :src="isDarkMode ? '/img/logo-dark.png' : '/img/logo.png'"
+                alt="Logo"
+                class="h-[30px]"
+            />
+        </Link>
 
-            <ButtonDarkMode />
-
-
-        <div class="flex-1 h-12  justify-center  rounded-[4px] relative">
+        <div class="flex-1 h-12 justify-center rounded-[4px] relative">
             <div
                 class="absolute inset-y-0 -left-3 flex items-center pl-6 pointer-events-none"
             >
@@ -47,9 +46,15 @@
 
             <div>
                 <div class="flex gap-1">
-                    <Link class="hover:text-gray-800 dark:hover:text-gray-300 font-bold" href="/login">LOGIN</Link>
+                    <Link
+                        href="/login"
+                        class="hover:text-gray-800 dark:hover:text-gray-300 font-bold"
+                    >
+                        LOGIN
+                    </Link>
                     <span>or</span>
                 </div>
+
                 <a class="hover:text-gray-800 dark:hover:text-gray-300 font-bold" href="#">REGISTER</a>
             </div>
         </div>
@@ -68,6 +73,8 @@
                 <span class="infotag">Cart</span>
             </a>
         </div>
+
+        <ButtonDarkMode />
     </div>
 </template>
 
