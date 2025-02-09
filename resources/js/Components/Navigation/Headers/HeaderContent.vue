@@ -9,8 +9,6 @@
     watch(() => search, (value) => {
         searchValue.value = value;
     });
-
-
 </script>
 
 <template>

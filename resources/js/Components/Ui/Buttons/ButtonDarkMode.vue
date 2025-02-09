@@ -1,13 +1,7 @@
 <script setup>
-    import { useDark, useToggle } from "@vueuse/core";
+    import { useDarkMode } from "../../../composables/useDarkMode";
 
-    const isDarkMode = useDark({
-        storageKey: "dark-mode",
-        valueDark: "dark",
-        valueLight: "light",
-    });
-
-    const toggleDarkMode = useToggle(isDarkMode);
+    const { isDarkMode, toggleDarkMode } = useDarkMode();
 </script>
 
 <template>

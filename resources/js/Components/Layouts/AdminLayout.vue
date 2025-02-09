@@ -1,9 +1,9 @@
 <script setup>
+    import { provide, ref } from 'vue';
+    import { useDarkMode } from '../../composables/useDarkMode';
     import Sidebar from '../Navigation/Sidebar/Sidebar.vue';
     import HeaderAdmin from '../Navigation/Headers/HeaderAdmin.vue';
     import Footer from '../Layouts/Footer.vue';
-    import { useDark, useToggle } from '@vueuse/core';
-    import { provide, ref } from 'vue';
 
     const activeModal    = ref(null);
     const setActiveModal = (id) => activeModal.value = id;
@@ -11,14 +11,7 @@
     provide("activeModal", activeModal);
     provide("setActiveModal", setActiveModal)
 
-    const isDarkMode = useDark({
-        storageKey: 'dark-mode',
-        valueDark: 'dark',
-        valueLight: 'light',
-    });
-
-    const toggleDarkMode = useToggle(isDarkMode);
-    const isDarkModeRef = ref(isDarkMode.value);
+    const { isDarkMode, toggleDarkMode, isDarkModeRef } = useDarkMode();
 </script>
 
 <template>
