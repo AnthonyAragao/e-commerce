@@ -8,6 +8,8 @@
 </script>
 
 <template>
+    <Head :title="product.name" />
+    
     <UserLayout>
         <ProductDetails
             :product="product"

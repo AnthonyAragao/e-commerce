@@ -5,6 +5,8 @@
 </script>
 
 <template>
+    <Head title="Products" />
+    
     <UserLayout>
         <div class=" py-10 max-w-[1400px] mx-auto grid grid-cols-5 gap-4">
             <aside class="col-span-1 bg-white shadow-md rounded-lg p-4">

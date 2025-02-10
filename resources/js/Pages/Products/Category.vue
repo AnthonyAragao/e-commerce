@@ -7,6 +7,8 @@
 </script>
 
 <template>
+    <Head title="Products" />
+
     <UserLayout>
         <div class="pb-10 max-w-[1400px] mx-auto grid grid-cols-5 gap-4">
             <aside class="col-span-1 flex flex-col gap-4">
