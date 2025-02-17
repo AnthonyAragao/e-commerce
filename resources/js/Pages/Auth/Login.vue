@@ -13,13 +13,13 @@
                 class="bg-white  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128] w-full h-12 mb-4 flex items-center justify-center px-4 gap-1"
             >
                 <span class="text-[16px] font-semibold dark:text-gray-100">E-commerce</span>
-
+            <a href="/">
                 <img
                     :src="isDarkMode ? '/img/logo-dark.png' : '/img/logo.png'"
                     alt="Logo"
                     class="h-[30px]"
                 />
-
+            </a>
                 <span
                     class="text-[10px] text-gray-600 font-semibold dark:text-gray-400"
                 >
@@ -74,7 +74,7 @@
                             >Forgot Password?</Link
                         >
                         <span
-                            class="text-center text-[14px] mt-4 dark:text-gray-200"
+                            class="text-center text-[14px] mt-4 mb-2 dark:text-gray-200"
                             >or enter with</span
                         >
                     </div>
@@ -95,6 +95,11 @@
         </div>
         <div class="absolute top-4 right-4">
             <ButtonDarkMode />
+        </div>
+        <div class="absolute top-4 left-4  ">
+            <a href="/">
+            <button  class="dark:text-gray-200 p-2  rounded-lg bg-white size-12  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128] hover:scale-105 cursor-pointer"><-</button>
+            </a>
         </div>
 
     </main>
