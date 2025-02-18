@@ -1,6 +1,5 @@
 <script setup>
     import { useDarkMode } from "../../../composables/useDarkMode";
-
     const { isDarkMode, toggleDarkMode } = useDarkMode();
 </script>
 
