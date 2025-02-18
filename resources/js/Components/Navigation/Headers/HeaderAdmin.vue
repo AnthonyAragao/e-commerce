@@ -25,13 +25,17 @@
                 <i class="fas fa-envelope text-gray-400"></i>
             </span>
 
-            <div class="flex items-center">
+            <!-- <div class="flex items-center">
                 <img
                     src="https://randomuser.me/api/portraits/men/75.jpg"
                     alt="User"
                     class="w-8 h-8 rounded-full"
                 >
-            </div>
+            </div> -->
+
+            <button class="text-red-600 dark:text-red-400">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
         </div>
   </header>
 </template>
