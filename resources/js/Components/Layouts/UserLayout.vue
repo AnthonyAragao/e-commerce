@@ -6,7 +6,7 @@
 <template>
     <HeaderUser />
 
-    <main class="p-2 min-h-[calc(100vh-4rem)]">
+    <main class="min-h-[calc(100vh-4rem)]">
         <slot></slot>
     </main>
 
