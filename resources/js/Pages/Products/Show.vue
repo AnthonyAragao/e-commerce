@@ -10,7 +10,7 @@
 <template>
     <Head :title="product.name" />
 
-    <UserLayout>
+    <UserLayout categories="">
         <ProductDetails
             :product="product"
         />

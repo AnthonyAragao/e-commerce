@@ -8,9 +8,9 @@
 </script>
 
 <template>
-    <Head title="Products" />
+    <Head title="E-commerce" />
 
-    <UserLayout>
+    <UserLayout :categories="categories">
         <div class="relative">
             <BannerSwiper />
 
@@ -46,9 +46,9 @@
                 />
             </div>
 
-            <aside class="col-span-1 flex flex-col gap-4">
+            <!-- <aside class="col-span-1 flex flex-col gap-4">
                 <CategoryList :categories="categories" />
-            </aside>
+            </aside> -->
         </div>
     </UserLayout>
 </template>

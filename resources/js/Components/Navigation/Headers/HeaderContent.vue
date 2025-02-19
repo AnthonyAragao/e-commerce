@@ -16,7 +16,7 @@
 </script>
 
 <template>
-    <div class="flex h-[80%] dark:bg-zinc-900 justify-between w-[1420px] mx-auto p-2 items-center gap-2">
+    <div class="flex bg-transparent h-[80%] dark:bg-zinc-900 justify-between w-[1420px] mx-auto p-2 items-center gap-2">
         <Link
             href="/"
             class="py-2 px-4 rounded-[4px] bg-white border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]"
