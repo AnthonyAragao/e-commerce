@@ -60,7 +60,7 @@
             </h2>
             <div class="mt-6 flex flex-col text-xs text-gray-600 dark:text-gray-400">
                 <div class="flex items-center justify-between">
-                    <p class="line-through text-red-600/70 dark:text-purple-600">R$ {{ product.regular_price }}</p>
+                    <p class="line-through text-red-600/70 dark:text-purple-200">R$ {{ product.regular_price }}</p>
                     <p class="font-bold text-[10px]">{{ product.stock }} units left</p>
                 </div>
 
