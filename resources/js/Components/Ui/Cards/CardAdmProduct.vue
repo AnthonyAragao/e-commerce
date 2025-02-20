@@ -39,7 +39,7 @@
                 <img
                     :src="`/storage/${product.images[0].image_path}`"
                     :alt="product.name"
-                    class="border-[1.5px] border-gray-300 dark:border-[#b3b3b3] p-[.2px] rounded-md w-20 h-20 object-cover"
+                    class="border-[1.5px] border-gray-300 dark:border-gray-600 p-[.2px] rounded-md w-20 h-20 object-cover"
                 >
 
                 <div class="flex">

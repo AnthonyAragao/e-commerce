@@ -1,14 +1,12 @@
 <script setup>
     import { watch, ref } from 'vue';
-    import ButtonDarkMode from '@/Components/Ui/Buttons/ButtonDarkMode.vue';
     import { useDarkMode } from '@/composables/useDarkMode';
-
+    import ButtonDarkMode from '@/Components/Ui/Buttons/ButtonDarkMode.vue';
 
     const { search }      = defineProps(['search']);
     const emit            = defineEmits(['search']);
     const searchValue     = ref(search);
     const { isDarkMode }  = useDarkMode();
-
 
     watch(() => search, (value) => {
         searchValue.value = value;
