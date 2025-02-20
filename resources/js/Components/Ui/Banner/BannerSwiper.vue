@@ -7,6 +7,9 @@
         "/img/banner-1.webp",
         "/img/banner-2.webp",
         "/img/banner-3.webp",
+        "/img/banner-4.webp",
+        "/img/banner-5.webp",
+        "/img/banner-6.webp",
     ];
 </script>
 
