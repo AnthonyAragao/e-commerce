@@ -1,7 +1,6 @@
 <script setup>
     import UserLayout from "@/Components/Layouts/UserLayout.vue";
     import CardProduct from "@/Components/Ui/Cards/CardProduct.vue";
-    import CategoryList from "@/Components/Products/CategoryList.vue";
     import BannerSwiper from "@/Components/Ui/Banner/BannerSwiper.vue";
 
     const { products, categories } = defineProps([ "products", "categories" ])

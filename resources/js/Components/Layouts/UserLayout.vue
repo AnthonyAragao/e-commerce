@@ -6,7 +6,7 @@
 
 <template>
     <HeaderUser :categories="categories"/>
-    
+
     <main class="min-h-[calc(100vh-4rem)]">
         <slot></slot>
     </main>

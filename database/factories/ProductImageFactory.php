@@ -14,14 +14,14 @@ class ProductImageFactory extends Factory
     public function definition(): array
     {
         $imagePaths = [
-            'products/alexa.jpg',
-            'products/notebook.webp',
-            'products/televisao.jpg',
+            'products/alexa.png',
+            'products/cadeira.png',
+            'products/fone.png',
+            'products/notebook.png',
+            'products/televisao.png',
             'products/pc.png',
-            'products/ps4.webp',
-            'products/cadeira.webp',
-            'products/fone.jpg',
-            'products/example.jpg',
+            'products/ps4.png',
+            // 'products/example.jpg',
         ];
 
         return [

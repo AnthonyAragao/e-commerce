@@ -17,7 +17,7 @@
                     v-for="imagem in product.images"
                     :key="imagem.id"
                     @click="selectedImage = imagem.image_path"
-                    class="size-14 my-6 p-1 bg-white rounded-md cursor-pointer border border-gray-300 overflow-hidden mx-auto"
+                    class="size-14 my-6 p-1 bg-white rounded-md cursor-pointer border border-gray-300 overflow-hidden mx-auto dark:bg-transparent dark:border-gray-700"
                 >
                     <img
                         :src="`/storage/${imagem.image_path}`"
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <div class="w-full min-h-[550px] bg-white flex justify-center items-center rounded-md shadow-card-reviews border border-gray-100">
+            <div class="w-full min-h-[550px] bg-white flex justify-center items-center rounded-md shadow-card-reviews border border-gray-100 dark:border-gray-700 dark:bg-transparent">
                 <img
                     :src="`/storage/${selectedImage}`"
                     :alt="product.name"
