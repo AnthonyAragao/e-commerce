@@ -60,18 +60,18 @@
             </h2>
             <div class="mt-6 flex flex-col text-xs text-gray-600 dark:text-gray-400">
                 <div class="flex items-center justify-between">
-                    <p class="line-through text-red-600/70 dark:text-purple-200">R$ {{ product.regular_price }}</p>
+                    <p class="line-through text-red-600/70 dark:text-purple-200">$ {{ product.regular_price }}</p>
                     <p class="font-bold text-[10px]">{{ product.stock }} units left</p>
                 </div>
 
                 <p class="text-xl font-bold text-primary dark:text-secondary">
-                    R$ {{ product.sale_price }}
+                    $ {{ product.sale_price }}
                 </p>
 
                 <p>One time payment</p>
                 <p>
                     or up to
-                    <span class="font-bold">10x of R$ {{ (product.sale_price / 10).toFixed(2).replace('.', ',') }}</span>
+                    <span class="font-bold">10x of $ {{ (product.sale_price / 10).toFixed(2).replace('.', ',') }}</span>
                 </p>
             </div>
 

@@ -65,11 +65,11 @@
 
             <div class="flex flex-col mt-2">
                 <p class="text-xs text-gray-500 dark:text-gray-300">
-                    From: <span class="line-through text-red-600/70 dark:text-purple-400/70">R$ {{ product.regular_price }}</span> per:
+                    From: <span class="line-through text-red-600/70 dark:text-purple-400/70">$ {{ product.regular_price }}</span> per:
                 </p>
 
-                <span class="text-5xl font-bold text-primary dark:text-secondary">R$ {{ product.sale_price }}</span>
-                <span class="text-gray-500">10x of R$ {{ (product.sale_price / 10).toFixed(2).replace('.', ',') }}</span>
+                <span class="text-5xl font-bold text-primary dark:text-secondary">$ {{ product.sale_price }}</span>
+                <span class="text-gray-500">10x of $ {{ (product.sale_price / 10).toFixed(2).replace('.', ',') }}</span>
             </div>
 
             <div class="flex items-center gap-4 mt-4 w-full">

@@ -52,7 +52,7 @@
                         </div>
 
                         <span class="text-[13px] font-semibold dark:text-gray-200">
-                            R$ {{ product.sale_price }}
+                            $ {{ product.sale_price }}
                         </span>
                     </div>
                 </div>
