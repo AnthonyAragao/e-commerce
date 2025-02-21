@@ -38,12 +38,32 @@
             </div>
         </div>
 
-        <div class="max-w-[1400px] mx-auto mt-44 mb-10 grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4">
-            <CardProduct
-                v-for="(product, index) in products.data.slice(0, 5)"
-                :key="index"
-                :product="product"
-            />
+        <div class="max-w-[1400px] mx-auto mt-44 mb-10 ">
+            <h1 class="text-gray-800 uppercase font-semibold text-2xl dark:text-gray-300 mb-2">
+                <i class="fas fa-fire text-primary dark:text-secondary"></i> best sellers
+            </h1>
+
+            <div class="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4">
+                <CardProduct
+                    v-for="(product, index) in products.data.slice(0, 5)"
+                    :key="index"
+                    :product="product"
+                />
+            </div>
+        </div>
+
+        <div class="max-w-[1400px] mx-auto  mb-10">
+            <h1 class="text-gray-800 uppercase font-semibold text-2xl dark:text-gray-300 mb-2">
+                <i class="fas fa-star text-primary dark:text-secondary"></i> featured products
+            </h1>
+
+            <div class="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4">
+                <CardProduct
+                    v-for="(product, index) in products.data.slice(10, 15)"
+                    :key="index"
+                    :product="product"
+                />
+            </div>
         </div>
 
 
