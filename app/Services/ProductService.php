@@ -15,6 +15,16 @@ class ProductService
         return $this->productRepository->getAll();
     }
 
+    public function bestSellers()
+    {
+        return $this->productRepository->getTopSellingProducts();
+    }
+
+    public function latestProducts()
+    {
+        return $this->productRepository->getLatestProducts();
+    }
+
     public function getProductsByCategory(string $slug)
     {
         return $this->productRepository->getProductsByCategory($slug);

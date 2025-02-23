@@ -10,6 +10,10 @@ interface ProductRepositoryInterface
 
     public function getRelatedProducts($product);
 
+    public function getTopSellingProducts();
+
+    public function getLatestProducts();
+
     public function findBySlug(string $slug);
 
     public function create(array $data);

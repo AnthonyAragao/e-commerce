@@ -15,10 +15,9 @@ class HomeController extends Controller
     public function index()
     {
         return Inertia::render('Products/Index', [
-            'products' => $this->productService->listProducts(),
+            'bestSellersProducts' => $this->productService->bestSellers(),
+            'latestProducts' => $this->productService->latestProducts(),
             'categories' => Category::all(),
-            // best sellers
-            // featured products
         ]);
     }
 }
