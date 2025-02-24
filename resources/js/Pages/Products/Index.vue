@@ -51,7 +51,7 @@
             :products="latestProducts"
         />
 
-        <div class="max-w-[1400px] mx-auto mb-20 grid grid-cols-2 gap-4">
+        <div class="max-w-[1400px] mx-auto mb-20 grid grid-cols-2 gap-8">
             <PromoCard
                 title="Activate Coupons"
                 buttonText="Activate"
