@@ -1,8 +1,9 @@
 <script setup>
     import { Swiper, SwiperSlide } from "swiper/vue";
-    import { Autoplay, Navigation  } from "swiper/modules";
+    import { Autoplay, Navigation, Pagination  } from "swiper/modules";
     import "swiper/css";
     import "swiper/css/navigation";
+    import "swiper/css/pagination";
 
     const banners = [
         "/img/banner-1.webp",
@@ -16,11 +17,14 @@
 
 <template>
     <Swiper
-        :modules="[Autoplay, Navigation]"
+        :modules="[Autoplay, Navigation, Pagination]"
         :slides-per-view="1"
         :loop="true"
         :autoplay="{ delay: 3000, disableOnInteraction: false }"
         navigation
+        :pagination="{
+            type: 'bullets',
+        }"
         class="w-full h-fit mb-10 relative"
     >
         <SwiperSlide v-for="(banner, index) in banners" :key="index">
@@ -31,12 +35,9 @@
             />
         </SwiperSlide>
 
-        
-
         <div class="bg-gradient-to-b from-transparent to-[#F5F5FA] dark:to-[#18181B] w-full h-[40%] absolute bottom-0 z-10"></div>
     </Swiper>
 </template>
-
 
 
 <style>
@@ -58,5 +59,22 @@
     .swiper-button-prev::after {
         font-size: 24px;
         color: white;
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        bottom: 180px!important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        border: 2px solid #fff!important;
+        background-color: #000;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #fff;
+        border-color: #000;
     }
 </style>
