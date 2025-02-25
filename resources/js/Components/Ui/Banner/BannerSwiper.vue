@@ -47,7 +47,12 @@
         border-radius: 50%;
         width: 60px;
         height: 60px;
-        transition: all 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    .swiper:hover .swiper-button-next,
+    .swiper:hover .swiper-button-prev {
+        opacity: 1!important;
     }
 
     .swiper-button-next:hover,
