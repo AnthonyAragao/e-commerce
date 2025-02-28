@@ -77,7 +77,7 @@
 
             <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[90%] flex gap-2">
                 <button
-                    class="py-3 bg-primary dark:bg-secondary dark:hover: w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-[#E22D05] dark:hover:bg-[#6361db] "
+                    class="py-3 bg-primary dark:bg-secondary w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-[#E22D05] dark:hover:bg-[#6361db] "
                 >
                     <i
                         v-if="hoveredProductId === product.id"
