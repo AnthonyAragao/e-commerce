@@ -16,6 +16,8 @@ class ProductController extends Controller
     {
         return Inertia::render('Products/Index', [
             'products' => $this->productService->listProducts(),
+            'bestSellersProducts' => $this->productService->bestSellers(),
+            'latestProducts' => $this->productService->latestProducts(),
             'categories' => Category::all(),
         ]);
     }
