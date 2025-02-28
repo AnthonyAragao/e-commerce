@@ -13,7 +13,7 @@
                 {{ title }}
             </h2>
 
-            <button class="mt-4 bg-primary hover:bg-hovPrimary dark:hover:bg-hovSecondary text-white w-full py-2 rounded-md text-sm dark:bg-secondary">
+            <button class="mt-4 hover:scale-105 transition-all duration-300 bg-primary hover:bg-hovPrimary dark:hover:bg-hovSecondary text-white w-full py-2 rounded-md text-sm dark:bg-secondary">
                 {{ buttonText }}
             </button>
         </div>
