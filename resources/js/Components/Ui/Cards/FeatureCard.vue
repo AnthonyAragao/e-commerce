@@ -20,7 +20,8 @@
 
         <a
             :href="buttonLink"
-            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-36 py-2 text-xs text-center bg-orange-200/40 text-primary dark:bg-gradient-to-r dark:from-secondary dark:to-[#412aa8] dark:text-white border border-orange-300/30 dark:border-secondary rounded-[4px] transition-transform duration-300 group-hover:transform group-hover:-translate-y-1"
+            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-36 py-2 text-xs text-center bg-gradient-to-r from-primary
+             to-[#C00000] text-white  dark:from-secondary dark:to-[#412aa8] dark:text-white border border-primary dark:border-secondary rounded-[4px] transition-transform duration-300 group-hover:transform group-hover:-translate-y-1"
         >
             {{ buttonText }}
         </a>
