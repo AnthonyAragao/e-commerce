@@ -33,6 +33,8 @@ export default {
                 // primary: '#FF6500'
                 primary: '#F23005',
                 secondary: '#7364db',
+                hovPrimary: '#E22D05',
+                hovSecondary: '#6361db',
             },
 
             boxShadow: {

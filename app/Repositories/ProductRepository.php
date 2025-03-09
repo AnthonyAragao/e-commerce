@@ -43,6 +43,24 @@ class ProductRepository implements ProductRepositoryInterface
             ->get();
     }
 
+    public function getTopSellingProducts()
+    {
+        return $this->product
+            ->orderBy('sales', 'desc')
+            ->with('images')
+            ->limit(5)
+            ->get();
+    }
+
+    public function getLatestProducts()
+    {
+        return $this->product
+            ->orderBy('created_at', 'desc')
+            ->with('images')
+            ->limit(5)
+            ->get();
+    }
+
     public function findBySlug($slug)
     {
         return $this->product

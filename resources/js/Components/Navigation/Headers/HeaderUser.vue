@@ -1,9 +1,10 @@
 <script setup>
+    import { ref, onMounted } from "vue";
     import HeaderContent from "./HeaderContent.vue";
-    import { ref , onMounted } from "vue";
+    import CategoryList from "./CategoryList.vue";
 
-    const showFixedHeader  = ref(false);
-    const search           = ref("");
+    const showFixedHeader = ref(false);
+    const search          = ref("");
 
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
@@ -16,16 +17,19 @@
 </script>
 
 <template>
-    <nav class="bg-[#F5F5FA] dark:bg-zinc-900 h-[88px] flex items-center z-10 w-full">
+    <nav
+        class="bg-[#F5F5FA] dark:bg-zinc-900 py-3 flex flex-col items-center w-full"
+    >
         <HeaderContent
             :search="search"
             @search="search = $event"
         />
+        <CategoryList />
     </nav>
 
     <nav
-        class="bg-[#F5F5FA] dark:bg-zinc-900 h-[88px] flex items-center z-10 w-full fixed left-1/2 top-0 -translate-x-1/2 -translate-y-full transition-transform duration-300"
-        :class="{'translate-y-0': showFixedHeader}"
+        class="bg-[#F5F5FA] dark:bg-zinc-900 py-3 flex items-center z-20 w-full fixed top-0 -translate-y-full transition-transform duration-300"
+        :class="{ 'translate-y-0': showFixedHeader }"
     >
         <HeaderContent
             :search="search"
@@ -33,25 +37,3 @@
         />
     </nav>
 </template>
-
-<style scoped>
-    .group:hover .infotag {
-        opacity: 1;
-        transform: translateY(5px);
-    }
-
-    .infotag {
-        position: absolute;
-        bottom: -1.5rem;
-        left: 70%;
-        transform: translateX(-60%) translateY(15px);
-        background-color: #333;
-        color: #fff;
-        padding: 0.2rem 0.5rem;
-        border-radius: 0.25rem;
-        font-size: 0.75rem;
-        white-space: nowrap;
-        opacity: 0;
-        transition: opacity 0.3s, transform 0.3s;
-    }
-</style>

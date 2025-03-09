@@ -60,24 +60,24 @@
             </h2>
             <div class="mt-6 flex flex-col text-xs text-gray-600 dark:text-gray-400">
                 <div class="flex items-center justify-between">
-                    <p class="line-through text-red-600/70 dark:text-purple-600">R$ {{ product.regular_price }}</p>
+                    <p class="line-through text-red-600/70 dark:text-purple-200">$ {{ product.regular_price }}</p>
                     <p class="font-bold text-[10px]">{{ product.stock }} units left</p>
                 </div>
 
                 <p class="text-xl font-bold text-primary dark:text-secondary">
-                    R$ {{ product.sale_price }}
+                    $ {{ product.sale_price }}
                 </p>
 
                 <p>One time payment</p>
                 <p>
                     or up to
-                    <span class="font-bold">10x of R$ {{ (product.sale_price / 10).toFixed(2).replace('.', ',') }}</span>
+                    <span class="font-bold">10x of $ {{ (product.sale_price / 10).toFixed(2).replace('.', ',') }}</span>
                 </p>
             </div>
 
             <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-[90%] flex gap-2">
                 <button
-                    class="py-3 bg-primary dark:bg-secondary w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-[#E22D05] "
+                    class="py-3 bg-primary dark:bg-secondary w-full text-white rounded-[4px] flex items-center justify-center gap-1 hover:bg-[#E22D05] dark:hover:bg-[#6361db] "
                 >
                     <i
                         v-if="hoveredProductId === product.id"

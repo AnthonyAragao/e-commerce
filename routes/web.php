@@ -4,12 +4,12 @@ use App\Http\Controllers\Admin\AdminCustomerController;
 use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Admin\AdminProductController;
-
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
 // ---------------------------------------- PRODUCTS -----------------------------------------------
-Route::get('/', [ProductController::class, 'index'])->name('products.index');
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/categories/{slug}', [ProductController::class, 'category'])->name('products.category');
 Route::get('/products/{slug}', [ProductController::class, 'show'])->name('products.show');
 Route::get('/login', fn() => Inertia\Inertia::render('Auth/Login'))->name('login');

@@ -1,10 +1,12 @@
 <script setup>
     import { watch, ref } from 'vue';
-    import ButtonDarkMode from '../../Ui/Buttons/ButtonDarkMode.vue';
+    import { useDarkMode } from '@/composables/useDarkMode';
+    import ButtonDarkMode from '@/Components/Ui/Buttons/ButtonDarkMode.vue';
 
-    const { search }  = defineProps(['search']);
-    const emit        = defineEmits(['search']);
-    const searchValue = ref(search);
+    const { search }      = defineProps(['search']);
+    const emit            = defineEmits(['search']);
+    const searchValue     = ref(search);
+    const { isDarkMode }  = useDarkMode();
 
     watch(() => search, (value) => {
         searchValue.value = value;
@@ -12,7 +14,7 @@
 </script>
 
 <template>
-    <div class="flex h-[80%] dark:bg-zinc-900 justify-between w-[1420px] mx-auto p-2 items-center gap-2">
+    <div class="flex bg-transparent h-[80%] dark:bg-zinc-900 justify-between w-[1420px] mx-auto p-2 items-center gap-2">
         <Link
             href="/"
             class="py-2 px-4 rounded-[4px] bg-white border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128]"
