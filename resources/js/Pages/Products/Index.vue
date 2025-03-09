@@ -6,24 +6,29 @@
 
 <template>
     <Head title="Products" />
-    
-    <UserLayout>
-        <div class=" py-10 max-w-[1400px] mx-auto grid grid-cols-5 gap-4">
-            <aside class="col-span-1 bg-white shadow-md rounded-lg p-4">
-                <h2 class="text-xl font-semibold text-gray-800">Categories</h2>
-                <ul class="mt-4">
-                    <li
-                        v-for="category in categories"
-                        :key="category.id"
-                        class="py-2 text-gray-600 hover:text-gray-800 cursor-pointer"
-                    >
-                        <Link :href="`/categories/${category.slug}`">
-                            {{ category.name }}
-                        </Link>
-                    </li>
-                </ul>
-            </aside>
 
+    <UserLayout>
+        <div class="pb-10 max-w-[1400px] mx-auto grid grid-cols-5 gap-4">
+            <aside class="col-span-1 flex flex-col gap-4">
+                <div class="bg-white  border-[1.5px] border-gray-200 dark:border-gray-700 dark:bg-[#1F2128] shadow-sm rounded-[4px] p-4 h-fit">
+                    <h2 class="text-lg font-semibold text-gray-700 dark:text-gray-300">Categories list</h2>
+                    <ul class="mt-2">
+                        <li
+                            v-for="category in categories"
+                            :key="category.id"
+                            class="mt-1 text-gray-500 text-sm hover:text-gray-800 cursor-pointer
+                            dark:text-gray-400 dark:hover:text-gray-300"
+                        >
+                            <Link :href="`/categories/${category.slug}`">
+                                {{ category.name }}
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </aside>
+<!--
             <div class="flex col-span-4 col-start-2 flex-wrap gap-4">
                 <div
                     v-for="product in products.data"
@@ -43,7 +48,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            
         </div>
     </UserLayout>
 </template>
