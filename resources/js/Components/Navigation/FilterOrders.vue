@@ -25,8 +25,8 @@
 
 <template>
     <div class="flex items-end justify-between mt-7 text-gray-500 font-medium">
-        <div class="flex gap-4">
-            <div class="w-[300px]">
+        <div class="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4 w-full">
+            <div class="">
                 <SelectInput
                     label="Status:"
                     v-model="form.status"
@@ -44,7 +44,7 @@
                 </SelectInput>
             </div>
 
-            <div class="w-[300px]">
+            <div class="">
                 <SelectInput
                     label="Payment method:"
                     name="paymentMethod"
@@ -62,7 +62,7 @@
                 </SelectInput>
             </div>
 
-            <div class="w-[300px]">
+            <div class="">
                 <DateInput
                     label="Date from:"
                     name="dateFrom"
@@ -71,7 +71,7 @@
                 />
             </div>
 
-            <div class="w-[300px]">
+            <div class="">
                 <DateInput
                     label="Date to:"
                     name="dateTo"
